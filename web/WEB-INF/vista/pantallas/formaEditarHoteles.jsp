@@ -1,6 +1,6 @@
 <style media="screen">
   div.card{
-    max-width: 40%;
+    max-width: 500px;
     float: left;
     margin: 10px;
   }
