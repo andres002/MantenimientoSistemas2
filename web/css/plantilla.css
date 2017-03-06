@@ -16,11 +16,11 @@ table.barraBanner {
 	color: 	white;
 	font-family: fantasy;
 	height:45px;
-	width:100%;								
+	width:100%;
 }
 
 table.barraMenu tr td a{
-	color: white;							
+	color: white;
 }
 
 a{
@@ -33,11 +33,11 @@ table.barraMenu {
 	border-top:2px solid gray;
 	font-family:"Times New Roman";
 	font-size:14px;
-	width:100%;				
+	width:100%;
 }
 table.barraHerramienta {
 	border-bottom:1px solid;
-	width:100%;				
+	width:100%;
 }
 td.barraIzquierda {
 	background-color:#87B1BA;
@@ -53,13 +53,13 @@ td.barraDerecha {
 table.barraIzquierdaX {
 	border-style:solid;
 	border:0px;
-	width:100%;				
+	width:100%;
 }
 table.barraDerecha {
 	background-color:#66FFCC;
 	border-style:solid;
 	border:0px;
-	width:100%;				
+	width:100%;
 }
 table.barraPie {
 	background-color:#FFFFFF;
@@ -67,11 +67,11 @@ table.barraPie {
 	font-family:Verdana, Arial;
         font-size:11px;
 	height:25px;
-	width:100%;				
+	width:100%;
 }
 table.barraDerechos {
 	background-color:#FFFFFF;
 	font-family:Verdana, Arial;
         font-size:9px;
-	width:100%;				
+	width:100%;
 }

@@ -1,6 +1,11 @@
+<style media="screen">
+  div.card{
+    max-width: 40%;
+    float: left;
+    margin: 10px;
+  }
+</style>
 
-  <div class="row">
-    <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
           <img src="images/hotel003.jpg">
@@ -23,11 +28,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
           <img src="images/hotel002.jpg">
@@ -50,11 +50,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
           <img src="images/hotel001.jpg">
@@ -76,6 +71,4 @@
             direccion 2da sur con 1ra norte
           </p>
         </div>
-      </div>
     </div>
-  </div>
