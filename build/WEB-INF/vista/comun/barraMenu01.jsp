@@ -21,17 +21,20 @@
 </tr>
 </table> -->
 
-<link rel="stylesheet" type="text/css" href="css/banner.css"/>
+<!-- rel="stylesheet" type="text/css" href="css/banner.css"/-->
 
 <nav>
   <div class="nav-wrapper">
     <a href="http://www.upchiapas.edu.mx/" class="brand-logo">
-      <img src="images/logo-upch.png" alt="upchiapas"/>
+      <img style="height: 45px;
+  margin: 10px;" src="images/logo-upch.png" alt="upchiapas"/>
     </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="irInicio.do">Home</a></li>
       <li><a href="solicitarListarRoles.do">Roles</a></li>
       <li><a href="solicitarListarHoteles.do">Hoteles</a></li>
+      <li><a href="solicitarVisualizarHoteles.do">Ver</a></li>
+      <li><a href="solicitarEditarHoteles.do">Editar</a></li>
     </ul>
   </div>
 </nav>

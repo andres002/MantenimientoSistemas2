@@ -90,8 +90,12 @@
 
 
         <!-- Mis Paths -->
-        <action path="/solicitarListarHoteles"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoHoteles.jsp" />
+    <action path="/solicitarListarHoteles"
+    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoHoteles.jsp" />
+    <action path="/solicitarVisualizarHoteles"
+    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaVerHoteles.jsp" />
+    <action path="/solicitarEditarHoteles"
+    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp" />
 
 
 
