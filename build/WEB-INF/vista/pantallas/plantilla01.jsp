@@ -18,23 +18,11 @@
 
     <body>
     <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-    <c:import url="/WEB-INF/vista/pantallas/${param.c}" />
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-
-
-                </td>
-            </tr>
-            <tr height="490px">
-                <td align="center" valign="center" width="100%">
-
-                </td>
-            </tr>
-					</tr>
-					</table>
+      <section style="height: 100vh;"class="">
+				  <c:import url="/WEB-INF/vista/pantallas/${param.c}" />
+      </section>
 					<c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-					
+
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/materialize.js"></script>
     </body>

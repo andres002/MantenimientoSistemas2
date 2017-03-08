@@ -18,22 +18,30 @@
     <body>
         <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
 
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
+<section style="height: 100vh;">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s8" style="padding-top: 10vh;">
+						<h3>Bienvenidos a trivago </h3>
+				</div>
+				<div class="col l6 8" style="padding-top: 10vh;">
+					<img src="images/hotel003.jpg" style=" height: 50vh; width:50wh;">
+				</div>
+			</div>
+		</div>
 
 
-                </td>
-            </tr>
-            <tr height="590px">
-                <td align="center" valign="center" width="100%">
-                    <h3>Bienvenidos a trivago </h3>
-                </td>
-                <td>
-                    <img src="images/hotel003.jpg" style="height: 50vh; width:50wh;">
-                </td>
-            </tr>
-						</table>
+</section>
+
+
+
+			      <%-- <div style="width=100wh height=100vh" class="">
+							<h3>Bienvenidos a trivago </h3>
+
+							<img src="images/hotel003.jpg" style="height: 50vh; width:50wh;"> --%>
+
+
+
 
             <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
 
