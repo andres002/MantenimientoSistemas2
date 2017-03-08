@@ -19,7 +19,8 @@ public final class FormaListadoHoteles
 
     private Collection hoteles;
     private int contador;
-	  private String nombre;
+	private String nombre;
+    private String pais;
 
     public void setHoteles(Collection hoteles) {
         this.hoteles = hoteles;
@@ -42,6 +43,14 @@ public final class FormaListadoHoteles
 
 	public void setNombre(String nombre){
          this.nombre = nombre;
+    }
+
+    public String getPais(){
+        return(this.nombre);
+    }
+
+    public void setPais(String pais){
+         this.pais = pais;
     }
 
     public void reset(ActionMapping mapping,

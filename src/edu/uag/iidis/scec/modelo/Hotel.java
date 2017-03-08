@@ -19,9 +19,11 @@ public class Hotel extends ClaseBase
     private Long id;
     private String nombre;
     private String descripcion;
-    private String precio;
-    private String horario;
-    private String telefono;
+	private String precio;
+	private String horario;
+	private String estado;
+    private String imagen;
+    private String pais;
     private String direccion;
 
     public Hotel() {
@@ -31,13 +33,15 @@ public class Hotel extends ClaseBase
         this.id = id;
     }
 
-    public Hotel(String nombre, String descripcion,String precio,String horario,String telefono, String direccion){
+    public Hotel(String nombre, String descripcion,String precio,String horario,String estado, String imagen, String pais, String direccion){
         this.nombre=nombre;
         this.descripcion=descripcion;
-    		this.precio=precio;
-    		this.horario=horario;
-    		this.telefono=telefono;
-        this.direccion=direccion;
+		this.precio=precio;
+		this.horario=horario;
+		this.estado=estado;
+        this.imagen=imagen;
+        this.pais = pais;
+        this.direccion = direccion;
     }
 
     /**
@@ -73,10 +77,16 @@ public class Hotel extends ClaseBase
 	public String getHorario() {
         return this.horario;
     }
-	public String getTelefono() {
-        return this.telefono;
+	public String getEstado() {
+        return this.estado;
     }
-     public String getDireccion() {
+     public String getImagen() {
+        return this.imagen;
+    }
+         public String getPais() {
+        return this.pais;
+    }
+         public String getDireccion() {
         return this.direccion;
     }
     /**
@@ -95,8 +105,14 @@ public class Hotel extends ClaseBase
 	public void setHorario(String horario) {
         this.horario = horario;
     }
-	public void setTelefono(String telefono) {
-        this.telefono = telefono;
+	public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    public void setPais(String pais) {
+        this.pais = pais;
     }
     public void setDireccion(String direccion) {
         this.direccion = direccion;

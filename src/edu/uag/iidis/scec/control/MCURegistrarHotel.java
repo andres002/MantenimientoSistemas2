@@ -108,7 +108,7 @@ public final class MCURegistrarHotel
             }
         }
         Hotel hotel = new Hotel(forma.getNombre(),
-                          forma.getDescripcion(),forma.getPrecio(),forma.getHorario(),forma.getEstado(),"upload\\"+fileName,forma.getPais(),forma.getMoneda());
+                          forma.getDescripcion(),forma.getPrecio(),forma.getHorario(),forma.getEstado(),"upload\\"+fileName,forma.getPais(),forma.getDireccion());
 
         ManejadorHoteles mr = new ManejadorHoteles();
         int resultado = mr.crearHotel(hotel);
