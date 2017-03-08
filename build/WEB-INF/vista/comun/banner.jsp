@@ -1,4 +1,4 @@
-
+	
 	<!-- IS: Encabezado de Pagina (Banner) -->
 	<table class="barraBanner">
 		<tr>	<td><img  src="images/logo-upch.png"></td>
