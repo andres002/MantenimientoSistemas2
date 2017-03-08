@@ -96,6 +96,8 @@
     forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaVerHoteles.jsp" />
     <action path="/solicitarEditarHoteles"
     forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp" />
+    <action path="/solicitarAgregarHotel"
+    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarHotel.jsp" />
 
 
 
