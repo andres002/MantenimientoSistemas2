@@ -269,6 +269,18 @@
             <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
        </action>
 
+       <action path="/procesarRegistroHotel"
+                  type="edu.uag.iidis.scec.control.MCURegistrarHotel"
+                  parameter="procesarRegistroHotel"
+                  name="formaNuevoHotel"
+                  scope="request"
+                  validate="true"
+                  input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoHotel.jsp" >
+              <forward name="cancelar" path="/solicitarListarRoles.do" redirect="true"/>
+              <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+              <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
+         </action>
+
 	   <action path="/procesarRegistroRol"
                 type="edu.uag.iidis.scec.control.MCURegistrarRol"
                 parameter="procesarRegistroRol"
