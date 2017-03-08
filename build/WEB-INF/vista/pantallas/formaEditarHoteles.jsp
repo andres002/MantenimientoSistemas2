@@ -43,7 +43,7 @@
                   <label for="icon_prefix2">Descripcion</label>
                 </div>
           </div>
-          <input type="submit" value="Submit">
+          <input class="waves-effect waves-light btn" type="submit" value="Submit">
           </form>
 
   </div>
