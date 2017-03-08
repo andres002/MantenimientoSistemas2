@@ -216,6 +216,17 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoRol.jsp"/>
         </action>
+
+        <action path="/solicitarRegistroHotel"
+                type="edu.uag.iidis.scec.control.MCURegistrarHotel"
+                parameter="solicitarRegistroHotel"
+                name="formaNuevoHotel"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoHotel.jsp"/>
+        </action>
+
+
         <action path="/solicitarRegistroEstado"
                 type="edu.uag.iidis.scec.control.MCURegistrarEstado"
                 parameter="solicitarRegistroEstado"
