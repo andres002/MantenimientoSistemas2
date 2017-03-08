@@ -31,12 +31,10 @@
 
                 </td>
             </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-                </td>
-            </tr>
-        </table>
+					</tr>
+					</table>
+					<c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
+					
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/materialize.js"></script>
     </body>
