@@ -9,6 +9,8 @@
 
     drop table if exists Estados;
 
+    drop table if exists Hoteles;
+
     drop table if exists Lugares;
 
     drop table if exists Pais;
@@ -27,6 +29,17 @@
         id bigint not null,
         Nombre varchar(255) not null unique,
         Descripcion varchar(255),
+        primary key (id)
+    ) type=InnoDB;
+
+    create table Hoteles (
+        id bigint not null,
+        Nombre varchar(255) not null unique,
+        Descripcion varchar(255),
+        Precio bigint,
+        Horario varchar(255),
+        Telefono varchar(255),
+        Direccion varchar(255),
         primary key (id)
     ) type=InnoDB;
 
