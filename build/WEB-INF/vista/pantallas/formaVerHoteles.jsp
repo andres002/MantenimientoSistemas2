@@ -1,17 +1,11 @@
-<style media="screen">
-  div.card{
-    max-width: 500px;
-    float: left;
-    margin: 10px;
-  }
-</style>
 
-      <div class="card">
+      <div class="card horizontal">
         <div class="card-image">
           <img src="images/hotel003.jpg">
           <span class="card-title">Nombre Hotel</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
         </div>
+        <div class="card-stacked">
         <div class="card-content">
           <p>
             telefono: 961-111-1111
@@ -28,12 +22,15 @@
           </p>
         </div>
       </div>
-      <div class="card">
+      </div>
+
+      <div class="card horizontal">
         <div class="card-image">
           <img src="images/hotel002.jpg">
           <span class="card-title">Nombre Hotel</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
         </div>
+        <div class="card-stacked">
         <div class="card-content">
           <p>
             telefono: 961-111-1111
@@ -50,12 +47,16 @@
           </p>
         </div>
       </div>
-      <div class="card">
+      </div>
+
+
+      <div class="card horizontal">
         <div class="card-image">
           <img src="images/hotel001.jpg">
           <span class="card-title">Nombre Hotel</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
         </div>
+        <div class="card-stacked">
         <div class="card-content">
           <p>
             telefono: 961-111-1111
@@ -71,4 +72,5 @@
             direccion 2da sur con 1ra norte
           </p>
         </div>
-    </div>
+      </div>
+      </div>
