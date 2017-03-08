@@ -6,14 +6,14 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!-- Propiedades para HSQLDB (local - pruebas) 
+        <!-- Propiedades para HSQLDB (local - pruebas)
         <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
         <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="connection.url">jdbc:hsqldb:data/bdscec</property>
         <property name="connection.username">sa</property>
         <property name="connection.password"></property>
          -->
-        
+
         <!-- Propiedades para MySQL (remoto)  -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
@@ -22,7 +22,7 @@
         <property name="hibernate.connection.password">root</property>
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="hibernate.connection.pool_size">1</property>
-	
+
 		<!-- SQL dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
 
@@ -51,6 +51,7 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Estado.hbm.xml"/>
 		<mapping resource="edu/uag/iidis/scec/modelo/Pais.hbm.xml"/>
 		<mapping resource="edu/uag/iidis/scec/modelo/Lugar.hbm.xml"/>
+    <mapping resource="edu/uag/iidis/scec/modelo/Hotel.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Recomendacion.hbm.xml"/>
     </session-factory>
 

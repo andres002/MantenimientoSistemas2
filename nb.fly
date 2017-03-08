@@ -97,7 +97,7 @@
     <property name="test.out.dir"    value="${basedir}/testout"/>
 
     <property   name="catalina.home"
-                value="C:\Program Files\apache-tomcat-9.0.0.M15"/>
+                value="C:\apache\apache-tomcat-9.0.0.M15"/>
     <property name="manager.url"      value="http://127.0.0.1:8080/manager/text"/>
     <property name="manager.username" value="tomcat"/>
     <property name="manager.password" value="tomcat"/>
@@ -471,6 +471,16 @@
 
     </target>
 
+    <!-- Ejecucion de todas las tareas importantes -->
+    <target name="start" depends="clean,build,dist,remove"
+            description="Realiza todas las actividades necesarias para la instalación">
+        <install url="${manager.url}"
+                username="${manager.username}"
+                password="${manager.password}"
+                path="${app.path}"
+                war="file:${dist.home}/${app.name}v${app.version}.war"/>
+    </target>
+
 <!-- ==================== Reload Target ============================== -->
 <!--
     The "reload" target tells the specified Tomcat 4 installation to
@@ -506,16 +516,6 @@
 
     </target>
 
-
-    <!-- Ejecucion de todas las tareas importantes -->
-    <target name="start" depends="clean,build,dist,remove"
-            description="Realiza todas las actividades necesarias para la instalación">
-        <install url="${manager.url}"
-                username="${manager.username}"
-                password="${manager.password}"
-                path="${app.path}"
-                war="filesetile:${dist.home}/${app.name}v${app.version}.war"/>
-    </target>
 
 <!-- ==================== Esquema Target ============================== -->
   <target name="db"
