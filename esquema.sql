@@ -36,9 +36,11 @@
         id bigint not null,
         Nombre varchar(255) not null unique,
         Descripcion varchar(255),
-        Precio bigint,
+        Precio varchar(255),
         Horario varchar(255),
-        Telefono varchar(255),
+        Estado varchar(255),
+        Imagen varchar(255),
+        Pais varchar(255),
         Direccion varchar(255),
         primary key (id)
     ) type=InnoDB;
