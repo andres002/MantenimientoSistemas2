@@ -2,6 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
+<style media="screen">
+  div.card{
+    margin: 50px;
+  }
+</style>
+
 <form>
         <div class="input-field">
           <input id="search" type="search" required>
@@ -16,7 +22,11 @@
 </h1>
 
 
- <a href="solicitarRegistroHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+
+ <div class="fixed-action-btn">
+    <a href="solicitarRegistroHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+  </div>
 
  <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
 
@@ -25,7 +35,11 @@
         <div class="card-image">
           <img src="${hotel.imagen}">
           <span class="card-title">${hotel.nombre}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+
+          <a href="procesarEliminarHotel.do?id=<c:out value="${hotel.id}"/>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>
+          <a style="left: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">mode_edit</i></a>
+
+
         </div>
         <div class="card-stacked">
         <div class="card-content">

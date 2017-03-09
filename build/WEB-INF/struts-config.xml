@@ -237,6 +237,16 @@
                 validate="false">
             <forward name="exito" path="/solicitarListarRoles.do" redirect="true"/>
         </action>
+
+        <action path="/procesarEliminarHotel"
+                    type="edu.uag.iidis.scec.control.MCUEliminarHotel"
+                    parameter="procesarEliminarHotel"
+                    name="formaEliminarHotel"
+                    scope="request"
+                    validate="false">
+                <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
+            </action>
+
         <action path="/procesarEliminarEstado"
                 type="edu.uag.iidis.scec.control.MCUEliminarEstado"
                 parameter="procesarEliminarEstado"
