@@ -106,6 +106,8 @@ public final class MCURegistrarHotel
               fos.flush();
               fos.close();
             }
+        }else {
+          fileName = "hotel001.jpg";
         }
         Hotel hotel = new Hotel(forma.getNombre(),
                           forma.getDescripcion(),forma.getPrecio(),forma.getHorario(),forma.getEstado(),"upload\\"+fileName,forma.getPais(),forma.getDireccion());

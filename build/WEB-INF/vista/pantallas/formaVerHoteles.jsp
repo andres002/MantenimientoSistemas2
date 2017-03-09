@@ -1,76 +1,66 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src="images/hotel003.jpg">
-          <span class="card-title">Nombre Hotel</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+<form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
         </div>
-        <div class="card-stacked">
-        <div class="card-content">
-          <p>
-            telefono: 961-111-1111
-          </p>
-          <p>
-          horario 00:00 23:55
-          </p>
-          <p>
-            precio 99999
-          </p>
-          <p>descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>
-            direccion 2da sur con 1ra norte
-          </p>
-        </div>
-      </div>
-      </div>
+      </form>
 
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src="images/hotel002.jpg">
-          <span class="card-title">Nombre Hotel</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
-        </div>
-        <div class="card-stacked">
-        <div class="card-content">
-          <p>
-            telefono: 961-111-1111
-          </p>
-          <p>
-          horario 00:00 23:55
-          </p>
-          <p>
-            precio 99999
-          </p>
-          <p>descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>
-            direccion 2da sur con 1ra norte
-          </p>
-        </div>
-      </div>
-      </div>
+
+<h1>
+  <fmt:message key="formaListadoHoteles.titulo" />
+</h1>
+
+
+ <a href="solicitarRegistroHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+ <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
 
 
       <div class="card horizontal">
         <div class="card-image">
-          <img src="images/hotel001.jpg">
-          <span class="card-title">Nombre Hotel</span>
+          <img src="${hotel.imagen}">
+          <span class="card-title">${hotel.nombre}</span>
           <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
         </div>
         <div class="card-stacked">
         <div class="card-content">
+          <h5>
+            <fmt:message key="formaListadoHoteles.etiqueta.precio" />
+          </h5>
           <p>
-            telefono: 961-111-1111
+            ${hotel.precio}
           </p>
+          <h5>
+            <fmt:message key="formaListadoHoteles.etiqueta.horario" />
+          </h5>
           <p>
-          horario 00:00 23:55
+            ${hotel.horario}
           </p>
+          <h5>
+            <fmt:message key="formaListadoHoteles.etiqueta.estado" />
+          </h5>
           <p>
-            precio 99999
+            ${hotel.estado}
           </p>
-          <p>descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h5>
+            <fmt:message key="formaListadoHoteles.etiqueta.pais" />
+          </h5>
           <p>
-            direccion 2da sur con 1ra norte
+            ${hotel.pais}
+          </p>
+          <h5>
+            <fmt:message key="formaListadoHoteles.etiqueta.direccion" />
+          </h5>
+          <p>
+            ${hotel.direccion}
           </p>
         </div>
       </div>
       </div>
+
+      </c:forEach>
