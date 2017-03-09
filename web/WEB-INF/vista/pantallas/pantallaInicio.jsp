@@ -11,15 +11,24 @@
 
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
         <link rel="stylesheet" type="text/css" href="css/materialize.css">
-
         </head>
     </head>
 
     <body>
+
         <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
 
 <section style="height: 100vh;">
-		<div class="container">
+
+			<h1 style="text-align:center;" >Bienvenidos a Trivago</h1>
+			<div class="carousel">
+			 <a class="carousel-item" href="#one!"><img src="images/hotel003.jpg"></a>
+			 <a class="carousel-item" href="#two!"><img src="images/hotel.jpg"></a>
+			 <a class="carousel-item" href="#three!"><img src="images/hotel2.jpg"></a>
+			 <a class="carousel-item" href="#four!"><img src="images/hotel3.jpg"></a>
+			 <a class="carousel-item" href="#five!"><img src="images/hotel3.jpg"></a>
+		 </div>
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col l6 s8" style="padding-top: 10vh;">
 						<h3>Bienvenidos a trivago </h3>
@@ -28,7 +37,7 @@
 					<img src="images/hotel003.jpg" style=" height: 50vh; width:50wh;">
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 
 </section>
@@ -49,5 +58,12 @@
 
         <script type="text/javascript" src="js/jQuery.js"></script>
         <script type="text/javascript" src="js/materialize.js"></script>
+
+				<script type="text/javascript">
+					$(document).ready(function(){
+			      $('.carousel').carousel();
+			    });
+				</script>
+
     </body>
 </html>
