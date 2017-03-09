@@ -33,7 +33,7 @@
 
       <div class="card horizontal">
         <div class="card-image">
-          <img src="${hotel.imagen}">
+          <img style="height: 100%; width: 100%;" src="${hotel.imagen}">
           <span class="card-title">${hotel.nombre}</span>
 
           <a href="procesarEliminarHotel.do?id=<c:out value="${hotel.id}"/>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>
