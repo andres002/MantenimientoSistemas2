@@ -116,7 +116,14 @@
     forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formabuscarHoteles.jsp" />
 
     <action path="/solicitarEditarHoteles"
-    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp" />
+                type="edu.uag.iidis.scec.control.MCUListarHoteles"
+                parameter="solicitarListarHoteles"
+                name="formaListadoHoteles"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
 
 
 
