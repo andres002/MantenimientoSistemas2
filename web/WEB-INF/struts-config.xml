@@ -117,8 +117,6 @@
 
     <action path="/solicitarEditarHoteles"
     forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp" />
-    <action path="/solicitarAgregarHotel"
-    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarHotel.jsp" />
 
 
 
@@ -231,6 +229,15 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoHotel.jsp"/>
+        </action>
+
+        <action path="/solicitarAgregarHotel"
+                type="edu.uag.iidis.scec.control.MCURegistrarHotel"
+                parameter="solicitarRegistroHotel"
+                name="formaNuevoHotel"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarHotel.jsp"/>
         </action>
 
 		<action path="/procesarEliminarRol"

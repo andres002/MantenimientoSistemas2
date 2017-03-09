@@ -13,6 +13,11 @@
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
         <link rel="stylesheet" type="text/css" href="css/mensajes.css">
         <link rel="stylesheet" type="text/css" href="css/materialize.css"></head>
+				<style media="screen">
+					html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  }
+				</style>
 
     </head>
 

@@ -221,4 +221,4 @@
     </table>
 </form>
 
-<div id="mapa" style="height: 300px; width:400px;"></div>
+<div id="mapa" style="height: 60vh; width:100vw;"></div>
