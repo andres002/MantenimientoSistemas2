@@ -26,20 +26,26 @@
 
 		<property name="precio"
 			column="Precio"
-            type="java.lang.Long" />
+            type="java.lang.String" />
 
 		<property name="horario"
 			column="Horario"
             type="java.lang.String"/>
 
-		<property name="telefono"
-			column="Telefono"
+		<property name="estado"
+			column="Estado"
             type="java.lang.String"/>
              <!--cambios-->
-        <property name="direccion"
-        column="Direccion"
+        <property name="imagen"
+        column="Imagen"
         type="java.lang.String"/>
 
+        <property name="pais"
+        column="Pais"
+        type="java.lang.String"/>
+		<property name="direccion"
+        column="Direccion"
+        type="java.lang.String"/>
     </class>
 
 </hibernate-mapping>

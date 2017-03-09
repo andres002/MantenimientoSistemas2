@@ -37,7 +37,8 @@ return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
      <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.descripcion" /></b></td>
      <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.precio" /></b></td>
      <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.horario" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.telefono" /></b></td>
+     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.estado" /></b></td>
+     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.pais" /></b></td>
      <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.direccion" /></b></td>
 
  <td colspan="2"><b><fmt:message key="formaListadoHoteles.etiqueta.administracion" /></b></td>
@@ -46,11 +47,11 @@ return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
         <tr>
             <td align="left" width="20%"><c:out value="${hotel.nombre}"/></td>
             <td align="left" width="60%"><c:out value="${hotel.descripcion}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.poblacion}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.coordenadas}"/></td>
+    <td align="left" width="60%"><c:out value="${hotel.precio}"/></td>
+    <td align="left" width="60%"><c:out value="${hotel.horario}"/></td>
     <td align="left" width="60%"><c:out value="${hotel.estado}"/></td>
     <td align="left" width="60%"><c:out value="${hotel.pais}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.moneda}"/></td>
+    <td align="left" width="60%"><c:out value="${hotel.direccion}"/></td>
 
             <td align="left" width="20%">
                 <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>'

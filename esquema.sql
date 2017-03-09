@@ -1,13 +1,15 @@
 
-    alter table UsuarioRol 
-        drop 
+    alter table UsuarioRol
+        drop
         foreign key FK4CA33E1C7F566F0;
 
-    alter table UsuarioRol 
-        drop 
+    alter table UsuarioRol
+        drop
         foreign key FK4CA33E1BC6DE0AE;
 
     drop table if exists Estados;
+
+    drop table if exists Hoteles;
 
     drop table if exists Lugares;
 
@@ -28,7 +30,20 @@
         Nombre varchar(255) not null unique,
         Descripcion varchar(255),
         primary key (id)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
+
+    create table Hoteles (
+        id bigint not null,
+        Nombre varchar(255) not null unique,
+        Descripcion varchar(255),
+        Precio varchar(255),
+        Horario varchar(255),
+        Estado varchar(255),
+        Imagen varchar(255),
+        Pais varchar(255),
+        Direccion varchar(255),
+        primary key (id)
+    ) Engine=InnoDB;
 
     create table Lugares (
         id bigint not null,
@@ -41,14 +56,14 @@
         Pais varchar(255),
         Moneda varchar(255),
         primary key (id)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table Pais (
         id bigint not null,
         Nombre varchar(255) not null unique,
         Descripcion varchar(255),
         primary key (id)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table Recomendaciones (
         id bigint not null,
@@ -59,19 +74,19 @@
         Comentario varchar(255),
         Calificacion bigint,
         primary key (id)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table Roles (
         idRol bigint not null,
         nombre varchar(255) not null unique,
         descripcion varchar(255),
         primary key (idRol)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table UsuarioRol (
         idUsuario bigint not null,
         idRol bigint not null
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table Usuarios (
         idUsuario bigint not null,
@@ -84,23 +99,23 @@
         nombreUsuario varchar(255) not null unique,
         claveAcceso varchar(255) not null,
         primary key (idUsuario)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
     create table ciudades (
         idciudad bigint not null,
         nombre varchar(255) not null unique,
         descripcion varchar(255),
         primary key (idciudad)
-    ) type=InnoDB;
+    ) Engine=InnoDB;
 
-    alter table UsuarioRol 
-        add index FK4CA33E1C7F566F0 (idRol), 
-        add constraint FK4CA33E1C7F566F0 
-        foreign key (idRol) 
+    alter table UsuarioRol
+        add index FK4CA33E1C7F566F0 (idRol),
+        add constraint FK4CA33E1C7F566F0
+        foreign key (idRol)
         references Roles (idRol);
 
-    alter table UsuarioRol 
-        add index FK4CA33E1BC6DE0AE (idUsuario), 
-        add constraint FK4CA33E1BC6DE0AE 
-        foreign key (idUsuario) 
+    alter table UsuarioRol
+        add index FK4CA33E1BC6DE0AE (idUsuario),
+        add constraint FK4CA33E1BC6DE0AE
+        foreign key (idUsuario)
         references Usuarios (idUsuario);

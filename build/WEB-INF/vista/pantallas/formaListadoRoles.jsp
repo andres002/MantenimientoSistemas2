@@ -6,7 +6,7 @@
     color:#000000;
 	text-decoration:none;
   }
-  
+
   .HipervinculoAdmon:hover{
     color:#006666;
 	text-decoration:underline;
@@ -15,7 +15,7 @@
 <script language="javascript" type="text/javascript">
 <!--
   function EliminarRol(strRolName){
-    return confirm("¿Desea eliminar el rol '" + strRolName + "'?")
+    return confirm("ï¿½Desea eliminar el rol '" + strRolName + "'?")
   }
 -->
 </script>
