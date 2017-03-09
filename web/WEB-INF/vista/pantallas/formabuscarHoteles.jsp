@@ -2,7 +2,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
     <head>
         <title>Titulo del documento</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -11,9 +10,14 @@
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
 
         <style>
-          
+
           #map {
-            height: 100%;
+            height: 75vh;
+            width: 70vw !important;
+            position: absolute;
+            top: 150px;
+            left: 50px;
+
           }
         </style>
 
@@ -27,10 +31,10 @@
           #listing {
             position: absolute;
             width: 200px;
-            height: 470px;
+            height: 75vh;
             overflow: auto;
-            left: 442px;
-            top: 0px;
+            left: 76vw;
+            top: 150px;
             cursor: pointer;
             overflow-x: hidden;
           }
@@ -42,22 +46,24 @@
             padding: 4px;
             z-index: 5;
             background-color: #fff;
+            top: 85px;
+            left: 30vw;
           }
           #locationField {
             position: absolute;
             width: 190px;
             height: 25px;
-            left: 108px;
-            top: 0px;
+            left: 51vw;
+            top: 85px;
             z-index: 5;
             background-color: #fff;
           }
-          #controls {
+          #controls{
             position: absolute;
-            left: 300px;
+            left: 39vw;
             width: 140px;
-            top: 0px;
-            z-index: 5;
+            top: 85px;
+            z-index: 100000;
             background-color: #fff;
           }
           #autocomplete {
@@ -65,6 +71,7 @@
           }
           #country {
             width: 100%;
+
           }
           .placeIcon {
             width: 20px;
@@ -97,31 +104,32 @@
     </head>
 
     <body>
-    <div id="findhotels">
-      Find hotels in:
-    </div>
 
-    <div id="locationField">
-      <input id="autocomplete" placeholder="Enter a city" type="text" />
-    </div>
+        <div id="findhotels">
+         Buscar hoteles en:
+        </div>
 
     <div id="controls">
-      <select id="country">
+        <select id="country" class="browser-default">
         <option value="all">All</option>
         <option value="au">Australia</option>
         <option value="br">Brazil</option>
         <option value="ca">Canada</option>
         <option value="fr">France</option>
         <option value="de">Germany</option>
-        <option value="mx">Mexico</option>
+        <option value="mx" selected>Mexico</option>
         <option value="nz">New Zealand</option>
         <option value="it">Italy</option>
         <option value="za">South Africa</option>
         <option value="es">Spain</option>
         <option value="pt">Portugal</option>
-        <option value="us" selected>U.S.A.</option>
+        <option value="us">U.S.A.</option>
         <option value="uk">United Kingdom</option>
       </select>
+    </div>
+
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Introduzca una ciudad" type="text" />
     </div>
 
     <div id="map"></div>
@@ -160,17 +168,13 @@
     </div>
 
     <script>
-// This example uses the autocomplete feature of the Google Places API.
-// It allows the user to find all hotels in a given place, within a given
-// country. It then displays markers for all the hotels returned,
-// with on-click details for each hotel.
 
-var map, places, infoWindow;
-var markers = [];
-var autocomplete;
-var countryRestrict = {'country': 'us'};
-var MARKER_PATH = 'https://maps.gstatic.com/intl/en_us/mapfiles/marker_green';
-var hostnameRegexp = new RegExp('^https?://.+?/');
+        var map, places, infoWindow;
+        var markers = [];
+        var autocomplete;
+        var countryRestrict = {'country': 'mx'};
+        var MARKER_PATH = 'https://maps.gstatic.com/intl/en_us/mapfiles/marker_green';
+        var hostnameRegexp = new RegExp('^https?://.+?/');
 
 var countries = {
   'au': {
@@ -229,8 +233,8 @@ var countries = {
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: countries['us'].zoom,
-    center: countries['us'].center,
+    zoom: countries['mx'].zoom,
+    center: countries['mx'].center,
     mapTypeControl: false,
     panControl: false,
     zoomControl: false,
@@ -439,4 +443,3 @@ function buildIWContent(place) {
         async defer></script>
 
     </body>
-</html>
