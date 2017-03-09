@@ -1,2 +1,3 @@
 build.xml
 src/hibernate.cfg.xml
+dist/MALv0.1.war
