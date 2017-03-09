@@ -3,8 +3,8 @@
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://maps.google.com/maps/api/js?sensor=false&amp;language=es"></script>
-<script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer></script>
+  <script>
   var geocoder;
   var infowindow;
   var marker;
