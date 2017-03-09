@@ -11,11 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
 
         <style>
-          html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-          }
+          
           #map {
             height: 100%;
           }
