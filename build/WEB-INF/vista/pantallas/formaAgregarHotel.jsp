@@ -151,7 +151,7 @@
 
                  maxlength="100"
                  value="${formaNuevoHotel.estado}">
-          <label for="icon_prefix">
+          <label for="icon_prefix" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.estado" />
           </label>
         </div>
@@ -164,7 +164,7 @@
 
                  maxlength="100"
                  value="${formaNuevoHotel.pais}">
-          <label for="icon_telephone">
+          <label for="icon_telephone" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.pais" />
           </label>
         </div>
@@ -176,7 +176,7 @@
                 id="direccion"
                  maxlength="100"
                  value="${formaNuevoHotel.direccion}">
-          <label for="icon_prefix">
+          <label for="icon_prefix" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.direccion" />
           </label>
         </div>
