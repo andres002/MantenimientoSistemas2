@@ -10,15 +10,20 @@ div.card{
 
 <script language="javascript" type="text/javascript">
 function EliminarHotel(strHotelName){
-  return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
+  return confirm("¿Desea eliminar el Hotel '" + strHotelName + "'?")
 }
 </script>
 
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 
+<h1 style="text-align:center;">
+  <fmt:message key="formaListadoHoteles.titulo" />
+</h1>
+
 <div class="fixed-action-btn">
   <a href="solicitarAgregarHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 </div>
+
 <div class="card">
   <table class="striped" id="hotel">
     <thead>
@@ -67,7 +72,25 @@ function EliminarHotel(strHotelName){
     <tbody>
       <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
         <tr>
-          <td>${hotel.nombre}</td>
+          <td>
+
+            <a class="waves-effect" href="#modal${hotel.id}">${hotel.nombre}</a>
+
+            <div id="modal${hotel.id}" class="modal">
+              <div class="modal-content">
+
+                <div class="card">
+                  <div class="card-image">
+                    <img style="height: 100%; width: 100%;" src="${hotel.imagen}">
+                    <span class="card-title">${hotel.nombre}</span>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </td>
           <td>${hotel.descripcion}</td>
           <td>${hotel.precio}</td>
           <td>${hotel.horario}</td>
@@ -91,9 +114,11 @@ function EliminarHotel(strHotelName){
 </div>
 
 <script type="text/javascript">
-$(document).ready(function()
-  {
-      $("#hotel").tablesorter();
-  }
-);
+  $(document).ready(function() {
+    $("#hotel").tablesorter();
+  } );
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
 </script>

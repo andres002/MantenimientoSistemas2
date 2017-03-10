@@ -25,7 +25,7 @@
 
 
  <div class="fixed-action-btn">
-    <a href="solicitarRegistroHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a href="solicitarAgregarHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
   </div>
 
  <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
