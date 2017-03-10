@@ -37,7 +37,7 @@
           <span class="card-title">${hotel.nombre}</span>
 
           <a href="procesarEliminarHotel.do?id=<c:out value="${hotel.id}"/>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>
-          <a style="left: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">mode_edit</i></a>
+          <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>&descripcion=<c:out value="${hotel.descripcion}"/>&nombre=<c:out value="${hotel.nombre}"/>&precio=<c:out value="${hotel.precio}"/>&horario=<c:out value="${hotel.horario}"/>&estado=<c:out value="${hotel.estado}"/>&pais=<c:out value="${hotel.pais}"/>&direccion=<c:out value="${hotel.direccion}"/>&imagen=<c:out value="hotel001.jpg"/>' style="left: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">mode_edit</i></a>
 
 
         </div>
