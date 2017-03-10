@@ -1,74 +1,75 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
-<style>
-.HipervinculoAdmon{
-color:#000000;
-text-decoration:none;
-}
 
-.HipervinculoAdmon:hover{
-color:#006666;
-text-decoration:underline;
+<style media="screen">
+div.card{
+  margin: 50px;
 }
 </style>
+
 <script language="javascript" type="text/javascript">
-<!--
 function EliminarHotel(strHotelName){
-return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
+  return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
 }
--->
 </script>
-<br>
-<font size='5'><fmt:message key="formaListadoHoteles.titulo" /></font>
-<table cellpadding="0" cellspacing="0" width="60%" border="0">
-    <tr>
-        <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
-            <a href="solicitarRegistroHotel.do" class="HipervinculoAdmon">Agregar nuevo hotel...</a>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4">
-           <html:errors />
-        </td>
-    </tr>
-    <tr bgcolor="#CCCCCC">
-     <td><b><fmt:message key="formaListadoHoteles.etiqueta.nombre" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.descripcion" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.precio" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.horario" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.estado" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.pais" /></b></td>
-     <td style="border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoHoteles.etiqueta.direccion" /></b></td>
 
- <td colspan="2"><b><fmt:message key="formaListadoHoteles.etiqueta.administracion" /></b></td>
-    </tr>
-    <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
+<div class="fixed-action-btn">
+  <a href="solicitarAgregarHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+</div>
+<div class="card">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th data-field="nombre">
+          <fmt:message key="formaListadoHoteles.etiqueta.nombre" />
+        </th>
+        <th data-field="descripcion">
+          <fmt:message key="formaListadoHoteles.etiqueta.descripcion" />
+        </th>
+        <th data-field="precio">
+          <fmt:message key="formaListadoHoteles.etiqueta.precio" />
+        </th>
+        <th data-field="horario">
+          <fmt:message key="formaListadoHoteles.etiqueta.horario" />
+        </th>
+        <th data-field="estado">
+          <fmt:message key="formaListadoHoteles.etiqueta.estado" />
+        </th>
+        <th data-field="pais">
+          <fmt:message key="formaListadoHoteles.etiqueta.pais" />
+        </th>
+        <th data-field="direccion">
+          <fmt:message key="formaListadoHoteles.etiqueta.direccion" />
+        </th>
+        <th data-field="administracion">
+          <fmt:message key="formaListadoHoteles.etiqueta.administracion" />
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
         <tr>
-            <td align="left" width="20%"><c:out value="${hotel.nombre}"/></td>
-            <td align="left" width="60%"><c:out value="${hotel.descripcion}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.precio}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.horario}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.estado}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.pais}"/></td>
-    <td align="left" width="60%"><c:out value="${hotel.direccion}"/></td>
-
-            <td align="left" width="20%">
-                <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>'
-         class="HipervinculoAdmon">
-                    <fmt:message key="formaListadoHoteles.etiqueta.modificar" />
-                </a>
-            </td>
-            <td>
-                <a href='procesarEliminarHotel.do?id=<c:out value="${hotel.id}"/>'
-         onClick="javascript: return EliminarHotel('<c:out value="${hotel.nombre}"/>')"
-         class="HipervinculoAdmon">
-                    <fmt:message key="formaListadoHoteles.etiqueta.eliminar" />
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
-    <tr>
-        <td colspan="4" align="right" style="padding-top:25px;"><b>Total:</b> ${formaListadoHoteles.contador}</td>
+          <td>${hotel.nombre}</td>
+          <td>${hotel.descripcion}</td>
+          <td>${hotel.precio}</td>
+          <td>${hotel.horario}</td>
+          <td>${hotel.estado}</td>
+          <td>${hotel.pais}</td>
+          <td>${hotel.direccion}</td>
+          <td>
+            <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>' class="waves-effect waves-light blue btn">
+            <i class="material-icons left">mode_edit</i>
+            <fmt:message key="formaListadoHoteles.etiqueta.modificar" />
+          </a>
+          <a href='procesarEliminarHotel.do?id=<c:out value="${hotel.id}"/>' class="waves-effect waves-light red btn" onClick="javascript: return EliminarHotel('<c:out value="${hotel.nombre}"/>')">
+          <i class="material-icons left">delete</i>
+          <fmt:message key="formaListadoHoteles.etiqueta.eliminar" />
+        </a>
+      </td>
     </tr>
+  </c:forEach>
+</tbody>
 </table>
+</div>

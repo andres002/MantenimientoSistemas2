@@ -136,11 +136,11 @@
             name="formaLogin"
             scope="request"
             validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaHome.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp"/>
         </action>
         <action path="/irInicio"
-                forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaHome.jsp" />
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
         <action path="/irAyuda"
