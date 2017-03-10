@@ -14,33 +14,49 @@ function EliminarHotel(strHotelName){
 }
 </script>
 
+<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+
 <div class="fixed-action-btn">
   <a href="solicitarAgregarHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 </div>
 <div class="card">
-  <table class="striped">
+  <table class="striped" id="hotel">
     <thead>
       <tr>
         <th data-field="nombre">
-          <fmt:message key="formaListadoHoteles.etiqueta.nombre" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.nombre" />
+          </a>
         </th>
         <th data-field="descripcion">
-          <fmt:message key="formaListadoHoteles.etiqueta.descripcion" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.descripcion" />
+          </a>
         </th>
         <th data-field="precio">
-          <fmt:message key="formaListadoHoteles.etiqueta.precio" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.precio" />
+          </a>
         </th>
         <th data-field="horario">
-          <fmt:message key="formaListadoHoteles.etiqueta.horario" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.horario" />
+          </a>
         </th>
         <th data-field="estado">
-          <fmt:message key="formaListadoHoteles.etiqueta.estado" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.estado" />
+          </a>
         </th>
         <th data-field="pais">
-          <fmt:message key="formaListadoHoteles.etiqueta.pais" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.pais" />
+          </a>
         </th>
         <th data-field="direccion">
-          <fmt:message key="formaListadoHoteles.etiqueta.direccion" />
+          <a class="waves-effect">
+            <fmt:message key="formaListadoHoteles.etiqueta.direccion" />
+          </a>
         </th>
         <th data-field="administracion">
           <fmt:message key="formaListadoHoteles.etiqueta.administracion" />
@@ -73,3 +89,11 @@ function EliminarHotel(strHotelName){
 </tbody>
 </table>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function()
+  {
+      $("#hotel").tablesorter();
+  }
+);
+</script>
