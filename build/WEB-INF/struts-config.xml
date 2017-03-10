@@ -121,6 +121,7 @@
                 scope="request"
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp" >
+            <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
        </action>
 
     <action path="/solicitarVisualizarHoteles"
@@ -347,6 +348,7 @@
                   scope="request"
                   validate="true"
                   input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoHotel.jsp" >
+              <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
          </action>
 
 	   <action path="/procesarRegistroRol"
