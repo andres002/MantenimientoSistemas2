@@ -121,6 +121,7 @@
                 scope="request"
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp" >
+            <forward path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formahref.jsp"/>
        </action>
 
     <action path="/solicitarVisualizarHoteles"

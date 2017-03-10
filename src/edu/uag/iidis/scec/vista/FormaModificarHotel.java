@@ -19,6 +19,7 @@ public class FormaModificarHotel extends ValidatorForm  {
     private String pais;
     private String direccion;
     Collection estados;
+    private String imagen;
 
     public Long getId() {
         return id;
@@ -27,6 +28,7 @@ public class FormaModificarHotel extends ValidatorForm  {
     public String getNombre() {
         return (this.nombre);
     }
+    public String getImagen() {
         return (this.imagen);
     }
     public String getDescripcion() {
@@ -66,6 +68,7 @@ public class FormaModificarHotel extends ValidatorForm  {
 	public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+	public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 	public void setPrecio(String precio) {
