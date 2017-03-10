@@ -60,6 +60,9 @@
     		<form-bean name="formaListadoHoteles"
                        type="edu.uag.iidis.scec.vista.FormaListadoHoteles">
             </form-bean>
+            <form-bean name="formaModificarHotel"
+           type="edu.uag.iidis.scec.vista.FormaModificarHotel">
+           </form-bean>
     </form-beans>
 
 	<form-beans>
@@ -101,6 +104,26 @@
 
         <!-- Mis Paths -->
 
+        <action path="/solicitarModificarHotel"
+                type="edu.uag.iidis.scec.control.MCUModificarHotel"
+                parameter="solicitarModificarHotel"
+                name="formaModificarHotel"
+                scope="request"
+                validate="true">
+
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp"/>
+        </action>
+
+        <action path="/procesarModificarHotel"
+                type="edu.uag.iidis.scec.control.MCUModificarHotel"
+                parameter="procesarModificarHotel"
+                name="formaModificarHotel"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp" >
+            <forward path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formahref.jsp"/>
+       </action>
+
     <action path="/solicitarVisualizarHoteles"
                 type="edu.uag.iidis.scec.control.MCUListarHoteles"
                 parameter="solicitarListarHoteles"
@@ -115,15 +138,6 @@
     <action path="/solicitarBuscarHoteles"
     forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formabuscarHoteles.jsp" />
 
-    <action path="/solicitarEditarHoteles"
-                type="edu.uag.iidis.scec.control.MCUListarHoteles"
-                parameter="solicitarListarHoteles"
-                name="formaListadoHoteles"
-                scope="request"
-                validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>
 
 
 

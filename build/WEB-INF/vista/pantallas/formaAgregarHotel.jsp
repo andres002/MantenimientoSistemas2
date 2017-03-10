@@ -84,13 +84,6 @@
 
     <form id="forma" action="procesarRegistroHotel.do" method="post" enctype="multipart/form-data">
 
-      <input class="waves-effect waves-light btn" type="button"
-      value="Reset"
-      onclickan="location.href='solicitarRegistroHotel.do'" />
-      <input class="waves-effect waves-light btn" type="submit"
-      name="org.apache.struts.taglib.html.CANCEL"
-      value="cancelar"
-      onclick="bCancel=true;">
 
         <div class="input-field">
           <i class="material-icons prefix">view_headline</i>
@@ -194,11 +187,7 @@
 
     <input class="waves-effect waves-light btn" type="submit"
     name="submit"
-    value="Agregar y terminar"/>
-    <input class="waves-effect waves-light btn" type="submit"
-    name="submit"
-    value="Agregar y volver"
-    onclick="forma.action='procesarRegistroHotel.do?volver=si'"/>
+    value="Agregar"/>
 
 
     </form>
