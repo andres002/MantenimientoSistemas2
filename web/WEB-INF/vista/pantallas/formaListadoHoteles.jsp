@@ -10,7 +10,7 @@ div.card{
 
 <script language="javascript" type="text/javascript">
 function EliminarHotel(strHotelName){
-  return confirm("¿Desea eliminar el estado '" + strHotelName + "'?")
+  return confirm("¿Desea eliminar el Hotel '" + strHotelName + "'?")
 }
 </script>
 
