@@ -8,8 +8,6 @@
   }
 </style>
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer></script>
   <script>
   var geocoder;
@@ -70,7 +68,6 @@
     });
   }
 </script>
-</head>
 
 <h1>
   <fmt:message key="formaNuevoHotel.titulo" />
