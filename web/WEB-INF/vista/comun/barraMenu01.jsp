@@ -31,11 +31,10 @@
     </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="irInicio.do">Home</a></li>
-      <li><a href="solicitarListarRoles.do">Roles</a></li>
       <li><a href="solicitarListarHoteles.do">Hoteles</a></li>
       <li><a href="solicitarVisualizarHoteles.do">Ver</a></li>
-      <li><a href="solicitarEditarHoteles.do">Editar</a></li>
       <li><a href="solicitarAgregarHotel.do">Agregar</a></li>
+      <li><a href="solicitarBuscarHoteles.do">Buscar</a></li>
     </ul>
   </div>
 </nav>

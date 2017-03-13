@@ -29,10 +29,10 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
 public class ManejadorHoteles {
     private Log log = LogFactory.getLog(ManejadorHoteles.class);
-    private HotelDAO dao;
+    private HotelDAO hotelDAO;
 
     public ManejadorHoteles() {
-        dao = new HotelDAO();
+        hotelDAO = new HotelDAO();
     }
 
 
@@ -45,7 +45,7 @@ public class ManejadorHoteles {
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarTodos();
+            resultado = hotelDAO.buscarTodos();
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {
@@ -65,7 +65,7 @@ public class ManejadorHoteles {
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarHotel(nombre);
+            resultado = hotelDAO.buscarHotel(nombre);
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {
@@ -85,7 +85,7 @@ public class ManejadorHoteles {
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarEstado(nombre);
+            resultado = hotelDAO.buscarEstado(nombre);
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {
@@ -102,9 +102,9 @@ public class ManejadorHoteles {
         }
         try {
             HibernateUtil.beginTransaction();
-            Hotel hotel = dao.buscarPorId(id, true);
+            Hotel hotel = hotelDAO.buscarPorId(id, true);
             if (hotel != null) {
-              dao.hazTransitorio(hotel);
+              hotelDAO.hazTransitorio(hotel);
             }
             HibernateUtil.commitTransaction();
         } catch (ExcepcionInfraestructura e) {
@@ -128,7 +128,7 @@ public class ManejadorHoteles {
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarImagen(nombre);
+            resultado = hotelDAO.buscarImagen(nombre);
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {
@@ -165,11 +165,11 @@ public class ManejadorHoteles {
         try {
             HibernateUtil.beginTransaction();
 
-            if (dao.existeHotel(hotel.getNombre())) {
+            if (hotelDAO.existeHotel(hotel.getNombre())) {
                resultado = 1; // Excepción. El nombre de ciudad ya existe
             } else {
 
-               dao.hazPersistente(hotel);
+               hotelDAO.hazPersistente(hotel);
 
                resultado = 0; // Exito. El ciudad se creo satisfactoriamente.
             }
@@ -192,6 +192,49 @@ public class ManejadorHoteles {
         Country service = new net.webservicex.Country();
         CountrySoap port = service.getCountrySoap();
         return port.getCurrencyByCountry(countryName);
+    }
+
+    public boolean modificarHotel(Hotel hotel) {
+
+        boolean toReturn = false;
+
+        if (this.log.isDebugEnabled()) {
+
+            this.log.debug(">guardarEstado(estado)");
+
+        }
+
+        try {
+
+            HibernateUtil.beginTransaction();
+
+//            Estado estadoByID = this.estadoDAO.buscarPorId(estado.getId(), true);
+//
+//            estadoByID.setNombre(estado.getNombre());
+//            estadoByID.setDescripcion(estado.getDescripcion());
+
+            //toReturn = this.estadoDAO.modificar(estado);
+            toReturn = this.hotelDAO.modificar( hotel );
+
+            HibernateUtil.commitTransaction();
+
+        } catch (ExcepcionInfraestructura ex) {
+
+            HibernateUtil.rollbackTransaction();
+
+            if (this.log.isWarnEnabled()) {
+
+                this.log.warn("< ExcepcionInfraestructura");
+
+            }
+
+        } finally {
+
+            HibernateUtil.closeSession();
+
+        }
+
+        return toReturn;
     }
 
     public String getData(String cities,String path){

@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<script type="text/javascript" src="js/Ajax.js"></script>
 
+
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
@@ -19,6 +20,9 @@
   }
 				</style>
 
+				<script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+
     </head>
 
     <body>
@@ -28,7 +32,6 @@
       </section>
 					<c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
 
-        <script type="text/javascript" src="js/jQuery.js"></script>
-        <script type="text/javascript" src="js/materialize.js"></script>
+
     </body>
 </html>

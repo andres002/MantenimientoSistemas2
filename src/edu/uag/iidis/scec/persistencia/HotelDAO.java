@@ -197,6 +197,36 @@ public class HotelDAO {
         }
     }
 
+    public boolean modificar( Hotel hotel ) throws ExcepcionInfraestructura {
+
+        boolean toReturn = false;
+
+        if (this.log.isDebugEnabled()) {
+
+            this.log.debug(">modificar(estado)");
+
+        }
+
+        try {
+
+            System.out.println(hotel.toString());
+
+            HibernateUtil.getSession().saveOrUpdate(hotel);
+
+            toReturn = true;
+
+        } catch (HibernateException ex) {
+
+            if (this.log.isWarnEnabled()) {
+
+                this.log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+
+        return toReturn;
+    }
+
     //cambios
     public Collection buscarImagen(String nombreHotel)
             throws ExcepcionInfraestructura {

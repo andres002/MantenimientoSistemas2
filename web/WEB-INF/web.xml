@@ -18,7 +18,7 @@
 
     <!-- Configuraci�n del Filtro  -->
 
-<!--
+
 <filter>
     <filter-name>userAccessFilter</filter-name>
     <filter-class>
@@ -38,7 +38,7 @@
     <filter-name>userAccessFilter</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
- -->
+
 
 
     <!-- Configuraci�n de Struts -->

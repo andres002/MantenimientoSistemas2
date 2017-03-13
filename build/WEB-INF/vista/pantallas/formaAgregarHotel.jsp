@@ -8,9 +8,7 @@
   }
 </style>
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer ></script>
   <script>
   var geocoder;
   var infowindow;
@@ -70,7 +68,6 @@
     });
   }
 </script>
-</head>
 
 <h1>
   <fmt:message key="formaNuevoHotel.titulo" />
@@ -87,13 +84,6 @@
 
     <form id="forma" action="procesarRegistroHotel.do" method="post" enctype="multipart/form-data">
 
-      <input class="waves-effect waves-light btn" type="button"
-      value="Reset"
-      onclickan="location.href='solicitarRegistroHotel.do'" />
-      <input class="waves-effect waves-light btn" type="submit"
-      name="org.apache.struts.taglib.html.CANCEL"
-      value="cancelar"
-      onclick="bCancel=true;">
 
         <div class="input-field">
           <i class="material-icons prefix">view_headline</i>
@@ -151,7 +141,7 @@
 
                  maxlength="100"
                  value="${formaNuevoHotel.estado}">
-          <label for="icon_prefix">
+          <label for="icon_prefix" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.estado" />
           </label>
         </div>
@@ -164,7 +154,7 @@
 
                  maxlength="100"
                  value="${formaNuevoHotel.pais}">
-          <label for="icon_telephone">
+          <label for="icon_telephone" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.pais" />
           </label>
         </div>
@@ -176,7 +166,7 @@
                 id="direccion"
                  maxlength="100"
                  value="${formaNuevoHotel.direccion}">
-          <label for="icon_prefix">
+          <label for="icon_prefix" class="active">
             <fmt:message key="formaNuevoHotel.etiqueta.direccion" />
           </label>
         </div>
@@ -197,11 +187,7 @@
 
     <input class="waves-effect waves-light btn" type="submit"
     name="submit"
-    value="Agregar y terminar"/>
-    <input class="waves-effect waves-light btn" type="submit"
-    name="submit"
-    value="Agregar y volver"
-    onclick="forma.action='procesarRegistroHotel.do?volver=si'"/>
+    value="Agregar"/>
 
 
     </form>

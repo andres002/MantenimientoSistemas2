@@ -60,6 +60,9 @@
     		<form-bean name="formaListadoHoteles"
                        type="edu.uag.iidis.scec.vista.FormaListadoHoteles">
             </form-bean>
+            <form-bean name="formaModificarHotel"
+           type="edu.uag.iidis.scec.vista.FormaModificarHotel">
+           </form-bean>
     </form-beans>
 
 	<form-beans>
@@ -101,18 +104,40 @@
 
         <!-- Mis Paths -->
 
-        <action path="/solicitarVisualizarHoteles"
-                    type="edu.uag.iidis.scec.control.MCUListarHoteles"
-                    parameter="solicitarListarHoteles"
-                    name="formaListadoHoteles"
-                    scope="request"
-                    validate="false">
-                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaVerHoteles.jsp"/>
-                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-            </action>
+        <action path="/solicitarModificarHotel"
+                type="edu.uag.iidis.scec.control.MCUModificarHotel"
+                parameter="solicitarModificarHotel"
+                name="formaModificarHotel"
+                scope="request"
+                validate="true">
 
-    <action path="/solicitarEditarHoteles"
-    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarHoteles.jsp" />
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp"/>
+        </action>
+
+        <action path="/procesarModificarHotel"
+                type="edu.uag.iidis.scec.control.MCUModificarHotel"
+                parameter="procesarModificarHotel"
+                name="formaModificarHotel"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarHotel.jsp" >
+            <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
+       </action>
+
+    <action path="/solicitarVisualizarHoteles"
+                type="edu.uag.iidis.scec.control.MCUListarHoteles"
+                parameter="solicitarListarHoteles"
+                name="formaListadoHoteles"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaVerHoteles.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+
+
+    <action path="/solicitarBuscarHoteles"
+    forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formabuscarHoteles.jsp" />
+
 
 
 
@@ -125,11 +150,11 @@
             name="formaLogin"
             scope="request"
             validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaHome.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp"/>
         </action>
         <action path="/irInicio"
-                forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaHome.jsp" />
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
         <action path="/irAyuda"
@@ -323,9 +348,7 @@
                   scope="request"
                   validate="true"
                   input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoHotel.jsp" >
-              <forward name="cancelar" path="/solicitarListarRoles.do" redirect="true"/>
-              <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
-              <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
+              <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
          </action>
 
 	   <action path="/procesarRegistroRol"
