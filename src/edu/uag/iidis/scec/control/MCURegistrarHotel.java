@@ -86,7 +86,7 @@ public final class MCURegistrarHotel
         }
 
 
-        String filePath = getServlet().getServletContext().getRealPath("/") +"upload";
+        String filePath = getServlet().getServletContext().getRealPath("/");
         log.debug("ruta: " + filePath);
         File folder = new File(filePath);
         if(!folder.exists()){
@@ -110,7 +110,7 @@ public final class MCURegistrarHotel
           fileName = "hotel001.jpg";
         }
         Hotel hotel = new Hotel(forma.getNombre(),
-                          forma.getDescripcion(),forma.getPrecio(),forma.getHorario(),forma.getEstado(),"upload\\"+fileName,forma.getPais(),forma.getDireccion());
+                          forma.getDescripcion(),forma.getPrecio(),forma.getHorario(),forma.getEstado(),fileName,forma.getPais(),forma.getDireccion());
 
         ManejadorHoteles mr = new ManejadorHoteles();
         int resultado = mr.crearHotel(hotel);

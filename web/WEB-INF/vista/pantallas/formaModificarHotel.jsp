@@ -19,9 +19,6 @@
           <img style="height: 100%; width: 100%;" src="${formaModificarHotel.imagen}">
           <span class="card-title">${formaModificarHotel.nombre}</span>
 
-          <a href="procesarEliminarHotel.do?id=<c:out value="${formaModificarHotel.id}"/>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>
-          <a style="left: 50px;" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">mode_edit</i></a>
-
 
         </div>
         <div class="card-stacked">

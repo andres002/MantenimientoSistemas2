@@ -49,9 +49,9 @@ public class MCUModificarHotel extends MappingDispatchAction {
         System.out.println(formaModificarHotel);
         //Hotel(String nombre, String descripcion,String precio,String horario,String estado, String imagen, String pais, String direccion);
         Hotel hotel = new Hotel(
-                formaModificarHotel.getNombre() ,
-                formaModificarHotel.getDescripcion() ,
-                formaModificarHotel.getPrecio() ,
+                formaModificarHotel.getNombre(),
+                formaModificarHotel.getDescripcion(),
+                formaModificarHotel.getPrecio(),
                 formaModificarHotel.getHorario(),
                 formaModificarHotel.getEstado(),
                 formaModificarHotel.getImagen(),

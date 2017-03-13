@@ -99,7 +99,7 @@ function EliminarHotel(strHotelName){
           <td>${hotel.direccion}</td>
           <td>
 
-            <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>&descripcion=<c:out value="${hotel.descripcion}"/>&nombre=<c:out value="${hotel.nombre}"/>&precio=<c:out value="${hotel.precio}"/>&horario=<c:out value="${hotel.horario}"/>&estado=<c:out value="${hotel.estado}"/>&pais=<c:out value="${hotel.pais}"/>&direccion=<c:out value="${hotel.direccion}"/>&imagen=<c:out value="hotel001.jpg"/>' class="waves-effect waves-light blue btn">
+            <a href='solicitarModificarHotel.do?id=<c:out value="${hotel.id}"/>&descripcion=<c:out value="${hotel.descripcion}"/>&nombre=<c:out value="${hotel.nombre}"/>&precio=<c:out value="${hotel.precio}"/>&horario=<c:out value="${hotel.horario}"/>&estado=<c:out value="${hotel.estado}"/>&pais=<c:out value="${hotel.pais}"/>&direccion=<c:out value="${hotel.direccion}"/>&imagen=<c:out value="${hotel.imagen}"/>' class="waves-effect waves-light blue btn">
             <i class="material-icons left">mode_edit</i>
             <fmt:message key="formaListadoHoteles.etiqueta.modificar" />
           </a>
