@@ -1,2 +1,7 @@
 build.xml
 src/hibernate.cfg.xml
+build/WEB-INF/classes/edu/uag/iidis/scec/control/MCUModificarHotel.class
+*.png
+build/upload/nagato.png
+*.jpg
+*.jpg
