@@ -56,6 +56,29 @@ public class ManejadorHoteles {
         }
     }
 
+    public Collection ordenarHotelesPor(String attribute) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = hotelDAO.ordenarHotelesPor(attribute);
+            if (log.isDebugEnabled()) {
+                log.debug(">ret4rn h6te3");
+            }
+            HibernateUtil.commitTransaction();
+            return resultado;
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
 	public Collection listarHotelesPorNombre(String nombre) {
         Collection resultado;
 

@@ -104,6 +104,16 @@
 
         <!-- Mis Paths -->
 
+        <action path="/ordenarHotelesPor"
+                type="edu.uag.iidis.scec.control.MCUOrdenarPor"
+                parameter="SolicitarOrdenarHotel"
+                name="formaListadoHoteles"
+                scope="request"
+                validate="true">
+
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaOrdenarHotel.jsp"/>
+        </action>
+
         <action path="/solicitarModificarHotel"
                 type="edu.uag.iidis.scec.control.MCUModificarHotel"
                 parameter="solicitarModificarHotel"
