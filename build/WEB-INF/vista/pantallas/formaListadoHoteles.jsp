@@ -137,6 +137,11 @@ function EliminarHotel(strHotelName){
 
     xmlhttp.open("GET","ordenarHotelesPor.do?nombre=" + attribute , true );
     xmlhttp.send();
+
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
   }
 
   function ordNombre(){
