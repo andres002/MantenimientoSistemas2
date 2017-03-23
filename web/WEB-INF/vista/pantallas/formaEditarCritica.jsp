@@ -33,7 +33,7 @@
 
       <div class="card horizontal">
         <div class="card-image">
-          <img style="height: 100%; width: 100%;" src="${critica.nivel + ".png"}">
+          <img style="height: 100%; width: 100%;" src="images/${critica.nivel}.png">
           <span class="card-title">${critica.nombre}</span>
 
           <a href="procesarEliminarCritica.do?id=<c:out value="${critica.id}"/>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>

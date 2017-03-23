@@ -16,7 +16,10 @@
 <div class="card horizontal">
   <div class="card-image">
 
-<div id="mapa" style="height: 100%; width:40vw;"></div>
+    <img style="height: 100%; width: 80%;" src="images/Alto.png">
+    <span class="card-title">
+      <fmt:message key="formaNuevoCritica.titulo" />
+    </span>
 
   </div>
   <div class="card-stacked">

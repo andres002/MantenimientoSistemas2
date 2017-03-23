@@ -63,6 +63,19 @@
             <form-bean name="formaModificarHotel"
            type="edu.uag.iidis.scec.vista.FormaModificarHotel">
            </form-bean>
+
+           <form-bean name="formaEliminarCritica"
+                          type="edu.uag.iidis.scec.vista.FormaEliminarCritica">
+               </form-bean>
+       		<form-bean name="formaNuevoCritica"
+                          type="edu.uag.iidis.scec.vista.FormaNuevoCritica">
+               </form-bean>
+       		<form-bean name="formaListadoCriticaes"
+                          type="edu.uag.iidis.scec.vista.FormaListadoCriticaes">
+               </form-bean>
+               <form-bean name="formaModificarCritica"
+              type="edu.uag.iidis.scec.vista.FormaModificarCritica">
+              </form-bean>
     </form-beans>
 
 	<form-beans>
@@ -103,6 +116,51 @@
 
 
         <!-- Mis Paths -->
+
+        <action path="/solicitarListarCriticaes"
+                    type="edu.uag.iidis.scec.control.MCUListarCriticaes"
+                    parameter="solicitarListarCriticaes"
+                    name="formaListadoCriticaes"
+                    scope="request"
+                    validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoCriticaes.jsp"/>
+                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            </action>
+
+            <action path="/solicitarModificarCritica"
+                    type="edu.uag.iidis.scec.control.MCUModificarCritica"
+                    parameter="solicitarModificarCritica"
+                    name="formaModificarCritica"
+                    scope="request"
+                    validate="true">
+
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarCritica.jsp"/>
+            </action>
+
+
+            <action path="/solicitarAgregarCritica"
+            forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarCritica.jsp" />
+
+            <action path="/procesarEliminarCritica"
+                        type="edu.uag.iidis.scec.control.MCUEliminarCritica"
+                        parameter="procesarEliminarCritica"
+                        name="formaEliminarCritica"
+                        scope="request"
+                        validate="false">
+                    <forward name="exito" path="/solicitarListarCriticaes.do" redirect="true"/>
+                </action>
+
+                <action path="/procesarRegistroCritica"
+                           type="edu.uag.iidis.scec.control.MCURegistrarCritica"
+                           parameter="procesarRegistroCritica"
+                           name="formaNuevoCritica"
+                           scope="request"
+                           validate="true"
+                           input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoCritica.jsp" >
+                       <forward name="exito" path="/solicitarListarCriticaes.do" redirect="true"/>
+                  </action>
+
+
 
         <action path="/ordenarHotelesPor"
                 type="edu.uag.iidis.scec.control.MCUOrdenarPor"

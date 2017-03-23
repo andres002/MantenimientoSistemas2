@@ -58,7 +58,7 @@ public final class MCURegistrarCritica
             folder.mkdir();
         }
         FormaNuevoCritica forma = (FormaNuevoCritica)form;
-        
+
         Critica critica = new Critica( forma.getNombre(),
                           forma.getDescripcion(),forma.getHotel(),forma.getNivel() );
 

@@ -66,7 +66,7 @@ function EliminarCritica(strCriticaName){
 
                 <div class="card">
                   <div class="card-image">
-                    <img style="height: 100%; width: 100%;" src="${critica.nivel + ".png"}">
+                    <img style="height: 100%; width: 100%;" src="images/${critica.nivel}.png">
                     <span class="card-title">${critica.nombre}</span>
                   </div>
                 </div>
