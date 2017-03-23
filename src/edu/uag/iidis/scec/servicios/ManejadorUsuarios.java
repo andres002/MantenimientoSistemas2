@@ -14,7 +14,7 @@ import edu.uag.iidis.scec.persistencia.hibernate.*;
 public class ManejadorUsuarios {
     private Log log = LogFactory.getLog(ManejadorUsuarios.class);
     private UsuarioDAO dao;
-    private AccesoDAO dao2;
+
 
     public ManejadorUsuarios() {
         dao = new UsuarioDAO();
@@ -45,7 +45,7 @@ public class ManejadorUsuarios {
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao2.buscarTodos();
+            resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {
