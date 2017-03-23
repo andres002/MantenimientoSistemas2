@@ -107,6 +107,16 @@
 
         <!-- Mis Paths -->
 
+        <action path="/solicitarListarUsuarios"
+                    type="edu.uag.iidis.scec.control.MCUListarUsuarios"
+                    parameter="solicitarListarUsuarios"
+                    name="formaListadoUsuarios"
+                    scope="request"
+                    validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoUsuarios.jsp"/>
+                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            </action>
+
         <action path="/solicitarVisualizarUsuarios"
                     type="edu.uag.iidis.scec.control.MCUListarUsuarios"
                     parameter="solicitarListarUsuarios"
