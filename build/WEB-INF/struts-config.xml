@@ -134,12 +134,18 @@
                     scope="request"
                     validate="true">
 
-                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaEditarCritica.jsp"/>
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarCritica.jsp"/>
             </action>
 
-
             <action path="/solicitarAgregarCritica"
-            forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarCritica.jsp" />
+                        type="edu.uag.iidis.scec.control.MCUListarHoteles"
+                        parameter="solicitarListarHoteles"
+                        name="formaListadoHoteles"
+                        scope="request"
+                        validate="false">
+                    <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAgregarCritica.jsp"/>
+                    <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+                </action>
 
             <action path="/procesarEliminarCritica"
                         type="edu.uag.iidis.scec.control.MCUEliminarCritica"

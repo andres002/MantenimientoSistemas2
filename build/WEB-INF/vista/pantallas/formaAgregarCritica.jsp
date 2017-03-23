@@ -29,12 +29,12 @@
 
 
         <div class="input-field">
-          <i class="material-icons prefix">view_headline</i>
+          <i class="material-icons prefix">perm_identity</i>
           <input type="text"
                  name="nombre"
 
                  maxlength="100"
-                 value="${formaNuevoCritica.nombre}">
+                 value="">
           <label for="icon_prefix">
             <fmt:message key="formaNuevoCritica.etiqueta.nombre" />
           </label>
@@ -46,35 +46,49 @@
                  name="descripcion"
 
                  maxlength="100"
-                 value="${formaNuevoCritica.descripcion}">
+                 value="">
           <label for="icon_telephone">
             <fmt:message key="formaNuevoCritica.etiqueta.descripcion" />
         </label>
         </div>
 
-        <div class="input-field">
-          <i class="material-icons prefix">credit_card</i>
-          <input type="number" step='any'
-                 name="hotel"
 
-                 maxlength="100"
-                 value="${formaNuevoCritica.hotel}">
-          <label for="icon_prefix">
-            <fmt:message key="formaNuevoCritica.etiqueta.hotel" />
-          </label>
-        </div>
+        <div class="input-field" form="forma">
+    <select name="hotel">
+      <option value="" disabled selected>
+        <fmt:message key="formaNuevoCritica.etiqueta.hotel" />
+      </option>
+      <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
+        <option value="${hotel.nombre}">
+          ${hotel.nombre}
+        </option>
+      </c:forEach>
+    </select>
+    <label>
+      <fmt:message key="formaNuevoCritica.etiqueta.hotel" />
+    </label>
+  </div>
 
-        <div class="input-field">
-          <i class="material-icons prefix">today</i>
-          <input type="text"
-                 name="nivel"
+  <div class="input-field" form="forma">
+<select name="nivel">
+<option value="" disabled selected>
+  <fmt:message key="formaNuevoCritica.etiqueta.nivel" />
+</option>
+  <option value="Alto">
+    Alto
+  </option>
+  <option value="Medio">
+    Medio
+  </option>
+  <option value="Bajo">
+    Bajo
+  </option>
+</select>
+<label>
+<fmt:message key="formaNuevoCritica.etiqueta.nivel" />
+</label>
+</div>
 
-                 maxlength="100"
-                 value="${formaNuevoCritica.nivel}">
-          <label for="icon_telephone">
-            <fmt:message key="formaNuevoCritica.etiqueta.nivel" />
-          </label>
-        </div>
 
     <input class="waves-effect waves-light btn" type="submit"
     name="submit"
@@ -86,3 +100,9 @@
   </div>
 </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select').material_select();
+});
+</script>
