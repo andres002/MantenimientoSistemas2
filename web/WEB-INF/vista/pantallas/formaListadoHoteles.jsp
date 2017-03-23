@@ -24,42 +24,42 @@ function EliminarHotel(strHotelName){
   <a href="solicitarAgregarHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 </div>
 
-<div class="card">
+<div class="card" id=cardT>
   <table class="striped" id="hotel">
     <thead>
       <tr>
         <th data-field="nombre">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordNombre('nombre');">
             <fmt:message key="formaListadoHoteles.etiqueta.nombre" />
           </a>
         </th>
         <th data-field="descripcion">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordDescripcion('descripcion');">
             <fmt:message key="formaListadoHoteles.etiqueta.descripcion" />
           </a>
         </th>
         <th data-field="precio">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordPrecio('precio');">
             <fmt:message key="formaListadoHoteles.etiqueta.precio" />
           </a>
         </th>
         <th data-field="horario">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordHorario('horario');">
             <fmt:message key="formaListadoHoteles.etiqueta.horario" />
           </a>
         </th>
         <th data-field="estado">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordEstado('estado');">
             <fmt:message key="formaListadoHoteles.etiqueta.estado" />
           </a>
         </th>
         <th data-field="pais">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordPais('pais');">
             <fmt:message key="formaListadoHoteles.etiqueta.pais" />
           </a>
         </th>
         <th data-field="direccion">
-          <a class="waves-effect">
+          <a class="waves-effect" onclick="ordDireccion('direccion');">
             <fmt:message key="formaListadoHoteles.etiqueta.direccion" />
           </a>
         </th>
@@ -115,11 +115,56 @@ function EliminarHotel(strHotelName){
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  /*$(document).ready(function() {
     $("#hotel").tablesorter();
-  } );
+  } );*/
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+
+  function ordenarPor( attribute ) {
+    var xmlhttp=new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+      if(xmlhttp.status==404){
+          document.getElementById("hotel").innerHTML="Page not found";
+      }
+      if (xmlhttp.readyState==4 && xmlhttp.status==200){
+          document.getElementById("hotel").innerHTML=xmlhttp.responseText;
+      }
+    };
+
+    xmlhttp.open("GET","ordenarHotelesPor.do?nombre=" + attribute , true );
+    xmlhttp.send();
+
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+  }
+
+  function ordNombre(){
+    ordenarPor("Nombre");
+  }
+  function ordDescripcion(){
+   ordenarPor("Descripcion");
+  }
+  function ordPrecio(){
+   ordenarPor("Precio");
+  }
+  function ordHorario(){
+   ordenarPor("Horario");
+  }
+  function ordEstado(){
+   ordenarPor("Estado");
+  }
+  function ordPais(){
+   ordenarPor("Pais");
+  }
+  function ordDireccion(){
+   ordenarPor("Direccion");
+  }
+
+
 </script>

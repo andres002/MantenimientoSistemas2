@@ -45,6 +45,15 @@
         primary key (id)
     ) Engine=InnoDB;
 
+    create table Criticaes (
+        id bigint not null,
+        Nombre varchar(255) not null unique,
+        Descripcion varchar(255),
+        Hotel varchar(255),
+        Nivel varchar(255),
+        primary key (id)
+    ) Engine=InnoDB;
+
     create table Lugares (
         id bigint not null,
         Nombre varchar(255) not null unique,
