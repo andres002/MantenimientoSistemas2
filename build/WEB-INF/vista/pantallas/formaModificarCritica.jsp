@@ -51,35 +51,34 @@
               </label>
               </div>
 
-              <div class="input-field">
-                <i class="material-icons prefix">view_headline</i>
-                <input type="text" step='any'
-                       name="hotel"
 
-                       maxlength="100"
-                       value="${formaModificarCritica.hotel}">
-                <label for="icon_prefix">
-                  <fmt:message key="formaListadoCriticaes.etiqueta.hotel" />
-                </label>
-              </div>
-
-              <div class="input-field">
-                <i class="material-icons prefix">grade</i>
-                <input type="text"
-                       name="nivel"
-
-                       maxlength="100"
-                       value="${formaModificarCritica.nivel}">
-                <label for="icon_telephone">
-                  <fmt:message key="formaListadoCriticaes.etiqueta.nivel" />
-                </label>
-              </div>
+              <div class="input-field" form="forma">
+            <select name="nivel">
+            <option value="${formaModificarCritica.nivel}" disabled selected>
+              ${formaModificarCritica.nivel}
+            </option>
+              <option value="Alto">
+                Alto
+              </option>
+              <option value="Medio">
+                Medio
+              </option>
+              <option value="Bajo">
+                Bajo
+              </option>
+            </select>
+            <label>
+            <fmt:message key="formaNuevoCritica.etiqueta.nivel" />
+            </label>
+            </div>
 
 
 
 
 
           <input value="${formaModificarCritica.id}" name="id" style="display: none"/>
+
+          <input value="${formaModificarCritica.hotel}" name="hotel" style="display: none"/>
 
           <input class="waves-effect waves-light btn" type="submit"
           name="submit"
@@ -90,3 +89,8 @@
         </div>
       </div>
       </div>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+      </script>
