@@ -71,7 +71,7 @@ function EliminarUsuario(strUsuarioName){
 
                 <div class="card">
                   <div class="card-image">
-                    <img style="height: 100%; width: 100%;" src="/images/user.png">
+                    <img style="height: 100%; width: 100%;" src="images/user.png">
                     <span class="card-title">${usuario.nombre.nombre}</span>
                   </div>
                 </div>
@@ -103,33 +103,16 @@ function EliminarUsuario(strUsuarioName){
 </div>
 
 <script type="text/javascript">
-  /*$(document).ready(function() {
+  $(document).ready(function() {
     $("#usuario").tablesorter();
-  } );*/
+  } );
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
 
   function ordenarPor( attribute ) {
-    var xmlhttp=new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-      if(xmlhttp.status==404){
-          document.getElementById("usuario").innerHTML="Page not found";
-      }
-      if (xmlhttp.readyState==4 && xmlhttp.status==200){
-          document.getElementById("usuario").innerHTML=xmlhttp.responseText;
-      }
-    };
-
-    xmlhttp.open("GET","ordenarUsuariosPor.do?nombre=" + attribute , true );
-    xmlhttp.send();
-
-    $(document).ready(function(){
-      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-      $('.modal').modal();
-    });
+    console.log("Alex implementa un ajax aqui");
   }
 
   function ordNombre(){

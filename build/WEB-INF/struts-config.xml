@@ -212,7 +212,6 @@
 
 
 
->>>>>>> refs/remotes/origin/master
         <action path="/ordenarHotelesPor"
                 type="edu.uag.iidis.scec.control.MCUOrdenarPor"
                 parameter="SolicitarOrdenarHotel"
@@ -223,7 +222,7 @@
             <forward name="exito" path="/WEB-INF/vista/pantallas/formaOrdenarHotel.jsp"/>
         </action>
 
-        <action path="/procesarRegistro"
+        <action path="/solicitarAgregarUsuario"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                 parameter="procesarRegistro"
                 name="formaNuevaPersona"
