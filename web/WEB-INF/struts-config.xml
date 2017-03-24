@@ -63,6 +63,11 @@
             <form-bean name="formaModificarHotel"
            type="edu.uag.iidis.scec.vista.FormaModificarHotel">
            </form-bean>
+<<<<<<< HEAD
+           <form-bean name="formaListadoUsuarios"
+                          type="edu.uag.iidis.scec.vista.FormaListadoUsuarios">
+               </form-bean>
+=======
 
            <form-bean name="formaEliminarCritica"
                           type="edu.uag.iidis.scec.vista.FormaEliminarCritica">
@@ -76,6 +81,7 @@
                <form-bean name="formaModificarCritica"
               type="edu.uag.iidis.scec.vista.FormaModificarCritica">
               </form-bean>
+>>>>>>> refs/remotes/origin/master
     </form-beans>
 
 	<form-beans>
@@ -117,6 +123,28 @@
 
         <!-- Mis Paths -->
 
+<<<<<<< HEAD
+        <action path="/solicitarListarUsuarios"
+                    type="edu.uag.iidis.scec.control.MCUListarUsuarios"
+                    parameter="solicitarListarUsuarios"
+                    name="formaListadoUsuarios"
+                    scope="request"
+                    validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoUsuarios.jsp"/>
+                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            </action>
+
+        <action path="/solicitarVisualizarUsuarios"
+                    type="edu.uag.iidis.scec.control.MCUListarUsuarios"
+                    parameter="solicitarListarUsuarios"
+                    name="formaListadoUsuarios"
+                    scope="request"
+                    validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaVerUsuarios.jsp"/>
+                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            </action>
+
+=======
         <action path="/solicitarListarCriticaes"
                     type="edu.uag.iidis.scec.control.MCUListarCriticaes"
                     parameter="solicitarListarCriticaes"
@@ -188,6 +216,7 @@
 
 
 
+>>>>>>> refs/remotes/origin/master
         <action path="/ordenarHotelesPor"
                 type="edu.uag.iidis.scec.control.MCUOrdenarPor"
                 parameter="SolicitarOrdenarHotel"
@@ -197,6 +226,18 @@
 
             <forward name="exito" path="/WEB-INF/vista/pantallas/formaOrdenarHotel.jsp"/>
         </action>
+
+        <action path="/procesarRegistro"
+                type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
+                parameter="procesarRegistro"
+                name="formaNuevaPersona"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
+            <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
+       </action>
 
         <action path="/solicitarModificarHotel"
                 type="edu.uag.iidis.scec.control.MCUModificarHotel"

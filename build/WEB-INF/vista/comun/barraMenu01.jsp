@@ -36,6 +36,9 @@
       <li><a href="solicitarAgregarHotel.do">Agregar</a></li>
       <li><a href="solicitarListarCriticaes.do">Criticas</a></li>
       <li><a href="solicitarBuscarHoteles.do">Buscar</a></li>
+      <li><a href="solicitarVisualizarUsuarios.do">Ver Usuarios</a></li>
+      <li><a href="solicitarListarUsuarios.do">lista usuarios</a></li>
+      <li><a href="procesarRegistro.do">Usuarios</a></li>
     </ul>
   </div>
 </nav>

@@ -8,18 +8,20 @@ import org.apache.commons.logging.LogFactory;
 import edu.uag.iidis.scec.modelo.Usuario;
 import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.UsuarioDAO;
+import edu.uag.iidis.scec.persistencia.AccesoDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
 public class ManejadorUsuarios {
     private Log log = LogFactory.getLog(ManejadorUsuarios.class);
     private UsuarioDAO dao;
 
+
     public ManejadorUsuarios() {
         dao = new UsuarioDAO();
     }
 
 
-    public Usuario obtenerUsuario(String nombreUsuario) 
+    public Usuario obtenerUsuario(String nombreUsuario)
             throws ExcepcionServicio {
 
         if (log.isDebugEnabled()) {
@@ -31,6 +33,26 @@ public class ManejadorUsuarios {
         } catch (ExcepcionInfraestructura e) {
             log.error("<ExcepcionInfraestructura");
             throw new ExcepcionServicio(e.getMessage(), e);
+        }
+    }
+
+    public Collection listarUsuarios() {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarTodos();
+            HibernateUtil.commitTransaction();
+            return resultado;
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
         }
     }
 
@@ -54,11 +76,11 @@ public class ManejadorUsuarios {
         }
 
         try {
-            HibernateUtil.beginTransaction();           
-            
+            HibernateUtil.beginTransaction();
+
             if (dao.existeUsuario(usuario.getCredencial()
                                          .getNombreUsuario())) {
-               resultado = 1; // Excepción. El nombre de usuario ya existe
+               resultado = 1; // Excepciï¿½n. El nombre de usuario ya existe
             } else {
 
                dao.hazPersistente(usuario);
@@ -74,7 +96,7 @@ public class ManejadorUsuarios {
             if (log.isWarnEnabled()) {
                 log.warn("<ExcepcionInfraestructura");
             }
-            resultado = 2;    // Excepción. Falla en la infraestructura
+            resultado = 2;    // Excepciï¿½n. Falla en la infraestructura
         } finally {
             HibernateUtil.closeSession();
         }
@@ -83,7 +105,7 @@ public class ManejadorUsuarios {
 
 
 /*
-    public void eliminarUsuario(String nombreUsuario) 
+    public void eliminarUsuario(String nombreUsuario)
             throws ExcepcionServicio {
 
         if (log.isDebugEnabled()) {
@@ -100,5 +122,5 @@ public class ManejadorUsuarios {
         }
     }
 */
-    
+
 }
