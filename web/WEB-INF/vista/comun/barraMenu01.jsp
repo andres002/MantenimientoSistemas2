@@ -31,14 +31,11 @@
     </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="irInicio.do">Home</a></li>
-      <li><a href="solicitarListarHoteles.do">Hoteles</a></li>
       <li><a href="solicitarVisualizarHoteles.do">Ver</a></li>
-      <li><a href="solicitarAgregarHotel.do">Agregar</a></li>
+      <li><a href="solicitarListarHoteles.do">Hoteles</a></li>
       <li><a href="solicitarListarCriticaes.do">Criticas</a></li>
+      <li><a href="solicitarListarUsuarios.do">Usuarios</a></li>
       <li><a href="solicitarBuscarHoteles.do">Buscar</a></li>
-      <li><a href="solicitarVisualizarUsuarios.do">Ver Usuarios</a></li>
-      <li><a href="solicitarListarUsuarios.do">lista usuarios</a></li>
-      <li><a href="procesarRegistro.do">Usuarios</a></li>
     </ul>
   </div>
 </nav>
