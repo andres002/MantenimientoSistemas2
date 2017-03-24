@@ -150,7 +150,7 @@
 
             <div class="input-field">
               <i class="material-icons prefix">view_headline</i>
-              <input type="text"
+              <input type="password"
                       name="claveAcceso"
                       size="50"
                       maxlength="100"
@@ -173,7 +173,7 @@
             </tr> --%>
             <div class="input-field">
               <i class="material-icons prefix">view_headline</i>
-              <input type="text"
+              <input type="password"
                       name="claveAccesoConfirmacion"
                       size="50"
                       maxlength="100"

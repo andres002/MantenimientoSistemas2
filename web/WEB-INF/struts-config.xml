@@ -246,6 +246,18 @@
             <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
        </action>
 
+       <action path="/solicitarEditarUsuario"
+               type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
+               parameter="procesarRegistro"
+               name="formaNuevaPersona"
+               scope="request"
+               validate="true"
+               input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona0.jsp" >
+           <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+           <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+           <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
+      </action>
+
         <action path="/solicitarModificarHotel"
                 type="edu.uag.iidis.scec.control.MCUModificarHotel"
                 parameter="solicitarModificarHotel"

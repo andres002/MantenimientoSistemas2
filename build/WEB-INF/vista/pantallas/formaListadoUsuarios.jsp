@@ -87,7 +87,7 @@ function EliminarUsuario(strUsuarioName){
           <td>${usuario.credencial.nombreUsuario}</td>
           <td>
 
-            <a href='solicitarModificarUsuario.do?id=<c:out value="${usuario.id}"/>&apellidoPaterno=<c:out value="${usuario.nombre.apellidoPaterno}"/>&apellidoMaterno=<c:out value="${usuario.nombre.apellidoMaterno}"/>&prefijo=<c:out value="${usuario.nombre.prefijo}"/>&nombreUsuario=<c:out value="${usuario.credencial.nombreUsuario}"/>&claveAcceso=<c:out value="${usuario.credencial.claveAcceso}"/>' class="waves-effect waves-light blue btn">
+            <a href='solicitarEditarUsuario.do?id=<c:out value="${usuario.id}"/>&apellidoPaterno=<c:out value="${usuario.nombre.apellidoPaterno}"/>&apellidoMaterno=<c:out value="${usuario.nombre.apellidoMaterno}"/>&prefijo=<c:out value="${usuario.nombre.prefijo}"/>&nombre=<c:out value="${usuario.nombre.nombre}"/>&nombreUsuario=<c:out value="${usuario.credencial.nombreUsuario}"/>&claveAcceso=<c:out value="${usuario.credencial.claveAcceso}"/>' class="waves-effect waves-light blue btn">
             <i class="material-icons left">mode_edit</i>
             <fmt:message key="formaListadoUsuarios.etiqueta.modificar" />
           </a>

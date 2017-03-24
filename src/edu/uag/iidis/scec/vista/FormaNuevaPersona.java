@@ -17,6 +17,8 @@ import org.apache.struts.validator.ValidatorForm;
 public final class FormaNuevaPersona
         extends ValidatorForm {
 
+          public Long id;
+
     private String prefijo;
     private String nombre;
     private String apellidoPaterno;
@@ -28,6 +30,17 @@ public final class FormaNuevaPersona
     private String claveAccesoConfirmacion;
 	private Collection ciudades;
 	private int contador;
+
+  public void setId(Long id) {
+      this.id = id;
+  }
+
+  public Long getId() {
+      return (this.id);
+  }
+
+
+
 
     public void setPrefijo(String prefijo) {
         this.prefijo=prefijo;
@@ -127,6 +140,7 @@ public final class FormaNuevaPersona
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
+                        id= new Long(0);
 	prefijo=null;
         nombre=null;
         apellidoPaterno=null;
