@@ -196,19 +196,7 @@
             </tr> --%>
             <input class="waves-effect waves-light btn" type="submit"
             name="submit"
-            value="Agregar y terminar"/>
-            <input class="waves-effect waves-light btn" type="submit"
-            name="submit"
-            value="Agregar y volver"
-            onclick="forma.action='procesarRegistro.do?volver=si'"/>
-            <input class="waves-effect waves-light btn" type="submit"
-            name="submit"
-            value="Reset"
-            onclick="location.href='solicitarRegistro.do'"/>
-            <input class="waves-effect waves-light btn" type="submit"
-            name="submit"
-            value="Cancelar"
-            onclick="bCancel=true;"/>
+            value="Agregar"/>
             <%-- <tr>
                 <td colspan="2" align="center">
                     <input type="submit"

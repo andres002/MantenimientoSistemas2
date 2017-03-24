@@ -67,6 +67,9 @@
            <form-bean name="formaListadoUsuarios"
                           type="edu.uag.iidis.scec.vista.FormaListadoUsuarios">
                </form-bean>
+               <form-bean name="formaEliminarUsuario"
+                              type="edu.uag.iidis.scec.vista.FormaEliminarUsuario">
+                   </form-bean>
 
            <form-bean name="formaEliminarCritica"
                           type="edu.uag.iidis.scec.vista.FormaEliminarCritica">
@@ -179,6 +182,15 @@
                         validate="false">
                     <forward name="exito" path="/solicitarListarCriticaes.do" redirect="true"/>
                 </action>
+
+                <action path="/procesarEliminarUsuario"
+                            type="edu.uag.iidis.scec.control.MCUEliminarUsuario"
+                            parameter="procesarEliminarUsuario"
+                            name="formaEliminarUsuario"
+                            scope="request"
+                            validate="false">
+                        <forward name="exito" path="/solicitarListarUsuarios.do" redirect="true"/>
+                    </action>
 
                 <action path="/procesarRegistroCritica"
                            type="edu.uag.iidis.scec.control.MCURegistrarCritica"
@@ -445,7 +457,7 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
             <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="exito" path="/solicitarListarUsuarios.do" redirect="true"/>
             <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
        </action>
        <action path="/procesarRegistroPais"

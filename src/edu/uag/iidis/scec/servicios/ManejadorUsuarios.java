@@ -104,6 +104,29 @@ public class ManejadorUsuarios {
     }
 
 
+    public void eliminarUsuario(Long id) {
+        if (log.isDebugEnabled()) {
+            log.debug(">eliminarUsuario(id)");
+        }
+        try {
+            HibernateUtil.beginTransaction();
+            Usuario usuario = dao.buscarPorId(id, true);
+            if (usuario != null) {
+              dao.hazTransitorio(usuario);
+            }
+            HibernateUtil.commitTransaction();
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            if (log.isWarnEnabled()) {
+                log.warn("<ExcepcionInfraestructura");
+            }
+        } finally {
+            HibernateUtil.closeSession();
+        }
+
+    }
+
+
 /*
     public void eliminarUsuario(String nombreUsuario)
             throws ExcepcionServicio {
@@ -121,6 +144,6 @@ public class ManejadorUsuarios {
             throw new ExcepcionServicio(e.getMessage(), e);
         }
     }
-*/
 
+*/
 }
