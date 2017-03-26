@@ -1,5 +1,3 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -10,7 +8,6 @@
   }
 </style>
 
-<%-- Esta vista nos permite Modificar una critica --%>
 
 <h1>
   <fmt:message key="formaListadoCriticaes.titulo" />

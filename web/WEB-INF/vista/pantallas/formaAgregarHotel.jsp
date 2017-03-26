@@ -1,5 +1,3 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -10,9 +8,6 @@
   }
 </style>
 
-<%-- Esta vista es usada para Agregar nuevos Hoteles --%>
-
-<%-- Este script nos permite obtener el estado, pais y direccion en el mapa --%>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer ></script>
   <script>
   var geocoder;

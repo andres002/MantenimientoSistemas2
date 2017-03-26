@@ -1,11 +1,6 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
-
-<%-- Esta vista es la que insertamos cuando el ajax nos regresa los datos para ordenar por atributo --%>
-
 <table class="striped" id="hotel">
   <thead>
     <tr>
@@ -96,7 +91,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal').modal();
 });
 </script>

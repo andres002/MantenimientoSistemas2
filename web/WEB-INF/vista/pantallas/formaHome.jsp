@@ -1,5 +1,3 @@
-<%-- Esta es la vista que se muestra al iniciar la aplicación, la pantalla de bienvenida --%>
-
 <h1 style="text-align:center;" >Bienvenidos a Trivago</h1>
 <div class="carousel" style="widt">
  <a class="carousel-item" style="width:30% !important; left: 1% !important;" href="#one!"><img src="images/hotel003.jpg"></a>

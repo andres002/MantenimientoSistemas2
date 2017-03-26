@@ -1,5 +1,3 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -9,8 +7,6 @@
     margin: 50px;
   }
 </style>
-
-<%-- Esta vista nos permite ver los hoteles y eliminarloo o editarlos --%>
 
 <form>
         <div class="input-field">
@@ -119,9 +115,9 @@
 
       </c:forEach>
 
-<%-- Este script despliega un modal de mayor información --%>
       <script type="text/javascript">
         $(document).ready(function(){
+          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
           $('.modal').modal();
         });
       </script>

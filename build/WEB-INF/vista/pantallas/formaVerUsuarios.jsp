@@ -1,6 +1,3 @@
-
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -10,8 +7,6 @@
     margin: 50px;
   }
 </style>
-
-<%-- Esta vista nos permite ver los usuarios --%>
 
 <form>
         <div class="input-field">
@@ -109,6 +104,7 @@
 
       <script type="text/javascript">
         $(document).ready(function(){
+          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
           $('.modal').modal();
         });
       </script>

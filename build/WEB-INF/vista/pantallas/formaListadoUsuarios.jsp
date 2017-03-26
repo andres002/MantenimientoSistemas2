@@ -1,5 +1,3 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -9,8 +7,6 @@ div.card{
   margin: 50px;
 }
 </style>
-
-<%-- Con este script preguntamos si realmente desea eliminar un Usuario --%>
 
 <script language="javascript" type="text/javascript">
 function EliminarUsuario(strUsuarioName){
@@ -115,8 +111,9 @@ function EliminarUsuario(strUsuarioName){
     $('.modal').modal();
   });
 
-  //Con esta función ordenamos por atributos mediante ajax
-
+  function ordenarPor( attribute ) {
+    console.log("Alex implementa un ajax aqui");
+  }
 
   function ordNombre(){
     ordenarPor("Nombre");
@@ -139,10 +136,6 @@ function EliminarUsuario(strUsuarioName){
   function ordDireccion(){
    ordenarPor("Direccion");
   }
-
-    function ordenarPor( attribute ) {
-
-    }
 
 
 </script>

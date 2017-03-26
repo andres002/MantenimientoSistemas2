@@ -1,5 +1,3 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -9,8 +7,6 @@ div.card{
   margin: 50px;
 }
 </style>
-
-<%-- Con este script preguntamos si realmente desea eliminar el Hotel --%>
 
 <script language="javascript" type="text/javascript">
 function EliminarHotel(strHotelName){
@@ -127,8 +123,6 @@ function EliminarHotel(strHotelName){
     $('.modal').modal();
   });
 
-
-//Con este script ordenamos por AJAX los hoteles 
   function ordenarPor( attribute ) {
     var xmlhttp=new XMLHttpRequest();
 

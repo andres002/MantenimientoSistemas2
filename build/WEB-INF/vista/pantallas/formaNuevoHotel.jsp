@@ -1,16 +1,8 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<%-- Esta vista nospermite agregar un nuevo Hotel --%>
-
-
-  <%-- Este script nos permite tener de manera automática el estado, pais y Dirección --%>
-
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrXf9CxNYGJnAoO1odTbpFBHYAONeIEKg&callback=initMap" async defer></script>
   <script>
   var geocoder;

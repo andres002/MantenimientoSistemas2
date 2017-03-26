@@ -1,9 +1,6 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
-
-    <%-- Esta es la pantalla que muestra el login de la aplicación  --%>
 
     <br>
       <style>

@@ -1,8 +1,4 @@
-<%-- Importamos lo necesario a usar en nuestra vista --%>
-
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
-
-<%-- esta vista es la que aparece al principio, despues del login, es el "home" de la app --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -32,10 +28,26 @@
 			 <a class="carousel-item" href="#four!" style="width:30% !important; left: 1% !important;"><img src="images/hotel3.jpg"></a>
 			 <a class="carousel-item" href="#five!" style="width:30% !important; left: 1% !important;"><img src="images/hotel4.jpg"></a>
 		 </div>
+		<!-- <div class="container">
+			<div class="row">
+				<div class="col l6 s8" style="padding-top: 10vh;">
+						<h3>Bienvenidos a trivago </h3>
+				</div>
+				<div class="col l6 8" style="padding-top: 10vh;">
+					<img src="images/hotel003.jpg" style=" height: 50vh; width:50wh;">
+				</div>
+			</div>
+		</div> -->
 
 
 </section>
 
+
+
+			      <%-- <div style="width=100wh height=100vh" class="">
+							<h3>Bienvenidos a trivago </h3>
+
+							<img src="images/hotel003.jpg" style="height: 50vh; width:50wh;"> --%>
 
 
 
