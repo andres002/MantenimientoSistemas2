@@ -1,24 +1,6 @@
-	<!-- Inicio Secci�n - Pie de P�gina -->
-	<!-- Inicio Seccion - Barra Menu Pie de P�gina -->
-	<%-- <table class="barraPie">
-		<tr>
-			<td align="center">
-				Acerca de | Ayuda | Hacer Recomendaci�n | Reportar Problema|
+	<!--Footer Usado en todas las vistas (Hace uso de Materilaize)  -->
 
-			</td>
-		</tr>
-	</table>
-	<!-- Fin Seccion - Barra Menu Pie de P�gina -->
-
-	<table class="barraDerechos">
-		<tr>
-			<td align="center">
-				Copyright � 2017. UPCHIAPAS    Todos los derechos reservados.
-				<br> Andres| Max | Luis Farelo
-				<br> 2 De Febrero de 2017
-			</td>
-		</tr>
-	</table> --%>
+	
 
 	<footer class="page-footer">
       <div class="container">
@@ -42,7 +24,7 @@
               <li><a class="grey-text text-lighten-3" href="#!">Andres </a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Max</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Farelo</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Angelica :vs</a></li>
+
             </ul>
           </div>
         </div>
@@ -55,4 +37,4 @@
       </div>
     </footer>
 
-	<!-- Fin de Secci�n - Pie de p�gina -->
+	<!-- Fin de Seccion - Pie de p�gina -->
