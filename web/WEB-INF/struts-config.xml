@@ -2,9 +2,7 @@
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
           "http://struts.apache.org/dtds/struts-config_1_2.dtd">
-<!--
 
--->
 <struts-config>
     <display-name>
         <![CDATA[
@@ -18,7 +16,7 @@
     </description>
 
 
-    <!-- Definici�n de Formas -->
+    <!-- Definiciónn de Formas -->
     <form-beans>
         <form-bean name="formaNuevaPersona"
                    type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
@@ -113,17 +111,17 @@
     </form-beans>
 
 
-    <!-- Definici�n de Global Forward -->
+    <!-- Definición de Global Forward -->
     <global-forwards>
         <forward name="irInicio" path="/irLogin.dd"/>
     </global-forwards>
 
-    <!-- Definici�n de acciones -->
+    <!-- Definición de acciones -->
     <action-mappings>
 
+      <!-- Actions y Paths agregados para hoteles, criticas y usuarios -->
 
-        <!-- Mis Paths -->
-
+      <!-- Listar Usuarios -->
         <action path="/solicitarListarUsuarios"
                     type="edu.uag.iidis.scec.control.MCUListarUsuarios"
                     parameter="solicitarListarUsuarios"
@@ -133,6 +131,8 @@
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoUsuarios.jsp"/>
                 <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
             </action>
+
+            <!-- Visualizar Usuarios -->
 
         <action path="/solicitarVisualizarUsuarios"
                     type="edu.uag.iidis.scec.control.MCUListarUsuarios"
@@ -144,6 +144,8 @@
                 <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
             </action>
 
+            <!-- Listar Criticas -->
+
         <action path="/solicitarListarCriticaes"
                     type="edu.uag.iidis.scec.control.MCUListarCriticaes"
                     parameter="solicitarListarCriticaes"
@@ -154,6 +156,7 @@
                 <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
             </action>
 
+            <!-- Modificar Criticas -->
             <action path="/solicitarModificarCritica"
                     type="edu.uag.iidis.scec.control.MCUModificarCritica"
                     parameter="solicitarModificarCritica"
@@ -164,6 +167,7 @@
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaModificarCritica.jsp"/>
             </action>
 
+            <!-- Agregar Critica -->
             <action path="/solicitarAgregarCritica"
                         type="edu.uag.iidis.scec.control.MCUListarHoteles"
                         parameter="solicitarListarHoteles"
@@ -174,6 +178,7 @@
                     <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
                 </action>
 
+                <!-- Eliminar Criticas  -->
             <action path="/procesarEliminarCritica"
                         type="edu.uag.iidis.scec.control.MCUEliminarCritica"
                         parameter="procesarEliminarCritica"
@@ -183,6 +188,8 @@
                     <forward name="exito" path="/solicitarListarCriticaes.do" redirect="true"/>
                 </action>
 
+                <!-- Eliminar Usuarios -->
+
                 <action path="/procesarEliminarUsuario"
                             type="edu.uag.iidis.scec.control.MCUEliminarUsuario"
                             parameter="procesarEliminarUsuario"
@@ -191,6 +198,8 @@
                             validate="false">
                         <forward name="exito" path="/solicitarListarUsuarios.do" redirect="true"/>
                     </action>
+
+                    <!-- Registrar Criticas -->
 
                 <action path="/procesarRegistroCritica"
                            type="edu.uag.iidis.scec.control.MCURegistrarCritica"
@@ -202,6 +211,8 @@
                        <forward name="exito" path="/solicitarListarCriticaes.do" redirect="true"/>
                   </action>
 
+                  <!-- Ordenar Criticas por -->
+
                   <action path="/ordenarCriticaesPor"
                           type="edu.uag.iidis.scec.control.MCUOrdenarCriticaPor"
                           parameter="SolicitarOrdenarCritica"
@@ -211,6 +222,8 @@
 
                       <forward name="exito" path="/WEB-INF/vista/pantallas/formaOrdenarCritica.jsp"/>
                   </action>
+
+                  <!-- Modificar Criticas -->
 
                   <action path="/procesarModificarCritica"
                           type="edu.uag.iidis.scec.control.MCUModificarCritica"
@@ -223,6 +236,7 @@
                  </action>
 
 
+                 <!-- Ordenar los hoteles por -->
 
         <action path="/ordenarHotelesPor"
                 type="edu.uag.iidis.scec.control.MCUOrdenarPor"
@@ -233,6 +247,8 @@
 
             <forward name="exito" path="/WEB-INF/vista/pantallas/formaOrdenarHotel.jsp"/>
         </action>
+
+        <!-- Agregar usuario -->
 
         <action path="/solicitarAgregarUsuario"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
@@ -246,6 +262,8 @@
             <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
        </action>
 
+       <!-- Editar Usuario -->
+
        <action path="/solicitarEditarUsuario"
                type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                parameter="procesarRegistro"
@@ -257,6 +275,8 @@
            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
            <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
       </action>
+
+      <!-- Modificar Hotel -->
 
         <action path="/solicitarModificarHotel"
                 type="edu.uag.iidis.scec.control.MCUModificarHotel"
@@ -278,6 +298,8 @@
             <forward name="exito" path="/solicitarListarHoteles.do" redirect="true"/>
        </action>
 
+       <!-- Visualizar Hoteles -->
+
     <action path="/solicitarVisualizarHoteles"
                 type="edu.uag.iidis.scec.control.MCUListarHoteles"
                 parameter="solicitarListarHoteles"
@@ -295,7 +317,7 @@
 
 
 
-        <!-- Paths del profe -->
+        <!-- Actions y Paths por default -->
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp" />
         <action path="/procesarLogin"
@@ -616,12 +638,12 @@
     </action-mappings>
 
 
-    <!-- Definici�n de archivos de recursos -->
+    <!-- Definición de archivos de recursos -->
     <message-resources
             parameter="edu.uag.iidis.scec.vista.scecRB"/>
 
 
-    <!-- Configuraci�n de Plug Ins -->
+    <!-- Configuración de Plug Ins -->
     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
         <set-property property="pathnames"
                       value="/WEB-INF/validator-rules.xml,
