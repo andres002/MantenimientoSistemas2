@@ -1,6 +1,10 @@
+<%-- Importamos lo necesario a usar en nuestra vista --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+
+<%-- Esta vista nos sirve para listar las criticas --%>
 
 <style media="screen">
 div.card{
@@ -8,11 +12,15 @@ div.card{
 }
 </style>
 
+<%-- Este script nos pregunta si verdaderamente queremos eliminar la critica --%>
+
 <script language="javascript" type="text/javascript">
 function EliminarCritica(strCriticaName){
   return confirm("¿Desea eliminar el Critica '" + strCriticaName + "'?")
 }
 </script>
+
+
 
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 
@@ -104,6 +112,8 @@ function EliminarCritica(strCriticaName){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+
+//Este script nos permite reorganizar la tabla de acuerdo al atributo con ajax 
 
   function ordenarPor( attribute ) {
     var xmlhttp=new XMLHttpRequest();

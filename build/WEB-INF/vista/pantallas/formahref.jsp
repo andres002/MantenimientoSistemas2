@@ -1,4 +1,4 @@
-
+<%-- Esta vista solo nos sirve para redireccionar a listar Hoteles --%>
 <!DOCTYPE html>
 <html>
   <head>

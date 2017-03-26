@@ -1,3 +1,5 @@
+<%-- Importamos lo necesario a usar en nuestra vista --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
@@ -7,6 +9,8 @@
     margin: 50px;
   }
 </style>
+
+<%-- Esta vista nos permite editar los hoteles --%>
 
 <form>
         <div class="input-field">
@@ -27,7 +31,7 @@
  <div class="fixed-action-btn">
     <a href="solicitarRegistroHotel.do" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
   </div>
-
+<%-- Hacemos un foreach de los elementos a mostrar --%>
  <c:forEach var="hotel" items="${formaListadoHoteles.hoteles}">
 
 

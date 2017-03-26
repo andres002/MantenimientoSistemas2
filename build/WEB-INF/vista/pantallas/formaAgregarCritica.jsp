@@ -1,6 +1,12 @@
+<%-- Importamos lo necesario a usar en nuestra vista --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+
+
+<%-- Esta vista es para agregar una nueva Critica --%>
+
 
 <style media="screen">
   div.card{

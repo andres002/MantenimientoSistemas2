@@ -1,3 +1,4 @@
+<%-- Importamos lo necesario a usar en nuestra vista --%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

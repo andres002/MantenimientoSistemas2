@@ -1,6 +1,11 @@
+<%-- Importamos lo necesario a usar en nuestra vista --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+
+<%-- Esta vista nos permite ordenar las criticas, es la que insertamos una vez que el AJAX nos ha devuelto los resultados --%>
+
 <table class="striped" id="critica">
   <thead>
     <tr>
@@ -73,7 +78,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  
   $('.modal').modal();
 });
 </script>
