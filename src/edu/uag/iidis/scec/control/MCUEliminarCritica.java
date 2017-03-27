@@ -17,6 +17,12 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
+/*
+*Esta clase nos permite eliminar las criticas
+*contiene métodos que conectan al manejador Criticaes y la forma eliminarCritica
+*
+*@author Luis Andres Max
+*/
 
 
 public final class MCUEliminarCritica
