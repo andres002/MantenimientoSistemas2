@@ -16,6 +16,14 @@ import java.util.Collection;
 import java.util.List;
 
 
+/**
+*Esta clase contiene las configuraciones para la persistencia de las criticas
+*tiene acceso directo a Hibernate
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
+
 public class CriticaDAO {
 
     private Log log = LogFactory.getLog(CriticaDAO.class);
@@ -24,6 +32,15 @@ public class CriticaDAO {
     }
 
 
+    /**
+    *Busca por id las criticas
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param idCritica id de la critica
+    *@param bloquear verdadero o falso
+    *@return Critica devuelve la critica buscada
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Critica buscarPorId(Long idCritica, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -54,7 +71,15 @@ public class CriticaDAO {
         return critica;
     }
 
-    public Collection ordenarCriticaesPor( String attribute )
+        /**
+        *Busca y ordena las Criticas por un atributo
+        *Tiene comunicación directa con Hibernate para realizar la transacción
+        *
+        *@param attribute atributo a usar para ordenar
+        *@return Collection devuelve una colección de las criticas ordenadas
+        *@throws ExcepcionInfraestructura si surge algun error en la transacción
+        */
+        public Collection ordenarCriticaesPor( String attribute )
             throws ExcepcionInfraestructura {
 
         Collection criticaes;
@@ -92,6 +117,13 @@ public class CriticaDAO {
 
 
 
+    /**
+    *Busca todas las criticas
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@return Collection devuelve una colección de todas las ciudades
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -117,7 +149,14 @@ public class CriticaDAO {
         return criticaes;
     }
 
-
+    /**
+    *Busca una critica
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param critica critica a buscar
+    *@return Collection devuelve una colección de todas las criticas
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Collection buscarPorEjemplo(Critica critica)
             throws ExcepcionInfraestructura {
 
@@ -142,6 +181,13 @@ public class CriticaDAO {
     }
 
 
+    /**
+    *Asigna permisos
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param critica critica a guardar
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public void hazPersistente(Critica critica)
             throws ExcepcionInfraestructura {
 
@@ -159,7 +205,13 @@ public class CriticaDAO {
         }
     }
 
-
+    /**
+    *termina una sesión
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param critica crítica a terminar sesión
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public void hazTransitorio(Critica critica)
             throws ExcepcionInfraestructura {
 
@@ -177,6 +229,14 @@ public class CriticaDAO {
         }
     }
 
+    /**
+    *Verifica si el nombre de la Crítica existe
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param nombreCritica nombre de la crítica
+    *@return boolean true si existe, false si no existe
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public boolean existeCritica(String nombreCritica)
             throws ExcepcionInfraestructura {
 
@@ -234,6 +294,15 @@ public class CriticaDAO {
         }
     }
 
+
+    /**
+    *Verifica si el nombre de la crítica existe
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param critica nombre de la crítica
+    *@return boolean true si existe, false si no existe
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public boolean modificar( Critica critica ) throws ExcepcionInfraestructura {
 
         boolean toReturn = false;
@@ -265,6 +334,14 @@ public class CriticaDAO {
     }
 
 
+    /**
+    *Busca una crítica específico 
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param nombreCritica nombre de la Crítica
+    *@return Collection una colección con los resultados de la crítica buscado
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
 	public Collection buscarCritica(String nombreCritica)
             throws ExcepcionInfraestructura {
 

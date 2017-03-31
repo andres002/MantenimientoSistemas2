@@ -18,7 +18,13 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
+/**
+*Esta clase nos permite listar los estados o buscar un especifica
+*contiene métodos que conectan al manejador Estados y la FormaListadoEstados
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 
 public final class MCUListarEstados
         extends MappingDispatchAction {
@@ -26,6 +32,19 @@ public final class MCUListarEstados
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+
+    /**
+    *Lista los estados
+    *hace un cast del form recibido a un estado
+    *Luego del Cast manda al manejador a realizar el método de listarEstados()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarListarEstados(
                 ActionMapping mapping,
                 ActionForm form,
@@ -63,13 +82,25 @@ public final class MCUListarEstados
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
 
     }
-	
+
+    /**
+    *Busca un estado
+    *hace un cast del form recibido a un estado
+    *Luego del Cast manda al manejador a realizar el método de listarEstadoPorNombre()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
 	public ActionForward buscarEstado(
                 ActionMapping mapping,
                 ActionForm form,
@@ -107,7 +138,7 @@ public final class MCUListarEstados
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }

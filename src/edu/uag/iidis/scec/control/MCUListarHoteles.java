@@ -20,6 +20,13 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 import net.webservicex.*;
 
+/**
+*Esta clase nos permite listar los Hoteles o buscar uno especifica
+*contiene métodos que conectan al manejador Hoteles y la FormaListadoHoteles
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 
 public final class MCUListarHoteles
         extends MappingDispatchAction {
@@ -27,6 +34,18 @@ public final class MCUListarHoteles
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+    /**
+    *Lista los Hoteles
+    *hace un cast del form recibido a un Hotel
+    *Luego del Cast manda al manejador a realizar el método de listarHoteles()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarListarHoteles(
                 ActionMapping mapping,
                 ActionForm form,
@@ -70,6 +89,19 @@ public final class MCUListarHoteles
         }
 
     }
+
+    /**
+    *Busca un hotel
+    *hace un cast del form recibido a un hotel
+    *Luego del Cast manda al manejador a realizar el método de listarHotelesPorNombre()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
 	 public ActionForward buscarHotel(
                 ActionMapping mapping,
                 ActionForm form,
@@ -114,7 +146,18 @@ public final class MCUListarHoteles
 
     }
 
-    //cambios
+    /**
+    *Busca la imagen de un hotel
+    *hace un cast del form recibido a un hotel
+    *Luego del Cast manda al manejador a realizar el método de buscarImagen()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarImagen(
                 ActionMapping mapping,
                 ActionForm form,
@@ -159,6 +202,18 @@ public final class MCUListarHoteles
 
     }
 
+    /**
+    *Busca el estado de un hotel
+    *hace un cast del form recibido a un hotel
+    *Luego del Cast manda al manejador a realizar el método de buscarEstado()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarEstado(
                 ActionMapping mapping,
                 ActionForm form,
@@ -203,6 +258,18 @@ public final class MCUListarHoteles
 
     }
 
+    /**
+    *Busca el servicio de un hotel
+    *hace un cast del form recibido a un listadohotel
+    *Luego del Cast manda al manejador a realizar el método de getService()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward getService(
                 ActionMapping mapping,
                 ActionForm form,

@@ -21,13 +21,33 @@ import org.apache.struts.actions.MappingDispatchAction;
 import net.webservicex.*;
 
 
+/**
+*Esta clase nos permite ordenar los hoteles por un atributo
+*contiene métodos que conectan al manejador Hoteles y la FormaListadoHoteles
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
+
 public final class MCUOrdenarPor
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    public ActionForward SolicitarOrdenarHotel(
+    /**
+    *Ordena los Hoteles por un atributo
+    *hace un cast del form recibido a una Hotel
+    *Luego del Cast manda al manejador a realizar el método de ordenarHotelesPor()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
+    public ActionForward SolicitarOrdenarHotl(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
@@ -72,6 +92,18 @@ public final class MCUOrdenarPor
         }
 
     }
+
+
+      /**
+      *Busca un hotel especificO
+      *
+      *@param mapping información de mapeo de acción
+      *@param form datos mandados por la vista
+      *@param request provee la información requerida por HTTP servlets.
+      *@param response Servlet que se encarga de enviar una respuesta
+      *@return forward puede ser exitoso a fracaso
+      *@throws Exception si surge algun error en la transaccion
+      */
 	 public ActionForward buscarHotel(
                 ActionMapping mapping,
                 ActionForm form,
@@ -116,7 +148,16 @@ public final class MCUOrdenarPor
 
     }
 
-    //cambios
+    /**
+    *Busca una imagende un hotel
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarImagen(
                 ActionMapping mapping,
                 ActionForm form,
@@ -161,6 +202,16 @@ public final class MCUOrdenarPor
 
     }
 
+    /**
+    *Busca el estado de unhotel especificO
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarEstado(
                 ActionMapping mapping,
                 ActionForm form,
@@ -205,6 +256,16 @@ public final class MCUOrdenarPor
 
     }
 
+    /**
+    *Busca el servicio de un hotel especifico 
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward getService(
                 ActionMapping mapping,
                 ActionForm form,

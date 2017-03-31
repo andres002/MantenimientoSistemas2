@@ -18,14 +18,33 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
-
+/**
+*Esta clase nos permite listar los Paises.
+*contiene métodos que conectan al manejador Paises y la FormaListadoPaises
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public final class MCUListarPaises
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+
+
+        /**
+        *Lista los Paises
+        *hace un cast del form recibido a un país
+        *Luego del Cast manda al manejador a realizar el método de listarPaises()
+        *
+        *@param mapping información de mapeo de acción
+        *@param form datos mandados por la vista
+        *@param request provee la información requerida por HTTP servlets.
+        *@param response Servlet que se encarga de enviar una respuesta
+        *@return forward puede ser exitoso a fracaso
+        **@throws Exception si surge algun error en la transaccion
+        */
     public ActionForward solicitarListarPaises(
                 ActionMapping mapping,
                 ActionForm form,
@@ -63,7 +82,7 @@ public final class MCUListarPaises
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }

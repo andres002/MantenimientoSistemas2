@@ -27,9 +27,17 @@ import org.dom4j.io.SAXReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
+
+/**
+*Esta clase facilita las transacciones con la persistencia
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public class ManejadorHoteles {
     private Log log = LogFactory.getLog(ManejadorHoteles.class);
     private HotelDAO hotelDAO;
+
 
     public ManejadorHoteles() {
         hotelDAO = new HotelDAO();

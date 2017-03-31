@@ -10,12 +10,12 @@ import org.apache.commons.lang.builder.ToStringStyle;
 
 /**
  * Clase base para los objetos que forman parte
- * del modelo del dominio.  
- * Esto es para los mÈtodos <code>toString</code>, 
+ * del modelo del dominio.
+ * Esto es para los m√©todos <code>toString</code>,
  * <code>equals</code> y <code>hashCode</code>.
  *
  * <p>
- * <a href="BaseObject.java.html"><i>Ver cÛdigo fuente</i></a>
+ * <a href="BaseObject.java.html"><i>Ver c√≥digo fuente</i></a>
  * </p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
@@ -23,16 +23,35 @@ import org.apache.commons.lang.builder.ToStringStyle;
  */
 public class ClaseBase implements Serializable {
 
+  /**
+  *
+  *regresa el String de la clase base
+  *@return String String de la clase base
+  */
+
     public String toString() {
         return ToStringBuilder.reflectionToString(this,
                 ToStringStyle.MULTI_LINE_STYLE);
     }
 
 
+    /**
+    *
+    *regresa verdadero o falso de acuerdo a la comparaci√≥n de un objeto
+    *@param o objeto a comparar
+    *@return boolean verdadero o falso
+    */
+
     public boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
+
+    /**
+    *
+    *regresa el String de la clase base
+    *@return int codigo hashCode
+    */
 
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);

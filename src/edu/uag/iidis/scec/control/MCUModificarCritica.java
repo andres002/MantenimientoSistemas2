@@ -16,10 +16,30 @@ import edu.uag.iidis.scec.servicios.*;
 import edu.uag.iidis.scec.modelo.Critica;
 import edu.uag.iidis.scec.vista.FormaModificarCritica;
 
+
+
+/**
+*Esta clase nos permite modificar una crítica
+*contiene métodos que conectan al manejador Criticaes y la FormaListadoCriticaes
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public class MCUModificarCritica extends MappingDispatchAction {
 
     private final Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
+
+    /**
+    *Solicita una modificación de una critica
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarModificarCritica(ActionMapping mapping, ActionForm form,
                 HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -33,10 +53,21 @@ public class MCUModificarCritica extends MappingDispatchAction {
 
     }
 
+    /**
+    *Modifica una crítica
+    *hace un cast del form recibido a una critica
+    *Luego del Cast manda al manejador a realizar el método de modificarCritica()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
+
     public ActionForward procesarModificarCritica(ActionMapping mapping, ActionForm form,
                 HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        System.out.println("Im here");
 
         if (this.log.isDebugEnabled()) {
 

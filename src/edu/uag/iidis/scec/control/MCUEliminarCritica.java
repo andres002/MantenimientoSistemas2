@@ -17,11 +17,12 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-/*
+/**
 *Esta clase nos permite eliminar las criticas
 *contiene métodos que conectan al manejador Criticaes y la forma eliminarCritica
 *
 *@author Luis Andres Max
+*@version 1.0
 */
 
 
@@ -30,6 +31,19 @@ public final class MCUEliminarCritica
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
+
+    /**
+    *Elimina una critica
+    *hace un cast del form recibido a una critica
+    *Luego del Cast manda al manejador a realizar el método de eliminarCritica()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
 
     public ActionForward procesarEliminarCritica(
                 ActionMapping mapping,

@@ -27,15 +27,32 @@ import org.dom4j.io.SAXReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
+
+/**
+*Esta clase facilita las transacciones con la persistencia
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public class ManejadorCriticaes {
     private Log log = LogFactory.getLog(ManejadorCriticaes.class);
     private CriticaDAO criticaDAO;
 
+    /**
+    *Constructor de las criticas
+    *
+    *
+    */
     public ManejadorCriticaes() {
         criticaDAO = new CriticaDAO();
     }
 
-
+    /**
+    *Lista las criticas
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@return collection devuelve una colección con todas las criticas
+    */
     public Collection listarCriticaes() {
         Collection resultado;
 
@@ -56,6 +73,13 @@ public class ManejadorCriticaes {
         }
     }
 
+    /**
+    *ordena las Críticas por un atributo
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@param attribute atributo por el que serán ordenadas las críticas
+    *@return collection devuelve una colección con todas las criticas ordenadas por el atributo
+    */
     public Collection ordenarCriticaesPor(String attribute) {
         Collection resultado;
 
@@ -79,7 +103,14 @@ public class ManejadorCriticaes {
         }
     }
 
-	public Collection listarCriticaesPorNombre(String nombre) {
+	/**
+    *Lista crítica de acuerdo al nombre
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@param nombre nombre por el que serán ordenadas las críticas
+    *@return collection devuelve una colección con todas las criticas ordenadas por el atributo
+    */
+    public Collection listarCriticaesPorNombre(String nombre) {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
@@ -99,6 +130,13 @@ public class ManejadorCriticaes {
         }
     }
 
+    
+    /**
+    *elimina una crítica
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@param id id de la crítica a eliminar
+    */
     public void eliminarCritica(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarCritica(critica)");
@@ -122,7 +160,13 @@ public class ManejadorCriticaes {
     }
 
 
-
+    /**
+    *Crea una crítica
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@param critica critica a agregar
+    *@return int  0.Creada correctamente 1.el nombre ya existe 2.-Error infraestructura
+    */
     public int crearCritica(Critica critica) {
 
         int resultado;
@@ -135,12 +179,12 @@ public class ManejadorCriticaes {
             HibernateUtil.beginTransaction();
 
             if (criticaDAO.existeCritica(critica.getNombre())) {
-               resultado = 1; // Excepción. El nombre de ciudad ya existe
+               resultado = 1; // Excepción. El nombre de critica ya existe
             } else {
 
                criticaDAO.hazPersistente(critica);
 
-               resultado = 0; // Exito. El ciudad se creo satisfactoriamente.
+               resultado = 0; // Exito. la critica se creo satisfactoriamente.
             }
 
             HibernateUtil.commitTransaction();
@@ -157,12 +201,21 @@ public class ManejadorCriticaes {
         }
         return resultado;
     }
-    private static String getCurrencyByCountry(java.lang.String countryName) {
-        Country service = new net.webservicex.Country();
-        CountrySoap port = service.getCountrySoap();
-        return port.getCurrencyByCountry(countryName);
-    }
 
+
+    // private static String getCurrencyByCountry(java.lang.String countryName) {
+    //     Country service = new net.webservicex.Country();
+    //     CountrySoap port = service.getCountrySoap();
+    //     return port.getCurrencyByCountry(countryName);
+    // }
+
+   /**
+    *modifica una crítica
+    *hace uso de las transacciones con criticaDAO
+    *
+    *@param critica critica a modificar
+    *@return boolean  true éxitoso, false sin éxito
+    */
     public boolean modificarCritica(Critica critica) {
 
         boolean toReturn = false;
@@ -199,33 +252,30 @@ public class ManejadorCriticaes {
         return toReturn;
     }
 
-    public String getData(String cities,String path){
-        String service ="";
-        try {
+ 
+
+   //          File fXmlFile = new File(path+"input.xml");
+   //          FileWriter w = new FileWriter(fXmlFile);
+   //          BufferedWriter bw = new BufferedWriter(w);
+   //          PrintWriter wr = new PrintWriter(bw);
+   //          wr.write(cities);
+   //          wr.close();
+   //          bw.close();
+   //          DocumentBuilderFactory dbFactory = DocumentBuilderFactory
+   //                  .newInstance();
+   //          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+   //          org.w3c.dom.Document doc = dBuilder.parse(fXmlFile);
+   //          NodeList nList = doc.getElementsByTagName("Table");
+
+   //          int temp = 0;
+   //          org.w3c.dom.Node nNode = nList.item(temp);
+   //          service += nNode.getTextContent();
 
 
-            File fXmlFile = new File(path+"input.xml");
-            FileWriter w = new FileWriter(fXmlFile);
-            BufferedWriter bw = new BufferedWriter(w);
-            PrintWriter wr = new PrintWriter(bw);
-            wr.write(cities);
-            wr.close();
-            bw.close();
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory
-                    .newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            org.w3c.dom.Document doc = dBuilder.parse(fXmlFile);
-            NodeList nList = doc.getElementsByTagName("Table");
-
-            int temp = 0;
-            org.w3c.dom.Node nNode = nList.item(temp);
-            service += nNode.getTextContent();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return service;
-    }
+   //      } catch (Exception e) {
+   //          e.printStackTrace();
+   //      }
+   //      return service;
+   //  }
 
 }

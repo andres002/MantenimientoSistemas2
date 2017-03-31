@@ -15,6 +15,13 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+*Esta clase contiene las configuraciones para la persistencia del login
+*tiene acceso directo a Hibernate
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 
 public class LoginDAO {
 
@@ -23,7 +30,15 @@ public class LoginDAO {
     public LoginDAO() {
     }
 
-
+    /**
+    *Busca un usuario y una contraseña valida para el logeo de la aplicación
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param nombreLogin nombre del Login
+    *@param password password del Login
+    *@return Collection una colección con los resultados del usuario buscado
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Collection buscarLogin(String nombreLogin, String password)
             throws ExcepcionInfraestructura {
 

@@ -23,12 +23,30 @@ import java.util.*;
 import org.apache.struts.upload.FormFile;
 
 
+
+/**
+*Esta clase nos permite Registrar un Hotel
+*contiene métodos que conectan al manejador hotel y la FormaNuevoHotel
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public final class MCURegistrarHotel
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+    /**
+    *solicita el registro de un Hotel
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarRegistroHotel(
                 ActionMapping mapping,
                 ActionForm form,
@@ -65,7 +83,18 @@ public final class MCURegistrarHotel
     }
 
 
-
+    /**
+    *Registra un hotel
+    *hace un cast del form recibido a un Hotel
+    *Luego del Cast manda al manejador a realizar el método de crearHotel()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward procesarRegistroHotel(
                 ActionMapping mapping,
                 ActionForm form,

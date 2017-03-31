@@ -19,13 +19,34 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
+/**
+*Esta clase nos permite listar las ciudades.
+*contiene métodos que conectan al manejador ciudades y la FormaListarCiudades
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 
-public final class MCUListarCiudades 
+
+public final class MCUListarCiudades
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+
+    /**
+    *Lista las ciudades
+    *hace un cast del form recibido a una ciudad
+    *Luego del Cast manda al manejador a realizar el método de listarCiudades()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarListarCiudades(
                 ActionMapping mapping,
                 ActionForm form,
@@ -37,10 +58,10 @@ public final class MCUListarCiudades
             log.debug(">solicitarListarCiudades");
         }
 
-        // Verifica si la acci�n fue cancelada por el usuario
+        // Verifica si la acción fue cancelada por el usuario
         if (isCancelled(request)) {
             if (log.isDebugEnabled()) {
-                log.debug("<La acci�n fue cancelada");
+                log.debug("<La acción fue cancelada");
             }
             return (mapping.findForward("cancelar"));
         }
@@ -61,9 +82,9 @@ public final class MCUListarCiudades
             }
             return (mapping.findForward("exito"));
         } else {
-            log.error("Ocurri� un error de infraestructura");
+            log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }

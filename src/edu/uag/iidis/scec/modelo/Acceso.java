@@ -28,16 +28,30 @@ public class Acceso extends ClaseBase
     public Acceso() {
     }
 
+    /**
+     * Constructor que establece el id del Acceso.
+     * @param id id del Acceso
+     */
     public Acceso(Long id){
         this.id = id;
     }
 
+
+    /**
+     * Constructor que establece todos los atributos del Acceso excepto id.
+     * @param nombre nombre del Acceso
+     *@param nombrePrefijo Prefijo del Acceso
+     *@param apellidoMaterno apellido materno del Acceso
+     *@param apellidoPaterno apellido paterno del Acceso
+     *@param nombreUsuario nombre de usuario del Acceso
+     *@param claveAcceso clave de acceso del Acceso
+     */
     public Acceso(String nombre, String nombrePrefijo,String apellidoMaterno,String apellidoPaterno,String nombreUsuario, String claveAcceso){
         this.nombre=nombre;
         this.nombrePrefijo=nombrePrefijo;
-		this.apellidoMaterno=apellidoMaterno;
-		this.apellidoPaterno=apellidoPaterno;
-		this.nombreUsuario=nombreUsuario;
+    		this.apellidoMaterno=apellidoMaterno;
+    		this.apellidoPaterno=apellidoPaterno;
+    		this.nombreUsuario=nombreUsuario;
         this.claveAcceso=claveAcceso;
 
     }

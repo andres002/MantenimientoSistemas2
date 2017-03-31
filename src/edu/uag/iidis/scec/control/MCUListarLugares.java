@@ -21,12 +21,33 @@ import org.apache.struts.actions.MappingDispatchAction;
 import net.webservicex.*;
 
 
+/**
+*Esta clase nos permite listar los lugares.
+*contiene métodos que conectan al manejador lugares y la FormaListadoLugares
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
+
 public final class MCUListarLugares
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+
+    /**
+    *Lista los lugares
+    *hace un cast del form recibido a un lugar
+    *Luego del Cast manda al manejador a realizar el método de listarLugares()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    **@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward solicitarListarLugares(
                 ActionMapping mapping,
                 ActionForm form,
@@ -64,12 +85,25 @@ public final class MCUListarLugares
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
 
     }
+
+    /**
+    *Busca un lugar
+    *hace un cast del form recibido a un lugar
+    *Luego del Cast manda al manejador a realizar el método de listarLugaresPorNombre()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
 	 public ActionForward buscarLugar(
                 ActionMapping mapping,
                 ActionForm form,
@@ -107,14 +141,25 @@ public final class MCUListarLugares
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
 
     }
 
-    //cambios
+    /**
+    *Busca la imagen de un lugar
+    *hace un cast del form recibido a un lugar
+    *Luego del Cast manda al manejador a realizar el método de buscaImagen()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarImagen(
                 ActionMapping mapping,
                 ActionForm form,
@@ -152,13 +197,25 @@ public final class MCUListarLugares
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
 
     }
-    
+
+    /**
+    *Busca un estado
+    *hace un cast del form recibido a un estado
+    *Luego del Cast manda al manejador a realizar el método de listarEstadoPorNombre()
+    *
+    *@param mapping información de mapeo de acción
+    *@param form datos mandados por la vista
+    *@param request provee la información requerida por HTTP servlets.
+    *@param response Servlet que se encarga de enviar una respuesta
+    *@return forward puede ser exitoso a fracaso
+    *@throws Exception si surge algun error en la transaccion
+    */
     public ActionForward buscarEstado(
                 ActionMapping mapping,
                 ActionForm form,
@@ -196,7 +253,7 @@ public final class MCUListarLugares
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
@@ -242,14 +299,14 @@ public final class MCUListarLugares
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
+                        new ActionMessage("errors.infraestructura"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
 
     }
 
-    
+
 
 
 

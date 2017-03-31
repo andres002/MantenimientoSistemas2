@@ -14,6 +14,13 @@ import org.apache.commons.logging.LogFactory;
 
 import java.util.*;
 
+/**
+*Esta clase contiene las configuraciones para la persistencia del login
+*tiene acceso directo a Hibernate
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 
 public class UsuarioDAO {
 
@@ -23,7 +30,15 @@ public class UsuarioDAO {
     public UsuarioDAO() {
     }
 
-
+    /**
+    *Busca por id los usuarios
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param idUsuario id del usuario
+    *@param bloquear verdadero o falso
+    *@return Usuario devuelve el usuario buscado
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Usuario buscarPorId(Long idUsuario, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -55,7 +70,14 @@ public class UsuarioDAO {
         return usuario;
     }
 
-
+    /**
+    *Busca un usuario por nombre de usuario
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param nombreUsuario nombre del usuario a buscar
+    *@return Usuario devuelve un usuario
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Usuario buscarPorNombreUsuario(String nombreUsuario)
             throws ExcepcionInfraestructura {
 
@@ -90,7 +112,13 @@ public class UsuarioDAO {
     }
 
 
-
+    /**
+    *Busca todos los usuarios
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@return Collection devuelve una colección de todos los usuarios
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -115,6 +143,14 @@ public class UsuarioDAO {
 
 
 
+    /**
+    *Busca un usuario
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param usuarioEjemplo Usuario a buscar
+    *@return Collection devuelve una colección de todos los usuarios
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public List buscarPorEjemplo(Usuario usuarioEjemplo)
             throws ExcepcionInfraestructura {
 
@@ -138,6 +174,14 @@ public class UsuarioDAO {
     }
 
 
+    /**
+    *Verifica si el nombre del usuario existe
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param nombreUsuario nombre del usuario
+    *@return boolean true si existe, false si no existe
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public boolean existeUsuario(String nombreUsuario)
             throws ExcepcionInfraestructura {
 
@@ -179,6 +223,13 @@ public class UsuarioDAO {
     }
 
 
+    /**
+    *Asigna permisos
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param usuario Usuario a guardar
+    *@throws ExcepcionInfraestructura si surge algún error en la transacción
+    */
     public void hazPersistente(Usuario usuario)
             throws ExcepcionInfraestructura {
 
@@ -200,6 +251,13 @@ public class UsuarioDAO {
     }
 
 
+    /**
+    *termina una sesión
+    *Tiene comunicación directa con Hibernate para realizar la transacción
+    *
+    *@param usuario Usuario a terminar sesión
+    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
+    */
     public void hazTransitorio(Usuario usuario)
             throws ExcepcionInfraestructura {
 
