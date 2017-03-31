@@ -40,7 +40,7 @@ public class ManejadorCriticaes {
 
     /**
     *Constructor de las criticas
-    *
+    *Asigna el DAO correspondiente
     *
     */
     public ManejadorCriticaes() {
@@ -130,7 +130,7 @@ public class ManejadorCriticaes {
         }
     }
 
-    
+
     /**
     *elimina una crítica
     *hace uso de las transacciones con criticaDAO
@@ -252,7 +252,7 @@ public class ManejadorCriticaes {
         return toReturn;
     }
 
- 
+
 
    //          File fXmlFile = new File(path+"input.xml");
    //          FileWriter w = new FileWriter(fXmlFile);

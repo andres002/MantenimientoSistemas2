@@ -11,16 +11,33 @@ import edu.uag.iidis.scec.persistencia.UsuarioDAO;
 import edu.uag.iidis.scec.persistencia.AccesoDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+*Esta clase facilita las transacciones con la persistencia
+*
+*@author Luis Andres Max
+*@version 1.0
+*/
 public class ManejadorUsuarios {
     private Log log = LogFactory.getLog(ManejadorUsuarios.class);
     private UsuarioDAO dao;
 
 
+    /**
+    *Constructor de los usuarios
+    *Asigna el DAO correspondiente
+    *
+    */
     public ManejadorUsuarios() {
         dao = new UsuarioDAO();
     }
 
-
+    /**
+    *obtiene un usuario
+    *hace uso de las transacciones con usuarioDAO
+    *
+    *@param nombreUsuario nombre del usuario a buscar
+    *@return Usuario devuelve el usuario solicitado
+    */
     public Usuario obtenerUsuario(String nombreUsuario)
             throws ExcepcionServicio {
 
@@ -57,6 +74,13 @@ public class ManejadorUsuarios {
     }
 
 
+    /**
+    *obtiene a todos los usuarios
+    *hace uso de las transacciones con usuarioDAO
+    *
+    *@param usuario usuario
+    *@return collection devuelve una colección con todos los usuarios
+    */
     public Collection obtenerUsuarios(Usuario usuario) {
 
         if (log.isDebugEnabled()) {
@@ -66,6 +90,13 @@ public class ManejadorUsuarios {
         return dao.buscarTodos();
     }
 
+    /**
+    *Crea un usuario
+    *hace uso de las transacciones con usuarioDAO
+    *
+    *@param usuario usuario a agregar
+    *@return int  0.Creada correctamente 1.el nombre ya existe 2.-Error infraestructura
+    */
 
     public int crearUsuario(Usuario usuario) {
 
@@ -104,6 +135,12 @@ public class ManejadorUsuarios {
     }
 
 
+    /**
+    *elimina un usuario
+    *hace uso de las transacciones con usuarioDAO
+    *
+    *@param id id del usuario a eliminar
+    */
     public void eliminarUsuario(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarUsuario(id)");
