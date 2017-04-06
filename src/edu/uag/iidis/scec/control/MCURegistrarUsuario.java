@@ -19,28 +19,13 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
-/**
-*Esta clase nos permite Registrar un usuario
-*contiene métodos que conectan al manejador usuarios y la FormaNuevaPersona
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
-public final class MCURegistrarUsuario
+
+public final class MCURegistrarUsuario 
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-    /**
-    *solicita el registro de un usuario
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    *@throws Exception si surge algun error en la transaccion
-    */
+
     public ActionForward solicitarRegistro(
                 ActionMapping mapping,
                 ActionForm form,
@@ -51,8 +36,8 @@ public final class MCURegistrarUsuario
         if (log.isDebugEnabled()) {
             log.debug(">solicitarRegistro");
         }
-
-
+		
+		
 		/* incluir ciudades      */
 		FormaNuevaPersona forma = (FormaNuevaPersona)form;
 		ManejadorCiudades mr = new ManejadorCiudades();
@@ -69,32 +54,21 @@ public final class MCURegistrarUsuario
                 forma.setCiudades ( resultado );
             }
         } else {
-            log.error("Ocurri� un error de infraestructura");
+            log.error("Ocurri� un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));
+                        new ActionMessage("errors.infraestructura"));                
             saveErrors(request, errores);
-        }
-
-
-	/* incluir ciudades      */
-
+        }		
+		
+		
+	/* incluir ciudades      */	
+		
 
         return (mapping.findForward("exito"));
     }
 
 
-    /**
-    *Registra un usuario
-    *hace un cast del form recibido a un Usuario
-    *Luego del Cast manda al manejador a realizar el método de crearUsuario()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
+
     public ActionForward procesarRegistro(
                 ActionMapping mapping,
                 ActionForm form,
@@ -106,15 +80,15 @@ public final class MCURegistrarUsuario
             log.debug(">procesarRegistro");
         }
 
-        // Verifica si la acción fue cancelada por el usuario
+        // Verifica si la acci�n fue cancelada por el usuario
         if (isCancelled(request)) {
             if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
+                log.debug("<La acci�n fue cancelada");
             }
             return (mapping.findForward("cancelar"));
         }
 
-
+        
         // Se obtienen los datos para procesar el registro
         FormaNuevaPersona forma = (FormaNuevaPersona)form;
 
@@ -135,30 +109,31 @@ public final class MCURegistrarUsuario
 
         ActionMessages errores = new ActionMessages();
         switch (resultado) {
-            case 0:
+            case 0:   
                 return (mapping.findForward("exito"));
 
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.nombreUsuarioYaExiste",
-                                               forma.getNombreUsuario()));
+                                               forma.getNombreUsuario()));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             case 3:
-                log.error("Ocurrió un error de infraestructura");
+                log.error("Ocurri� un error de infraestructura");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             default:
-                log.warn("ManejadorUsuario.crearUsuario regres� reultado inesperado");
+                log.warn("ManejadorUsuario.crearUsuario regres� reultado inesperado");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
         }
     }
 
 }
+

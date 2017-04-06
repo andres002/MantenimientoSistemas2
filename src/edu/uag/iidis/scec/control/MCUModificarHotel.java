@@ -16,29 +16,10 @@ import edu.uag.iidis.scec.servicios.*;
 import edu.uag.iidis.scec.modelo.Hotel;
 import edu.uag.iidis.scec.vista.FormaModificarHotel;
 
-/**
-*Esta clase nos permite modificar un Hotel
-*contiene métodos que conectan al manejador Hoteles y la FormaModificarHotel
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 public class MCUModificarHotel extends MappingDispatchAction {
 
     private final Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-
-
-    /**
-    *Solicita una modificación de un Hotel
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
     public ActionForward solicitarModificarHotel(ActionMapping mapping, ActionForm form,
                 HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -52,18 +33,6 @@ public class MCUModificarHotel extends MappingDispatchAction {
 
     }
 
-    /**
-    *Modifica un Hotel
-    *hace un cast del form recibido a un Hotel
-    *Luego del Cast manda al manejador a realizar el método de modificarHotel()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
     public ActionForward procesarModificarHotel(ActionMapping mapping, ActionForm form,
                 HttpServletRequest request, HttpServletResponse response) throws Exception {
 

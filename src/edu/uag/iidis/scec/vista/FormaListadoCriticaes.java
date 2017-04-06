@@ -10,9 +10,9 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el listado de criticas
+ * Form bean para el registro de una nueva persona.
  *
- * @author Farelo Andres Max
+ * @author Victor Ramos
  */
 public final class FormaListadoCriticaes
         extends ValidatorForm {
@@ -21,10 +21,6 @@ public final class FormaListadoCriticaes
     private int contador;
 	private String nombre;
 
-    /**
-    *establece las criticas en el Collection
-    *@param criticaes collection de criticas
-    */
     public void setCriticaes(Collection criticaes) {
         this.criticaes = criticaes;
         if (criticaes != null) {
@@ -33,47 +29,22 @@ public final class FormaListadoCriticaes
           this.contador = -1;
     }
 
-    /**
-    *regresa el collection de las criticas
-    *
-    *@return criticaes collection de criticas
-    */
     public Collection getCriticaes() {
         return (this.criticaes);
     }
 
-    /**
-    *regresa el numero de criticas
-    *
-    *@return size numero de criticas
-    */
     public int getContador() {
         return (this.contador);
     }
-
-    /**
-    *regresa el nombre
-    *
-    *@return nombre nombre
-    */
 	public String getNombre(){
         return(this.nombre);
     }
-    /**
-    *establece el nombre
-    *
-    *@param nombre nombre
-    */
+
 	public void setNombre(String nombre){
          this.nombre = nombre;
     }
 
-    /**
-    *elimina todas las criticas
-    *
-    *@param mapping acciones
-    *@param request informacion
-    */
+
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         contador=0;
@@ -81,13 +52,6 @@ public final class FormaListadoCriticaes
     }
 
 
-    /**
-    *realiza las validaciones proporcionadas por Struts-Validator
-    *
-    *@param mapping acciones
-    *@param request informacion
-    *@return ActionErrors errores de la acccion
-    */
     public ActionErrors validate(ActionMapping mapping,
                                  HttpServletRequest request) {
 

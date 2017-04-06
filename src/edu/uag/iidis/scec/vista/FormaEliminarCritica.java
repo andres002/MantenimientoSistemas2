@@ -9,51 +9,30 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para la eliminación de una critica
+ * Form bean para el registro de una nueva persona.
  *
- * @author Farelo Andres Max
+ * @author Victor Ramos
  */
 public final class FormaEliminarCritica
         extends ValidatorForm {
 
     private Long id;
 
-    /**
-    *establece el id de la critica
-    *@param id id de la crítica
-    */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-    *regresa el id de la critica
-    *
-    *@return id id de la critica
-    */
     public Long getId() {
         return (this.id);
     }
 
 
-    /**
-    *vuelve el id = 0
-    *
-    *@param mapping acciones
-    *@param request informacion
-    */
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {
         id= new Long(0);
     }
 
-    /**
-    *realiza las validaciones proporcionadas por Struts-Validator
-    *
-    *@param mapping acciones
-    *@param request informacion
-    *@return ActionErrors erroresde la acccion
-    */
+
     public ActionErrors validate(ActionMapping mapping,
                                  HttpServletRequest request) {
 

@@ -18,31 +18,14 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-/**
-*Esta clase nos permite tener acceso al login de la aplicación
-*contiene métodos que conectan al manejador login y la FormaLogin
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 
-public final class MCULogin
+
+public final class MCULogin 
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCULogin.class);
 
-    /**
-    *Nos permite obtener el usuario y la contraseña del login
-    *hace un cast del form recibido a algo legible
-    *Luego del Cast manda al manejador a realizar el método de buscarLogin()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
+
     public ActionForward solicitarLogin(
                 ActionMapping mapping,
                 ActionForm form,
@@ -59,7 +42,7 @@ public final class MCULogin
 
         Collection resultado = mr.buscarLogin(forma.getUser(),forma.getPassword());
 		//User user = new User("Victor", "1234");
-// simulamos que no se autentico
+// simulamos que no se autentico	
 	   //request.getSession().setAttribute("user", user);
         User user = null;
         if (resultado.size() != 0) {
@@ -74,12 +57,12 @@ public final class MCULogin
         } else {
             log.error("El usuario no existe");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.NoExisteUsuario"));
+                        new ActionMessage("errors.NoExisteUsuario"));                
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso"));
         }
-
+  
     }
 
-
+    
 }

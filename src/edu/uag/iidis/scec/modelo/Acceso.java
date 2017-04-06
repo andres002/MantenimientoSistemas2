@@ -28,30 +28,16 @@ public class Acceso extends ClaseBase
     public Acceso() {
     }
 
-    /**
-     * Constructor que establece el id del Acceso.
-     * @param id id del Acceso
-     */
     public Acceso(Long id){
         this.id = id;
     }
 
-
-    /**
-     * Constructor que establece todos los atributos del Acceso excepto id.
-     * @param nombre nombre del Acceso
-     *@param nombrePrefijo Prefijo del Acceso
-     *@param apellidoMaterno apellido materno del Acceso
-     *@param apellidoPaterno apellido paterno del Acceso
-     *@param nombreUsuario nombre de usuario del Acceso
-     *@param claveAcceso clave de acceso del Acceso
-     */
     public Acceso(String nombre, String nombrePrefijo,String apellidoMaterno,String apellidoPaterno,String nombreUsuario, String claveAcceso){
         this.nombre=nombre;
         this.nombrePrefijo=nombrePrefijo;
-    		this.apellidoMaterno=apellidoMaterno;
-    		this.apellidoPaterno=apellidoPaterno;
-    		this.nombreUsuario=nombreUsuario;
+		this.apellidoMaterno=apellidoMaterno;
+		this.apellidoPaterno=apellidoPaterno;
+		this.nombreUsuario=nombreUsuario;
         this.claveAcceso=claveAcceso;
 
     }
@@ -66,7 +52,7 @@ public class Acceso extends ClaseBase
 
     /**
      * Establece el id del Acceso.
-     * @param id define el id de acceso
+     * @return void
      */
     public void setId(Long id) {
         this.id = id;
@@ -75,108 +61,61 @@ public class Acceso extends ClaseBase
 
     /**
      * Regresa el nombre del Acceso.
-     * @return String nombre de acceso
+     * @return String
      */
     public String getNombre() {
         return this.nombre;
     }
-    /**
-     * Regresa el prefijo.
-     * @return String nombrePrefijo
-     */
 	public String getNombrePrefijo() {
         return this.nombrePrefijo;
     }
-
-    /**
-     * Regresa el apellido Materno.
-     * @return String apellidoMaterno
-     */
-
 	public String getApellidoMaterno() {
         return this.apellidoMaterno;
     }
-
-    /**
-     * Regresa el apellido Materno.
-     * @return String apellidoPaterno
-     */
-
 	public String getApellidoPaterno() {
         return this.apellidoPaterno;
     }
-
-    /**
-     * Regresa el nombre del Usuario.
-     * @return String nombreUsuario
-     */
-
 	public String getNombreUsuario() {
         return this.nombreUsuario;
     }
-
-    /**
-     * Regresa la clave de Acceso.
-     * @return String claveAcceso
-     */
      public String getClaveAcceso() {
         return this.claveAcceso;
     }
 
 
     /**
-     * Establece el nombre de Acceso.
-     * @param nombre define el id de acceso
+     * Establece el nombre del Acceso.
+     * @return void
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    /**
-     * Establece el Prefijo.
-     * @param nombrePrefijo  String prefijo de Usuario
-     */
-
 	public void setNombrePrefijo(String nombrePrefijo) {
         this.nombrePrefijo = nombrePrefijo;
     }
-
-    /**
-     * Establece el apellido Materno.
-     * @param apellidoMaterno Apellido Materno de usuario
-     */
-
 	public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-
-    /**
-     * Establece el apellido Paterno.
-     * @param apellidoPaterno Apellido Paterno de usuario
-     */
-
 	public void setApellidoPaterno(String apellidoPaterno) {
         this.apellidoPaterno = apellidoPaterno;
     }
-
-    /**
-     * Establece el nombre de usuario.
-     * @param nombreUsuario nombre de usuario
-     */
-
 	public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
-
-    /**
-     * Establece la clave de Acceso.
-     * @param claveAcceso Apellido Materno de usuario
-     */
-
     public void setClaveAcceso(String claveAcceso) {
         this.claveAcceso = claveAcceso;
     }
 
+    /**
+     * Regresa la descripción del Acceso.
+     * @return String
+     */
+
+
+    /**
+     * Establece la descripción del Acceso.
+     * @return void
+     */
 
 
 

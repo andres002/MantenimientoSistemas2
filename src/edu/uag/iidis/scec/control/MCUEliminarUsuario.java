@@ -18,31 +18,13 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
-/**
-*Esta clase nos permite eliminar los Usuarios
-*contiene métodos que conectan al manejador Usuarios y la forma eliminarUsuario
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
+
 public final class MCUEliminarUsuario
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    /**
-   *Elimina un usuario
-   *hace un cast del form recibido a un usuario
-   *Luego del Cast manda al manejador a realizar el método de eliminarUsuario()
-   *
-   *@param mapping información de mapeo de acción
-   *@param form datos mandados por la vista
-   *@param request provee la información requerida por HTTP servlets.
-   *@param response Servlet que se encarga de enviar una respuesta
-   *@return forward puede ser exitoso a fracaso
-   *@throws Exception si surge algun error en la transaccion
-   */
     public ActionForward procesarEliminarUsuario(
                 ActionMapping mapping,
                 ActionForm form,

@@ -15,13 +15,6 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
-/**
-*Esta clase contiene las configuraciones para la persistencia de los hoteles
-*tiene acceso directo a Hibernate
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 
 public class HotelDAO {
 
@@ -30,15 +23,7 @@ public class HotelDAO {
     public HotelDAO() {
     }
 
-    /**
-    *Busca por id los hoteles
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param idHotel id del Hotel
-    *@param bloquear verdadero o falso
-    *@return Hotel devuelve el hotel buscado
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public Hotel buscarPorId(Long idHotel, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -69,15 +54,6 @@ public class HotelDAO {
         return hotel;
     }
 
-
-    /**
-    *Busca y ordena los hoteles por un atributo
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param attribute atributo a usar para ordenar
-    *@return Collection devuelve una colección de los hoteles ordenados
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection ordenarHotelesPor( String attribute )
             throws ExcepcionInfraestructura {
 
@@ -115,13 +91,7 @@ public class HotelDAO {
     }
 
 
-    /**
-    *Busca todos los hoteles
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@return Collection devuelve una colección de todos los hoteles
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -148,14 +118,6 @@ public class HotelDAO {
     }
 
 
-    /**
-    *Busca un hotel
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param hotel Hotel a buscar
-    *@return Collection devuelve una colección de todos los hoteles
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarPorEjemplo(Hotel hotel)
             throws ExcepcionInfraestructura {
 
@@ -179,13 +141,7 @@ public class HotelDAO {
         return hoteles;
     }
 
-    /**
-    *Asigna permisos
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param hotel Hotel a guardar
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public void hazPersistente(Hotel hotel)
             throws ExcepcionInfraestructura {
 
@@ -203,13 +159,7 @@ public class HotelDAO {
         }
     }
 
-    /**
-    *termina una sesión
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param hotel Hotel a terminar sesión
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public void hazTransitorio(Hotel hotel)
             throws ExcepcionInfraestructura {
 
@@ -227,15 +177,6 @@ public class HotelDAO {
         }
     }
 
-
-    /**
-    *Verifica si el nombre del hotel existe
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreHotel nombre del hotel
-    *@return boolean true si existe, false si no existe
-    *@throws ExcepcionInfraestructura si surge algun error en la transacción
-    */
     public boolean existeHotel(String nombreHotel)
             throws ExcepcionInfraestructura {
 
@@ -323,15 +264,7 @@ public class HotelDAO {
         return toReturn;
     }
 
-   
-    /**
-    *Busca una imagen del hotel
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreHotel nombre del hotel
-    *@return collection regresa una colección con las imagenes
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+    //cambios
     public Collection buscarImagen(String nombreHotel)
             throws ExcepcionInfraestructura {
 
@@ -374,14 +307,6 @@ public class HotelDAO {
         }
     }
 
-    /**
-    *Busca un hotel específico 
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreHotel nombre del hotel
-    *@return Collection una colección con los resultados del hotel buscado
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
 	public Collection buscarHotel(String nombreHotel)
             throws ExcepcionInfraestructura {
 
@@ -424,14 +349,6 @@ public class HotelDAO {
         }
     }
 
-    /**
-    *Busca los estados de un hotel
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreHotel nombre del hotel
-    *@return Collection devuelve una colección con los datos.
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarEstado(String nombreHotel)
             throws ExcepcionInfraestructura {
 

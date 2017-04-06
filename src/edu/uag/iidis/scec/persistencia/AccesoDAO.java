@@ -15,13 +15,6 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
-/**
-*Esta clase contiene las configuraciones para la persistencia del Acceso
-*tiene acceso directo a Hibernate
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 
 public class AccesoDAO {
 
@@ -30,15 +23,7 @@ public class AccesoDAO {
     public AccesoDAO() {
     }
 
-    /**
-    *Busca por id los accesos
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param idAcceso id del acceso
-    *@param bloquear verdadero o falso
-    *@return Acceso devuelve el acceso buscado
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public Acceso buscarPorId(Long idAcceso, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -69,15 +54,6 @@ public class AccesoDAO {
         return acceso;
     }
 
-
-    /**
-    *Busca y ordena los accesos por un atributo
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param attribute atributo a usar para ordenar
-    *@return Collection devuelve una colección de los accesos ordenados
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection ordenarAccesosPor( String attribute )
             throws ExcepcionInfraestructura {
 
@@ -116,13 +92,6 @@ public class AccesoDAO {
 
 
 
-    /**
-    *Busca todos los accesos
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@return Collection devuelve una colección de todos los accesos
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -149,14 +118,6 @@ public class AccesoDAO {
     }
 
 
-    /**
-    *Busca un acceso
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param acceso Acceso a buscar
-    *@return Collection devuelve una colección de todos los accesos
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarPorEjemplo(Acceso acceso)
             throws ExcepcionInfraestructura {
 
@@ -181,13 +142,6 @@ public class AccesoDAO {
     }
 
 
-    /**
-    *Asigna permisos
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param acceso Acceso a guardar
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public void hazPersistente(Acceso acceso)
             throws ExcepcionInfraestructura {
 
@@ -205,13 +159,7 @@ public class AccesoDAO {
         }
     }
 
-    /**
-    *termina una sesión
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param acceso Acceso a terminar sesión
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public void hazTransitorio(Acceso acceso)
             throws ExcepcionInfraestructura {
 
@@ -229,14 +177,6 @@ public class AccesoDAO {
         }
     }
 
-    /**
-    *Verifica si el nombre del acceso (usuario) existe
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreAcceso nombre del acceso
-    *@return boolean true si existe, false si no existe
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public boolean existeAcceso(String nombreAcceso)
             throws ExcepcionInfraestructura {
 
@@ -294,14 +234,6 @@ public class AccesoDAO {
         }
     }
 
-    /**
-    *Verifica si el nombre del acceso (usuario) existe
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param acceso nombre del acceso
-    *@return boolean true si existe, false si no existe
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public boolean modificar( Acceso acceso ) throws ExcepcionInfraestructura {
 
         boolean toReturn = false;
@@ -332,14 +264,7 @@ public class AccesoDAO {
         return toReturn;
     }
 
-    /**
-    *Busca una imagen del acceso
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreAcceso nombre del acceso
-    *@return collection regresa una colección con las imagenes
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+    //cambios
     public Collection buscarImagen(String nombreAcceso)
             throws ExcepcionInfraestructura {
 
@@ -382,14 +307,6 @@ public class AccesoDAO {
         }
     }
 
-    /**
-    *Busca un acceso específico 
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreAcceso nombre del acceso
-    *@return Collection una colección con los resultados del acceso buscado
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
 	public Collection buscarAcceso(String nombreAcceso)
             throws ExcepcionInfraestructura {
 
@@ -432,14 +349,6 @@ public class AccesoDAO {
         }
     }
 
-    /**
-    *Busca los estados de un acceso
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreAcceso nombre del acceso
-    *@return Collection devuelve una colección con los datos.
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarEstado(String nombreAcceso)
             throws ExcepcionInfraestructura {
 

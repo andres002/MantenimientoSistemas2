@@ -20,33 +20,12 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 import net.webservicex.*;
 
-/**
-*Esta clase nos permite listar las criticas o buscar una especifica
-*contiene métodos que conectan al manejador Criticaes y la FormaListadoCriticaes
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
-
 
 public final class MCUListarCriticaes
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-
-    /**
-    *Lista las criticas
-    *hace un cast del form recibido a una critica
-    *Luego del Cast manda al manejador a realizar el método de listarCriticaes()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
 
     public ActionForward solicitarListarCriticaes(
                 ActionMapping mapping,
@@ -91,19 +70,6 @@ public final class MCUListarCriticaes
         }
 
     }
-
-    /**
-    *Busca una critica
-    *hace un cast del form recibido a una critica
-    *Luego del Cast manda al manejador a realizar el método de listarCriticaesPorNombre()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    *@throws Exception si surge algun error en la transaccion
-    */
 	 public ActionForward buscarCritica(
                 ActionMapping mapping,
                 ActionForm form,

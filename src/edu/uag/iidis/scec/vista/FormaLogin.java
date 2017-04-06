@@ -10,9 +10,9 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el logeo de usuarios
+ * Form bean para el registro de una nueva persona.
  *
- * @author Farelo Andres Max
+ * @author Victor Ramos
  */
 public final class FormaLogin
         extends ValidatorForm {
@@ -20,50 +20,24 @@ public final class FormaLogin
     private String user;
     private String password;
 
+   
 
-    /**
-    *regresa el usuario
-    *
-    *@return user usuario
-    */
     public String getUser(){
         return(this.user);
     }
-
-    /**
-    *establece el usuario
-    *
-    *@param user usuario
-    */
     public void setUser(String user){
          this.user = user;
     }
 
-    /**
-    *regresa la contraseña del usuario
-    *
-    *@return password contraseña del usuario
-    */
     public String getPassword(){
         return (this.password);
     }
 
-    /**
-    *establece la contraseña del usuario
-    *
-    *@param password contraseña usuario
-    */
     public void setPassword(String password){
         this.password = password;
     }
 
-    /**
-    *realiza las validaciones proporcionadas por Struts-Validator
-    *
-    *@param mapping acciones
-    *@param request informacion
-    *@return ActionErrors errores de la acccion
-    */
+
     public ActionErrors validate(ActionMapping mapping,
                                  HttpServletRequest request) {
 

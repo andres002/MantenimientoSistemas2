@@ -18,28 +18,12 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
-/**
-*Esta clase nos permite Registrar una Ciudad
-*contiene métodos que conectan al manejador Ciudad y la FormaNuevoCiudad
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
+
 public final class MCURegistrarCiudad
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-    /**
-    *solicita un registra de una Ciudad
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    *@throws Exception si surge algun error en la transaccion
-    */
 
     public ActionForward solicitarRegistroCiudad(
                 ActionMapping mapping,
@@ -56,18 +40,7 @@ public final class MCURegistrarCiudad
     }
 
 
-    /**
-    *Registra una Ciudad
-    *hace un cast del form recibido a una Ciudad
-    *Luego del Cast manda al manejador a realizar el método de crearCiudad()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    *@throws Exception si surge algun error en la transaccion
-    */
+
     public ActionForward procesarRegistroCiudad(
                 ActionMapping mapping,
                 ActionForm form,
@@ -87,7 +60,7 @@ public final class MCURegistrarCiudad
             return (mapping.findForward("cancelar"));
         }
 
-
+        
         // Se obtienen los datos para procesar el registro
         FormaNuevoCiudad forma = (FormaNuevoCiudad)form;
 
@@ -99,30 +72,31 @@ public final class MCURegistrarCiudad
 
         ActionMessages errores = new ActionMessages();
         switch (resultado) {
-            case 0:
+            case 0:   
                 return (mapping.findForward("exito"));
 
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.nombreCiudadYaExiste",
-                                               forma.getNombre()));
+                                               forma.getNombre()));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             case 3:
                 log.error("Ocurrió un error de infraestructura");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             default:
                 log.warn("ManejadorUsuario.crearUsuario regresó reultado inesperado");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
         }
     }
 
 }
+

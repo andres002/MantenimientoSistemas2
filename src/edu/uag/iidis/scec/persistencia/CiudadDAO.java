@@ -16,14 +16,6 @@ import java.util.Collection;
 import java.util.List;
 
 
-/**
-*Esta clase contiene las configuraciones para la persistencia de las ciuadades
-*tiene acceso directo a Hibernate
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
-
 public class CiudadDAO {
 
     private Log log = LogFactory.getLog(CiudadDAO.class);
@@ -31,15 +23,7 @@ public class CiudadDAO {
     public CiudadDAO() {
     }
 
-    /**
-    *Busca por id las ciudades
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param idCiudad id del acceso
-    *@param bloquear verdadero o falso
-    *@return Ciudad devuelve la Ciudad buscada
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public Ciudad buscarPorId(Long idCiudad, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -71,13 +55,6 @@ public class CiudadDAO {
     }
 
 
-    /**
-    *Busca todas las ciudades
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@return Collection devuelve una colección de todas las ciudades
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -103,14 +80,6 @@ public class CiudadDAO {
     }
 
 
-    /**
-    *Busca una ciudad
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param ciudad ciudad a buscar
-    *@return Collection devuelve una colección de todas las ciudades
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public Collection buscarPorEjemplo(Ciudad ciudad)
             throws ExcepcionInfraestructura {
 
@@ -135,13 +104,6 @@ public class CiudadDAO {
     }
 
 
-    /**
-    *Asigna permisos
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param ciudad ciudad a guardar
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public void hazPersistente(Ciudad ciudad)
             throws ExcepcionInfraestructura {
 
@@ -159,13 +121,7 @@ public class CiudadDAO {
         }
     }
 
-    /**
-    *termina una sesión
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param ciudad ciudad a terminar sesión
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
+
     public void hazTransitorio(Ciudad ciudad)
             throws ExcepcionInfraestructura {
 
@@ -183,14 +139,6 @@ public class CiudadDAO {
         }
     }
 
-    /**
-    *Verifica si el nombre de la Ciudad existe
-    *Tiene comunicación directa con Hibernate para realizar la transacción
-    *
-    *@param nombreCiudad nombre de la ciudad
-    *@return boolean true si existe, false si no existe
-    *@throws ExcepcionInfraestructura si surge algun error en la transaccion
-    */
     public boolean existeCiudad(String nombreCiudad)
             throws ExcepcionInfraestructura {
 

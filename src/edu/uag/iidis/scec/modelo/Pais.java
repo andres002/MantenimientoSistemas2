@@ -5,15 +5,15 @@ import java.util.*;
 
 
 /**
- * Esta clase nos da acceso al país y sus atributos
- *id, nombre, descripcion.
+ * Esta clase es usada para representar un rol de un
+ * usuario. 
  *
- * <p><a href="Pais.java.html"><i>Ver código fuente</i></a></p>
+ * <p><a href="Estado.java.html"><i>Ver código fuente</i></a></p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
  */
-public class Pais extends ClaseBase
+public class Pais extends ClaseBase 
         implements Serializable {
 
     private Long id;
@@ -24,20 +24,10 @@ public class Pais extends ClaseBase
     public Pais() {
     }
 
-    /**
-     * Constructor que establece el id del País.
-     * @param id id del país
-     */
     public Pais(Long id){
         this.id = id;
     }
 
-    /**
-     * Constructor que establece todos los atributos del País excepto id.
-     * @param nombre nombre del País
-     *@param descripcion descripcion del País
-     *
-     */
     public Pais(String nombre, String descripcion){
         this.nombre=nombre;
         this.descripcion=descripcion;
@@ -45,17 +35,16 @@ public class Pais extends ClaseBase
 
     /**
      * Regresa el id del Pais.
-     * @return Long id
+     * @return Long
      */
     public Long getId() {
         return this.id;
     }
 
-
-     /**
-      * Establece el id del País.
-      * @param id id del País
-      */
+    /**
+     * Establece el id del Pais.
+     * @return void
+     */
     public void setId(Long id) {
         this.id = id;
     }
@@ -63,33 +52,32 @@ public class Pais extends ClaseBase
 
     /**
      * Regresa el nombre del Pais.
-     * @return String nombre
+     * @return String
      */
     public String getNombre() {
         return this.nombre;
     }
 
-
-     /**
-      * Establece el nombre del País.
-      * @param nombre nombre del País
-      */
+    /**
+     * Establece el nombre del Pais.
+     * @return void
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
+    
     /**
      * Regresa la descripción del Pais.
-     * @return String descripción
+     * @return String
      */
     public String getDescripcion() {
         return this.descripcion;
     }
 
     /**
-     * Establece la descripción del País.
-     * @param descripcion descripcion del País
+     * Establece la descripción del Pais.
+     * @return void
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;

@@ -27,33 +27,15 @@ import org.dom4j.io.SAXReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
-
-/**
-*Esta clase facilita las transacciones con la persistencia
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 public class ManejadorHoteles {
     private Log log = LogFactory.getLog(ManejadorHoteles.class);
     private HotelDAO hotelDAO;
 
-
-    /**
-    *Constructor de los hoteles
-    *Asigna el DAO corrspondiente
-    *
-    */
     public ManejadorHoteles() {
         hotelDAO = new HotelDAO();
     }
 
-    /**
-    *Lista todos los hoteles
-    *hace uso de las transacciones con HotelDAO
-    *
-    *@return collection devuelve una colección con todos los hoteles
-    */
+
     public Collection listarHoteles() {
         Collection resultado;
 
@@ -74,13 +56,6 @@ public class ManejadorHoteles {
         }
     }
 
-    /**
-    *ordena los hoteles por un atributo
-    *hace uso de las transacciones con hotelDAO
-    *
-    *@param attribute atributo por el que serán ordenadas los hoteles
-    *@return collection devuelve una colección con todos los hoteles ordenadas por el atributo
-    */
     public Collection ordenarHotelesPor(String attribute) {
         Collection resultado;
 
@@ -104,14 +79,7 @@ public class ManejadorHoteles {
         }
     }
 
-    /**
-      *Lista los hoteles de acuerdo al nombre
-      *hace uso de las transacciones con hotelDAO
-      *
-      *@param nombre nombre por el que serán ordenados los hoteles
-      *@return collection devuelve una colección con los hoteles ordenadas por el atributo
-      */
-  public Collection listarHotelesPorNombre(String nombre) {
+	public Collection listarHotelesPorNombre(String nombre) {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
@@ -131,13 +99,6 @@ public class ManejadorHoteles {
         }
     }
 
-    /**
-      *busca el estado de un hotel
-      *hace uso de las transacciones con hotelDAO
-      *
-      *@param nombre nombre del estado
-      *@return collection devuelve una colección con los hoteles
-      */
     public Collection buscaEstado(String nombre) {
         Collection resultado;
 
@@ -158,12 +119,6 @@ public class ManejadorHoteles {
         }
     }
 
-    /**
-    *elimina un hotel
-    *hace uso de las transacciones con hotelDAO
-    *
-    *@param id id del hotel a eliminar
-    */
     public void eliminarHotel(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarHotel(hotel)");
@@ -186,13 +141,7 @@ public class ManejadorHoteles {
 
     }
 
-      /**
-      *busca la imagen de un hotel
-      *hace uso de las transacciones con hotelDAO
-      *
-      *@param nombre nombre del hotel
-      *@return collection devuelve una colección con las imagenes
-      */
+    //cambios
     public Collection buscaImagen(String nombre) {
         Collection resultado;
 
@@ -228,14 +177,6 @@ public class ManejadorHoteles {
         return resultado;
     }
 
-    /**
-    *Crea un hotel
-    *hace uso de las transacciones con hotelDAO
-    *
-    *@param hotel hotel a agregar
-    *@return int  0.Creada correctamente 1.el nombre ya existe 2.-Error infraestructura
-    */
-
     public int crearHotel(Hotel hotel) {
 
         int resultado;
@@ -270,21 +211,12 @@ public class ManejadorHoteles {
         }
         return resultado;
     }
-
-
     private static String getCurrencyByCountry(java.lang.String countryName) {
         Country service = new net.webservicex.Country();
         CountrySoap port = service.getCountrySoap();
         return port.getCurrencyByCountry(countryName);
     }
 
-    /**
-     *modifica un hotel
-     *hace uso de las transacciones con hotelDAO
-     *
-     *@param hotel hotel a modificar
-     *@return boolean  true éxitoso, false sin éxito
-     */
     public boolean modificarHotel(Hotel hotel) {
 
         boolean toReturn = false;
@@ -327,8 +259,6 @@ public class ManejadorHoteles {
 
         return toReturn;
     }
-
-
 
     public String getData(String cities,String path){
         String service ="";

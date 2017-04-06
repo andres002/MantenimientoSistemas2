@@ -19,13 +19,6 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
 
-/**
-*Esta clase nos permite listar las Recomendaciones o buscar una en especifica.
-*contiene métodos que conectan al manejador Recomendaciones y la FormaListadoRecomendaciones
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
 
 public final class MCUListarRecomendaciones
         extends MappingDispatchAction {
@@ -33,18 +26,6 @@ public final class MCUListarRecomendaciones
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    /**
-    *Lista las Recomendaciones
-    *hace un cast del form recibido a una Recomendación
-    *Luego del Cast manda al manejador a realizar el método de listarRecomendaciones()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
     public ActionForward solicitarListarRecomendaciones(
                 ActionMapping mapping,
                 ActionForm form,
@@ -82,25 +63,11 @@ public final class MCUListarRecomendaciones
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));
+                        new ActionMessage("errors.infraestructura"));                
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }
     }
-
-
-    /**
-    *Busca una Recomendación
-    *hace un cast del form recibido a una Recomendación
-    *Luego del Cast manda al manejador a realizar el método de listarRecomendacionPorNombre()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    *@throws Exception si surge algun error en la transaccion
-    */
     public ActionForward buscarRecomendacion(
                 ActionMapping mapping,
                 ActionForm form,
@@ -124,7 +91,7 @@ public final class MCUListarRecomendaciones
 
         ManejadorRecomendaciones mr = new ManejadorRecomendaciones();
 
-
+        
         Collection resultado = mr.listarRecomendacionPorNombre(forma.getNombre());
         log.debug("Resultado "+resultado);
         ActionMessages errores = new ActionMessages();
@@ -140,7 +107,7 @@ public final class MCUListarRecomendaciones
         } else {
             log.error("Ocurrió un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));
+                        new ActionMessage("errors.infraestructura"));                
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso") );
         }

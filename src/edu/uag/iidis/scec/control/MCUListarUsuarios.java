@@ -20,14 +20,6 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 import net.webservicex.*;
 
-/**
-*Esta clase nos permite listar los usuarios
-*contiene métodos que conectan al manejador usuarios y la FormaListadoUsuarios
-*
-*@author Luis Andres Max
-*@version 1.0
-*/
-
 
 public final class MCUListarUsuarios
         extends MappingDispatchAction {
@@ -35,18 +27,6 @@ public final class MCUListarUsuarios
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    /**
-    *Lista los usuarios
-    *hace un cast del form recibido a un usuario
-    *Luego del Cast manda al manejador a realizar el método de listarUsuarios()
-    *
-    *@param mapping información de mapeo de acción
-    *@param form datos mandados por la vista
-    *@param request provee la información requerida por HTTP servlets.
-    *@param response Servlet que se encarga de enviar una respuesta
-    *@return forward puede ser exitoso a fracaso
-    **@throws Exception si surge algun error en la transaccion
-    */
     public ActionForward solicitarListarUsuarios(
                 ActionMapping mapping,
                 ActionForm form,

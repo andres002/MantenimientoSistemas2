@@ -6,14 +6,14 @@ import java.util.*;
 
 /**
  * Esta clase es usada para representar un rol de un
- * usuario.
+ * usuario. 
  *
- * <p><a href="Ciudad.java.html"><i>Ver cï¿½digo fuente</i></a></p>
+ * <p><a href="Ciudad.java.html"><i>Ver código fuente</i></a></p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
  */
-public class Ciudad extends ClaseBase
+public class Ciudad extends ClaseBase 
         implements Serializable {
 
     private Long id;
@@ -43,7 +43,7 @@ public class Ciudad extends ClaseBase
 
     /**
      * Establece el id del rol.
-     * @param id Establece el id del rol
+     * @return void
      */
     public void setId(Long id) {
         this.id = id;
@@ -52,7 +52,7 @@ public class Ciudad extends ClaseBase
 
     /**
      * Regresa el nombre del rol.
-     * @return String nombre
+     * @return String
      */
     public String getNombre() {
         return this.nombre;
@@ -60,24 +60,24 @@ public class Ciudad extends ClaseBase
 
     /**
      * Establece el nombre del rol.
-     * @param nombre nombre del rol
+     * @return void
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
+    
     /**
-     * Regresa la descripciÃ³n del rol.
-     * @return String descripcion
+     * Regresa la descripción del rol.
+     * @return String
      */
     public String getDescripcion() {
         return this.descripcion;
     }
 
     /**
-     * Establece la descripciÃ³n del rol.
-     * @param descripcion descripcion del rol
+     * Establece la descripción del rol.
+     * @return void
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;

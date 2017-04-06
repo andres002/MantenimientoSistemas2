@@ -1,13 +1,11 @@
 
-    alter table UsuarioRol 
-        drop 
+    alter table UsuarioRol
+        drop
         foreign key FK4CA33E1C7F566F0;
 
-    alter table UsuarioRol 
-        drop 
+    alter table UsuarioRol
+        drop
         foreign key FK4CA33E1BC6DE0AE;
-
-    drop table if exists Criticaes;
 
     drop table if exists Estados;
 
@@ -27,15 +25,6 @@
 
     drop table if exists ciudades;
 
-    create table Criticaes (
-        id bigint not null,
-        Nombre varchar(255) not null unique,
-        Descripcion varchar(255),
-        Hotel varchar(255),
-        Nivel varchar(255),
-        primary key (id)
-    ) Engine=InnoDB;
-
     create table Estados (
         id bigint not null,
         Nombre varchar(255) not null unique,
@@ -53,6 +42,15 @@
         Imagen varchar(255),
         Pais varchar(255),
         Direccion varchar(255),
+        primary key (id)
+    ) Engine=InnoDB;
+
+    create table Criticaes (
+        id bigint not null,
+        Nombre varchar(255) not null unique,
+        Descripcion varchar(255),
+        Hotel varchar(255),
+        Nivel varchar(255),
         primary key (id)
     ) Engine=InnoDB;
 
@@ -119,14 +117,14 @@
         primary key (idciudad)
     ) Engine=InnoDB;
 
-    alter table UsuarioRol 
-        add index FK4CA33E1C7F566F0 (idRol), 
-        add constraint FK4CA33E1C7F566F0 
-        foreign key (idRol) 
+    alter table UsuarioRol
+        add index FK4CA33E1C7F566F0 (idRol),
+        add constraint FK4CA33E1C7F566F0
+        foreign key (idRol)
         references Roles (idRol);
 
-    alter table UsuarioRol 
-        add index FK4CA33E1BC6DE0AE (idUsuario), 
-        add constraint FK4CA33E1BC6DE0AE 
-        foreign key (idUsuario) 
+    alter table UsuarioRol
+        add index FK4CA33E1BC6DE0AE (idUsuario),
+        add constraint FK4CA33E1BC6DE0AE
+        foreign key (idUsuario)
         references Usuarios (idUsuario);
