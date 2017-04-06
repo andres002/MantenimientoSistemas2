@@ -1,5 +1,5 @@
 package edu.uag.iidis.scec.persistencia.hibernate;
-//*   import org.hibernate.*;  
+//*   import org.hibernate.*;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.*;
@@ -25,10 +25,10 @@ public class HibernateUtil {
     private static final ThreadLocal threadInterceptor = new ThreadLocal();
 
 
-    // Create the initial SessionFactory from the 
+    // Create the initial SessionFactory from the
     // default configuration files
-	
-	
+
+
 	////  Hibernae 4  utiliza diferente el SessionFactory porque buildSessionFactory deprecated este es el codigo de hibernate 4
 /*
 		private static SessionFactory sessionFactory;
@@ -37,14 +37,14 @@ public class HibernateUtil {
 		private static SessionFactory configureSessionFactory() throws HibernateException {
 	    Configuration configuration = new Configuration();
 	    configuration.configure();
-	    serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();        
+	    serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
 	    sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 	    return sessionFactory;
 }
-	
-	
+
+
 	Este es el de hibernate 2.16
-	
+
     static {
         if (log.isDebugEnabled()) {
             log.debug(">creando sessionFactory");
@@ -59,11 +59,11 @@ public class HibernateUtil {
         }
     }
 
-	
-	
+
+
 */
 
-	
+
     static {
         if (log.isDebugEnabled()) {
             log.debug(">creando sessionFactory");
@@ -72,10 +72,10 @@ public class HibernateUtil {
         try {
             configuration = new Configuration();
 		    configuration.configure();
-		    serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();        
+		    serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
 		    sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
-            
+
         } catch (Throwable ex) {
             log.error("Building SessionFactory failed.", ex);
             throw new ExceptionInInitializerError(ex);
@@ -83,7 +83,7 @@ public class HibernateUtil {
     }
 
     /**
-     * Regresa el SessionFactory usado por esta clase estática.
+     * Regresa el SessionFactory usado por esta clase estï¿½tica.
      *
      * @return SessionFactory
      */
@@ -112,7 +112,7 @@ public class HibernateUtil {
     }
 
     /**
-     * Reconstruye SessionFactory con la misma configuración
+     * Reconstruye SessionFactory con la misma configuraciï¿½n
      *
      */
      public static void rebuildSessionFactory()
@@ -130,7 +130,7 @@ public class HibernateUtil {
     /**
      * Rebuild the SessionFactory with the given Hibernate Configuration.
      *
-     * @param cfg
+     * @param cfg configuration
      */
      public static void rebuildSessionFactory(Configuration cfg)
             throws ExcepcionInfraestructura {
@@ -146,9 +146,8 @@ public class HibernateUtil {
      }
 
     /**
-     * Recupera la sesión actual local al thread.
-     * <p/>
-     * Si la sesión no está abierta, abre una nueva sesión 
+     * Recupera la sesiÃ³n actual local al thread.
+     * Si la sesiÃ³n no estÃ¡ abierta, abre una nueva sesiÃ³n
      * para el thread que se ejecuta.
      *
      * @return Session
@@ -164,23 +163,23 @@ public class HibernateUtil {
         try {
             if (s == null) {
                 if (log.isDebugEnabled()) {
-                    log.debug("-Abriendo una nueva sesión para el thread.");
+                    log.debug("-Abriendo una nueva sesiï¿½n para el thread.");
                 }
 
                 if (getInterceptor() != null) {
                     if (log.isDebugEnabled()) {
-                        log.debug("-Usando el interceptor: " + 
+                        log.debug("-Usando el interceptor: " +
                                   getInterceptor().getClass());
                     } ///// de acuerdo a la nueva forma de los interceptors
 					//Session session = sf.withOptions()
                     //.interceptor(new AuditInterceptor())
-                    //.openSession(); 
+                    //.openSession();
 					// s = getSessionFactory().openSession(getInterceptor());
 				   s = getSessionFactory()
 				   		.withOptions()
                     	.interceptor(getInterceptor())
                     	.openSession();
-				   
+
                 } else {
                     s = getSessionFactory().openSession();
                 }
@@ -195,7 +194,7 @@ public class HibernateUtil {
     }
 
     /**
-     * Cierra la sesión local thread.
+     * Cierra la sesiÃ³n local thread.
      */
     public static void closeSession()
             throws ExcepcionInfraestructura {
@@ -209,7 +208,7 @@ public class HibernateUtil {
             threadSession.set(null);
             if (s != null && s.isOpen()) {
                 if (log.isDebugEnabled()) {
-                    log.debug("-Cerrando la sesión local al thread.");
+                    log.debug("-Cerrando la sesiï¿½n local al thread.");
                 }
                 s.close();
             }
@@ -221,7 +220,7 @@ public class HibernateUtil {
 
 
     /**
-     * Inicia una nueva transacción de base de datos
+     * Inicia una nueva transacciï¿½n de base de datos
      */
     public static void beginTransaction()
             throws ExcepcionInfraestructura {
@@ -234,7 +233,7 @@ public class HibernateUtil {
         try {
             if (tx == null) {
                 if (log.isDebugEnabled()) {
-                    log.debug("-Iniciando una nueva transacción de base de datos en este thread.");
+                    log.debug("-Iniciando una nueva transacciï¿½n de base de datos en este thread.");
                 }
                 tx = getSession().beginTransaction();
                 threadTransaction.set(tx);
@@ -247,7 +246,7 @@ public class HibernateUtil {
 
 
     /**
-     * Compromete la transacción de base de datos.
+     * Compromete la transacciï¿½n de base de datos.
      */
     public static void commitTransaction()
             throws ExcepcionInfraestructura {
@@ -261,14 +260,14 @@ public class HibernateUtil {
             if ( tx != null && !tx.wasCommitted()
                             && !tx.wasRolledBack() ) {
                 if (log.isDebugEnabled()) {
-                    log.debug("-Comprometiendo la transacción de este thread.");
+                    log.debug("-Comprometiendo la transacciï¿½n de este thread.");
                 }
                 tx.commit();
             }
             threadTransaction.set(null);
         } catch (HibernateException ex) {
             if (log.isDebugEnabled()) {
-                log.debug("-Deshaciendo la transacción de este thread.");
+                log.debug("-Deshaciendo la transacciï¿½n de este thread.");
             }
             rollbackTransaction();
             log.error("<HibernateException");
@@ -278,7 +277,7 @@ public class HibernateUtil {
 
 
     /**
-     * Deshace la transacción de base de datos
+     * Deshace la transacciï¿½n de base de datos
      */
     public static void rollbackTransaction()
             throws ExcepcionInfraestructura {
@@ -292,7 +291,7 @@ public class HibernateUtil {
             threadTransaction.set(null);
             if ( tx != null && !tx.wasCommitted() && !tx.wasRolledBack() ) {
                 if (log.isDebugEnabled()) {
-                    log.debug("-Intentando deshacer la transacción para este thread.");
+                    log.debug("-Intentando deshacer la transacciï¿½n para este thread.");
                 }
                 tx.rollback();
             }
@@ -301,7 +300,7 @@ public class HibernateUtil {
             throw new ExcepcionInfraestructura(ex);
         } finally {
             if (log.isDebugEnabled()) {
-                log.debug("-Intentando cerrar la sesión.");
+                log.debug("-Intentando cerrar la sesiï¿½n.");
             }
             closeSession();
         }
@@ -347,6 +346,7 @@ public class HibernateUtil {
      * Every Session opened is opened with this interceptor after
      * registration. Has no effect if the current Session of the
      * thread is already open, effective on next close()/getSession().
+     *@param interceptor Interceptor
      */
     public static void registerInterceptor(Interceptor interceptor) {
         threadInterceptor.set(interceptor);
@@ -359,4 +359,3 @@ public class HibernateUtil {
     }
 
 }
-

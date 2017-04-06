@@ -6,17 +6,17 @@ import java.util.List;
 
 /**
  * Esta clase es usada para representar a un usuario de la
- * aplicación. 
+ * aplicaciÃ³n.
  *
  * <p>
- * <a href="Usuario.java.html"><i>Ver código fuente</i></a>
+ * <a href="Usuario.java.html"><i>Ver cÃ³digo fuente</i></a>
  * </p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
  */
 public class Usuario extends Persona {
-    
+
     protected Credencial credencial;
     protected List roles = new ArrayList();
 
@@ -24,7 +24,13 @@ public class Usuario extends Persona {
     public Usuario(){
     }
 
-    public Usuario(NombrePersona nombre, 
+
+    /**
+     * Constructor que establece todos los atributos del usuario excepto id.
+     * @param nombre nombre del usuario
+     *@param credencial descripcion del usuario
+     */
+    public Usuario(NombrePersona nombre,
                    Credencial credencial) {
         super(nombre);
         this.credencial=credencial;
@@ -40,8 +46,8 @@ public class Usuario extends Persona {
     }
 
     /**
-     * Establece el identificador del usuario.
-     * @param id Identificador del usuario
+     * Establece la credencial del usuario.
+     * @param credencial credencial del usuario
      */
     public void setCredencial(Credencial credencial) {
         this.credencial = credencial;
@@ -59,7 +65,7 @@ public class Usuario extends Persona {
 
     /**
      * Establece los roles del usuario
-     * @param roles
+     * @param roles Lista de los roles del usuario
      */
     public void setRoles(List roles) {
         this.roles = roles;
@@ -68,7 +74,7 @@ public class Usuario extends Persona {
 
     /**
      * Agrega un rol para el usuario
-     * @param rol
+     * @param rol rol asignado a un usuario
      */
     public void addRol(Rol rol) {
         if (roles.indexOf(rol) < 0) {
@@ -77,7 +83,11 @@ public class Usuario extends Persona {
         }
     }
 
-    
+
+    /**
+     * quita un rol para el usuario
+     * @param rol rol removido a un usuario
+     */
     public void removeRol(Rol rol) {
         roles.remove(rol);
         rol.getUsuarios().remove(this);

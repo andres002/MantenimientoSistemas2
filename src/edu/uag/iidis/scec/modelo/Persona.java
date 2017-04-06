@@ -5,17 +5,17 @@ import java.util.List;
 
 
 /**
- * Esta clase es usada para representar a una persona. 
+ * Esta clase es usada para representar a una persona.
  *
  * <p>
- * <a href="Persona.java.html"><i>Ver código fuente</i></a>
+ * <a href="Persona.java.html"><i>Ver cÃ³digo fuente</i></a>
  * </p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
  */
 public class Persona {
-    
+
     protected Long id;
     protected NombrePersona nombre;
 
@@ -28,13 +28,6 @@ public class Persona {
     }
 
 
-    /**
-     * Regresa el identificador de la persona.
-     * @return Long
-     */
-    public Long getId() {
-        return id;
-    }
 
     /**
      * Establece el identificador de la persona.
@@ -55,7 +48,7 @@ public class Persona {
 
     /**
      * Establece el nombre de la persona
-     * @param nombrePersona
+     * @param nombre nombre de la persona
      */
     public void setNombre(NombrePersona nombre) {
         this.nombre = nombre;
