@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="16" failures="2" hostname="DESKTOP-I9252OC" id="0" name="AllTests" package="edu.uag.iidis.scec.pruebas" skipped="0" tests="24" time="4.635" timestamp="2017-04-07T06:09:43">
+  <testsuite errors="14" failures="4" hostname="DESKTOP-I9252OC" id="0" name="AllTests" package="edu.uag.iidis.scec.pruebas" skipped="0" tests="30" time="3.732" timestamp="2017-04-07T10:21:07">
       <properties>
           <property name="java.vendor" value="Oracle Corporation" />
 
@@ -178,28 +178,48 @@
 
       </properties>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuarioInvalido" time="4.205">
-          <failure message="Falló" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Falló
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testCrearUsuarioInvalido(UsuarioDAOTest.java:71)
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarPorEjemplo" time="2.519" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarUsuarioPorId" time="0.015" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testEliminarUsuario" time="0.254" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testVerificarRol" time="0.009" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarTodos" time="0.013" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuario" time="0.103" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testordenarHotelesPorF" time="0.112" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testEliminarHotelF" time="0.019">
+          <error message="org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]
+	at edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(HotelDAO.java:52)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testEliminarHotelF(HotelDAOTest.java:244)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</failure>
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]
+	at org.hibernate.internal.SessionFactoryImpl$1$1.handleEntityNotFound(SessionFactoryImpl.java:237)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:210)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:361)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:151)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:954)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:920)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:911)
+	at edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(HotelDAO.java:39)
+</error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarUsuarioPorId" time="0.055" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarPorEjemplo" time="0.037" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuario" time="0.07">
-          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;gosuna&apos; for key &apos;nombreUsuario&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;gosuna&apos; for key &apos;nombreUsuario&apos;&quot;
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testActualizarHotelF" time="0.056">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
 	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testCrearUsuario(UsuarioDAOTest.java:42)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testActualizarHotelF(HotelDAOTest.java:123)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
-Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;gosuna&apos; for key &apos;nombreUsuario&apos;&quot;
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
 	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
@@ -220,7 +240,7 @@ Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key o
 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
 	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
-Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;gosuna&apos; for key &apos;nombreUsuario&apos;&quot;
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
@@ -232,28 +252,150 @@ Caused by: java.sql.SQLException: Duplicate key or integrity constraint violatio
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testEliminarRol" time="0.015">
-          <error message="No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Rol#2]" type="org.hibernate.ObjectNotFoundException">org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Rol#2]
-	at org.hibernate.internal.SessionFactoryImpl$1$1.handleEntityNotFound(SessionFactoryImpl.java:237)
-	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:171)
-	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:160)
-	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:195)
-	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:185)
-	at edu.uag.iidis.scec.modelo.Rol_$$_javassist_1.getUsuarios(Rol_$$_javassist_1.java)
-	at edu.uag.iidis.scec.modelo.Usuario.removeRol(Usuario.java:83)
-	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:192)
-	at edu.uag.iidis.scec.modelo.Usuario_$$_javassist_5.removeRol(Usuario_$$_javassist_5.java)
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testEliminarRol(UsuarioDAOTest.java:166)
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testEliminarHotelE" time="0.007">
+          <error message="org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]
+	at edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(HotelDAO.java:52)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testEliminarHotelE(HotelDAOTest.java:222)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Hotel#1]
+	at org.hibernate.internal.SessionFactoryImpl$1$1.handleEntityNotFound(SessionFactoryImpl.java:237)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:210)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:361)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:151)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:954)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:920)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:911)
+	at edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(HotelDAO.java:39)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testVerificarRol" time="0.006">
-          <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testVerificarRol(UsuarioDAOTest.java:151)
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testActualizarHotelE" time="0.04">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testActualizarHotelE(HotelDAOTest.java:94)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
+</error>
+
+      </testcase>
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testordenarHotelesPorE" time="0.042">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(HotelDAO.java:88)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testordenarHotelesPorE(HotelDAOTest.java:273)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:59)
+	at org.hibernate.internal.SessionImpl.autoFlushIfRequired(SessionImpl.java:1053)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1108)
+	at org.hibernate.internal.QueryImpl.list(QueryImpl.java:101)
+	at edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(HotelDAO.java:74)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
+</error>
+
+      </testcase>
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testCrearHotelE" time="0.046">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testCrearHotelE(HotelDAOTest.java:38)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
+</error>
+
+      </testcase>
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testExisteHotelE" time="0.011" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testExisteHotelF" time="0.008">
+          <failure message="El hotel no se encuentra registrado" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: El hotel no se encuentra registrado
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testExisteHotelF(HotelDAOTest.java:204)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
@@ -261,314 +403,882 @@ Caused by: java.sql.SQLException: Duplicate key or integrity constraint violatio
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarTodos" time="0.005" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testAgregarRol" time="0.022" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuarioInvalido" time="0.003" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarUsuarioPorId" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarUsuarioPorId(UsuarioDAOTest.java:83)
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testBuscarTodosF" time="0.008">
+          <failure message="La busqueda fallo" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: La busqueda fallo
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testBuscarTodosF(HotelDAOTest.java:165)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+</failure>
+
+      </testcase>
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testBuscarTodosE" time="0.006" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.HotelDAOTest" name="testCrearHotelF" time="0.043">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.HotelDAOTest.testCrearHotelF(HotelDAOTest.java:66)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarPorEjemplo" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarPorEjemplo(UsuarioDAOTest.java:102)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testEliminarCriticaE" time="0.011">
+          <error message="org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(CriticaDAO.java:52)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testEliminarCriticaE(CriticaDAOTest.java:208)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]
+	at org.hibernate.internal.SessionFactoryImpl$1$1.handleEntityNotFound(SessionFactoryImpl.java:237)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:210)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:361)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:151)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:954)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:920)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:911)
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(CriticaDAO.java:39)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuario" time="0.004">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testCrearUsuario(UsuarioDAOTest.java:41)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testCrearCriticaF" time="0.044">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testCrearCriticaF(CriticaDAOTest.java:60)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testEliminarRol" time="0.013">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testEliminarRol(UsuarioDAOTest.java:164)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testordenarCriticaesPorF" time="0.008" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testordenarCriticaesPorE" time="0.034">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(CriticaDAO.java:88)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testordenarCriticaesPorE(CriticaDAOTest.java:255)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:59)
+	at org.hibernate.internal.SessionImpl.autoFlushIfRequired(SessionImpl.java:1053)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1108)
+	at org.hibernate.internal.QueryImpl.list(QueryImpl.java:101)
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(CriticaDAO.java:74)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testVerificarRol" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testVerificarRol(UsuarioDAOTest.java:150)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testCrearCriticaE" time="0.035">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testCrearCriticaE(CriticaDAOTest.java:35)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarTodos" time="0.002">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarTodos(UsuarioDAOTest.java:116)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testExisteCriticaE" time="0.008" />
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testEliminarCriticaF" time="0.006">
+          <error message="org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(CriticaDAO.java:52)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testEliminarCriticaF(CriticaDAOTest.java:230)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.uag.iidis.scec.modelo.Critica#1]
+	at org.hibernate.internal.SessionFactoryImpl$1$1.handleEntityNotFound(SessionFactoryImpl.java:237)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:210)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:361)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:151)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:954)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:920)
+	at org.hibernate.internal.SessionImpl.load(SessionImpl.java:911)
+	at edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(CriticaDAO.java:39)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testAgregarRol" time="0.003">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testAgregarRol(UsuarioDAOTest.java:132)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testActualizarCriticaE" time="0.064">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testActualizarCriticaE(CriticaDAOTest.java:84)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuarioInvalido" time="0.003" />
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarUsuarioPorId" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarUsuarioPorId(UsuarioDAOTest.java:83)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testExisteCriticaF" time="0.005">
+          <failure message="El Critica no se encuentra registrado" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: El Critica no se encuentra registrado
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testExisteCriticaF(CriticaDAOTest.java:190)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
+</failure>
+
+      </testcase>
+
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testActualizarCriticaF" time="0.037">
+          <error message="org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;" type="edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura">edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:275)
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testActualizarCriticaF(CriticaDAOTest.java:109)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
+	at junit.extensions.TestSetup.run(TestSetup.java:23)
+Caused by: org.hibernate.exception.ConstraintViolationException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at org.hibernate.exception.internal.SQLStateConverter.convert(SQLStateConverter.java:104)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:125)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:110)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:129)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractProxyHandler.invoke(AbstractProxyHandler.java:81)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2849)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3290)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:80)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:273)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:265)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:186)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:323)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:52)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1081)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:315)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175)
+	at edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(HibernateUtil.java:266)
+Caused by: java.sql.SQLException: Duplicate key or integrity constraint violation,  message from server: &quot;Duplicate entry &apos;001&apos; for key &apos;Nombre&apos;&quot;
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1977)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1163)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1272)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2236)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1741)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1588)
+	at org.hibernate.engine.jdbc.internal.proxy.AbstractStatementProxyHandler.continueInvocation(AbstractStatementProxyHandler.java:122)
 </error>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarPorEjemplo" time="0.002">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarPorEjemplo(UsuarioDAOTest.java:102)
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testBuscarTodosF" time="0.005">
+          <failure message="La busqueda fallo" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: La busqueda fallo
+	at edu.uag.iidis.scec.pruebas.CriticaDAOTest.testBuscarTodosF(CriticaDAOTest.java:151)
 	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
 	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
 	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
+</failure>
 
       </testcase>
 
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testCrearUsuario" time="0.004">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testCrearUsuario(UsuarioDAOTest.java:41)
-	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
-	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
-	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
+      <testcase classname="edu.uag.iidis.scec.pruebas.CriticaDAOTest" name="testBuscarTodosE" time="0.005" />
 
-      </testcase>
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testEliminarRol" time="0.003">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testEliminarRol(UsuarioDAOTest.java:164)
-	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
-	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
-	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
-
-      </testcase>
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testVerificarRol" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testVerificarRol(UsuarioDAOTest.java:150)
-	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
-	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
-	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
-
-      </testcase>
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testBuscarTodos" time="0.001">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarTodos(UsuarioDAOTest.java:116)
-	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
-	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
-	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
-
-      </testcase>
-
-      <testcase classname="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" name="testAgregarRol" time="0.003">
-          <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testAgregarRol(UsuarioDAOTest.java:132)
-	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:22)
-	at junit.extensions.TestSetup$1.protect(TestSetup.java:19)
-	at junit.extensions.TestSetup.run(TestSetup.java:23)
-</error>
-
-      </testcase>
-
-      <system-out><![CDATA[[SCEC] 2017-04-07 01:09:43,835 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
-[SCEC] 2017-04-07 01:09:47,523 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:47,524 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:47,525 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:47,525 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:47,600 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : >hazPersistente(usuario)
-[SCEC] 2017-04-07 01:09:47,600 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-Hibernate: select max(idUsuario) from Usuarios
-[SCEC] 2017-04-07 01:09:47,922 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
-[SCEC] 2017-04-07 01:09:47,922 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
-Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
-[SCEC] 2017-04-07 01:09:48,024 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,024 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,033 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
-[SCEC] 2017-04-07 01:09:48,033 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,034 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
-Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-[SCEC] 2017-04-07 01:09:48,084 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,085 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,088 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorEjemplo(122) : >buscarPorEjemplo()
-[SCEC] 2017-04-07 01:09:48,088 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,089 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+      <system-out><![CDATA[[SCEC] 2017-04-07 05:21:07,843 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorEjemplo(122) : >buscarPorEjemplo()
+[SCEC] 2017-04-07 05:21:07,848 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
+[SCEC] 2017-04-07 05:21:09,970 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:09,970 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
 Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_ where (this_.nombreUsuario=?)
 Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-[SCEC] 2017-04-07 01:09:48,123 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,124 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : >hazPersistente(usuario)
-[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,127 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
-[SCEC] 2017-04-07 01:09:48,127 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
-Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
-[SCEC] 2017-04-07 01:09:48,149  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
-[SCEC] 2017-04-07 01:09:48,150 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry 'gosuna' for key 'nombreUsuario'"
-[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
-[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,188 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,189 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,189 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,190 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
-[SCEC] 2017-04-07 01:09:48,190 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,196 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,196 DEBUG edu.uag.iidis.scec.persistencia.RolDAO.buscarPorId(33) : >buscarPorID(2, false)
-[SCEC] 2017-04-07 01:09:48,197 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,197 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
-[SCEC] 2017-04-07 01:09:48,198 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+[SCEC] 2017-04-07 05:21:10,348 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,348 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,359 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
+[SCEC] 2017-04-07 05:21:10,359 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,359 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
 Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
 Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-Hibernate: select rol0_.idRol as idRol2_0_, rol0_.nombre as nombre2_0_, rol0_.descripcion as descripc3_2_0_ from Roles rol0_ where rol0_.idRol=?
-[SCEC] 2017-04-07 01:09:48,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
-[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+[SCEC] 2017-04-07 05:21:10,372 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,373 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,374 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,374 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,375 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,375 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,376 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(63) : >buscarPorNombreUsuario(flyzx)
+[SCEC] 2017-04-07 05:21:10,377 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-07 05:21:10,623 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(79) : >buscarPorNombreUsuario(flyzx)
+[SCEC] 2017-04-07 05:21:10,623 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:10,623 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:10,625 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(63) : >buscarPorNombreUsuario(flyzx)
+[SCEC] 2017-04-07 05:21:10,626 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-07 05:21:10,627 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(79) : >buscarPorNombreUsuario(flyzx)
+[SCEC] 2017-04-07 05:21:10,627 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,627 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,628 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
+[SCEC] 2017-04-07 05:21:10,628 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,628 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
 Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
 Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-[SCEC] 2017-04-07 01:09:48,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarTodos(100) : >buscarTodos()
-[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+[SCEC] 2017-04-07 05:21:10,636 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,636 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,637 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarTodos(100) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:10,637 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,637 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
 Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_
 Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : >buscarPorID(1, false)
-[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
 Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
-[SCEC] 2017-04-07 01:09:48,241 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : >hazPersistente(usuario)
-[SCEC] 2017-04-07 01:09:48,241 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,242 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
-[SCEC] 2017-04-07 01:09:48,242 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
-[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,247 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,252 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,254 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,254 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,266 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,267 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,270 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,270 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,271 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,275 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,276 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,279 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,279 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,281 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
-[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
-[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
-[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
-[SCEC] 2017-04-07 01:09:48,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,286 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,287 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
-[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
-[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
-[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
-[SCEC] 2017-04-07 01:09:48,289 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
-[SCEC] 2017-04-07 01:09:48,289 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+[SCEC] 2017-04-07 05:21:10,649 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,649 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,650 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,650 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,650 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,651 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,651 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : >hazPersistente(usuario)
+[SCEC] 2017-04-07 05:21:10,651 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select max(idUsuario) from Usuarios
+[SCEC] 2017-04-07 05:21:10,678 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:10,678 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:10,750 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(63) : >buscarPorNombreUsuario(flyzx)
+[SCEC] 2017-04-07 05:21:10,751 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-07 05:21:10,752 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,752 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,755 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,756 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,756 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,756 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,756 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(63) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:10,757 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(70) : from Hotel ORDER BY nombre
+[SCEC] 2017-04-07 05:21:10,757 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select hotel0_.id as id7_, hotel0_.Nombre as Nombre7_, hotel0_.Descripcion as Descripc3_7_, hotel0_.Precio as Precio7_, hotel0_.Horario as Horario7_, hotel0_.Estado as Estado7_, hotel0_.Imagen as Imagen7_, hotel0_.Pais as Pais7_, hotel0_.Direccion as Direccion7_ from Hoteles hotel0_ order by hotel0_.Nombre
+[SCEC] 2017-04-07 05:21:10,852 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(76) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:10,852 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(82) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:10,862 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(83) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Hotel@6e4de19b[
+  id=1
+  nombre=001
+  descripcion=001
+  precio=001
+  horario=001
+  estado=001
+  imagen=001
+  pais=001
+  direccion=001
+]]
+[SCEC] 2017-04-07 05:21:10,863 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:10,863 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:10,864 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,864 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,865 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,865 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,865 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select hotel0_.id as id7_0_, hotel0_.Nombre as Nombre7_0_, hotel0_.Descripcion as Descripc3_7_0_, hotel0_.Precio as Precio7_0_, hotel0_.Horario as Horario7_0_, hotel0_.Estado as Estado7_0_, hotel0_.Imagen as Imagen7_0_, hotel0_.Pais as Pais7_0_, hotel0_.Direccion as Direccion7_0_ from Hoteles hotel0_ where hotel0_.id=? for update
+[SCEC] 2017-04-07 05:21:10,867 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,867 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,867 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,867 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazTransitorio(167) : >hazTransitorio(hotel)
+[SCEC] 2017-04-07 05:21:10,868 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,871 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,871 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,874  WARN edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(49) : <HibernateException
+[SCEC] 2017-04-07 05:21:10,876 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,876 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:10,877 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,877 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,877 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,878 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,884 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,884 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,884 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,885 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,885 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazPersistente(149) : >hazPersistente(hotel)
+[SCEC] 2017-04-07 05:21:10,885 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select max(id) from Hoteles
+[SCEC] 2017-04-07 05:21:10,887 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,887 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select hotel0_.id as id7_0_, hotel0_.Nombre as Nombre7_0_, hotel0_.Descripcion as Descripc3_7_0_, hotel0_.Precio as Precio7_0_, hotel0_.Horario as Horario7_0_, hotel0_.Estado as Estado7_0_, hotel0_.Imagen as Imagen7_0_, hotel0_.Pais as Pais7_0_, hotel0_.Direccion as Direccion7_0_ from Hoteles hotel0_ where hotel0_.id=? for update
+[SCEC] 2017-04-07 05:21:10,889 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:10,889 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Hoteles (Nombre, Descripcion, Precio, Horario, Estado, Imagen, Pais, Direccion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:10,895  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:10,895 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:10,897 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:10,897 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,897 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:10,936 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,937 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,937 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,937 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:10,937 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,938 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,938 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,938 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,941 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,941 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,941 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select hotel0_.id as id7_0_, hotel0_.Nombre as Nombre7_0_, hotel0_.Descripcion as Descripc3_7_0_, hotel0_.Precio as Precio7_0_, hotel0_.Horario as Horario7_0_, hotel0_.Estado as Estado7_0_, hotel0_.Imagen as Imagen7_0_, hotel0_.Pais as Pais7_0_, hotel0_.Direccion as Direccion7_0_ from Hoteles hotel0_ where hotel0_.id=? for update
+[SCEC] 2017-04-07 05:21:10,943 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,943 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,944 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,944 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazTransitorio(167) : >hazTransitorio(hotel)
+[SCEC] 2017-04-07 05:21:10,944 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,944 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,944 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,944  WARN edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(49) : <HibernateException
+[SCEC] 2017-04-07 05:21:10,945 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,945 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:10,945 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,945 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,945 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,946 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,947 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,948 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,948 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,948 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,948 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazPersistente(149) : >hazPersistente(hotel)
+[SCEC] 2017-04-07 05:21:10,948 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,949 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:10,949 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select hotel0_.id as id7_0_, hotel0_.Nombre as Nombre7_0_, hotel0_.Descripcion as Descripc3_7_0_, hotel0_.Precio as Precio7_0_, hotel0_.Horario as Horario7_0_, hotel0_.Estado as Estado7_0_, hotel0_.Imagen as Imagen7_0_, hotel0_.Pais as Pais7_0_, hotel0_.Direccion as Direccion7_0_ from Hoteles hotel0_ where hotel0_.id=? for update
+[SCEC] 2017-04-07 05:21:10,951 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:10,951 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Hoteles (Nombre, Descripcion, Precio, Horario, Estado, Imagen, Pais, Direccion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:10,953  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:10,953 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:10,953 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:10,954 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,954 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:10,983 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,983 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,983 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:10,983 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:10,983 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,984 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:10,984 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,984 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:10,987 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:10,988 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:10,988 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,988 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:10,989 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazPersistente(149) : >hazPersistente(hotel)
+[SCEC] 2017-04-07 05:21:10,989 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:10,989 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(63) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:10,990 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(70) : from Hotel ORDER BY nombre
+[SCEC] 2017-04-07 05:21:10,990 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: insert into Hoteles (Nombre, Descripcion, Precio, Horario, Estado, Imagen, Pais, Direccion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:10,992  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:10,992 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:10,993  WARN edu.uag.iidis.scec.persistencia.HotelDAO.ordenarHotelesPor(86) : <HibernateException
+[SCEC] 2017-04-07 05:21:10,993 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:10,993 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,026 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,027 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,027 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,027 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,029 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,030 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,030 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,030 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,030 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazPersistente(149) : >hazPersistente(hotel)
+[SCEC] 2017-04-07 05:21:11,030 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,031 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,031 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Hoteles (Nombre, Descripcion, Precio, Horario, Estado, Imagen, Pais, Direccion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,033  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,033 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,034 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,034 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,034 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,071 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,071 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,072 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,072 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,072 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,072 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,073 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,073 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,077 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,077 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,077 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,077 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,078 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(184) : >existeRol(nombreRol)
+[SCEC] 2017-04-07 05:21:11,078 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(205) : select nombre from Hotel where nombre = :nombre001
+[SCEC] 2017-04-07 05:21:11,078 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,085 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(211) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:11,085 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(216) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select hotel0_.Nombre as col_0_0_ from Hoteles hotel0_ where hotel0_.Nombre=?
+[SCEC] 2017-04-07 05:21:11,087 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(221) : <<<<<<<<< Result size 1
+[SCEC] 2017-04-07 05:21:11,087 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,087 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,088 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,088 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,088 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,089 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,089 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,089 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,089 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(184) : >existeRol(nombreRol)
+[SCEC] 2017-04-07 05:21:11,090 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(205) : select nombre from Hotel where nombre = :nombre002
+[SCEC] 2017-04-07 05:21:11,090 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,090 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(211) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:11,090 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(216) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select hotel0_.Nombre as col_0_0_ from Hoteles hotel0_ where hotel0_.Nombre=?
+[SCEC] 2017-04-07 05:21:11,093 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.existeHotel(221) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-07 05:21:11,093 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,093 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,094 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,094 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,096 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,096 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,097 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,097 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,097 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(101) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,097 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.id as id7_0_, this_.Nombre as Nombre7_0_, this_.Descripcion as Descripc3_7_0_, this_.Precio as Precio7_0_, this_.Horario as Horario7_0_, this_.Estado as Estado7_0_, this_.Imagen as Imagen7_0_, this_.Pais as Pais7_0_, this_.Direccion as Direccion7_0_ from Hoteles this_
+[SCEC] 2017-04-07 05:21:11,100 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(109) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:11,100 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(110) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Hotel@226642a5[
+  id=1
+  nombre=001
+  descripcion=001
+  precio=001
+  horario=001
+  estado=001
+  imagen=001
+  pais=001
+  direccion=001
+]]
+[SCEC] 2017-04-07 05:21:11,101 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,101 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,102 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,102 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,104 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,104 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,104 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,104 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,105 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(101) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,105 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.id as id7_0_, this_.Nombre as Nombre7_0_, this_.Descripcion as Descripc3_7_0_, this_.Precio as Precio7_0_, this_.Horario as Horario7_0_, this_.Estado as Estado7_0_, this_.Imagen as Imagen7_0_, this_.Pais as Pais7_0_, this_.Direccion as Direccion7_0_ from Hoteles this_
+[SCEC] 2017-04-07 05:21:11,107 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(109) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:11,108 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.buscarTodos(110) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Hotel@4fe89c24[
+  id=1
+  nombre=001
+  descripcion=001
+  precio=001
+  horario=001
+  estado=001
+  imagen=001
+  pais=001
+  direccion=001
+]]
+[SCEC] 2017-04-07 05:21:11,108 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,108 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,109 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,109 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,110 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,110 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,110 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,110 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,111 DEBUG edu.uag.iidis.scec.persistencia.HotelDAO.hazPersistente(149) : >hazPersistente(hotel)
+[SCEC] 2017-04-07 05:21:11,111 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,111 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,112 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Hoteles (Nombre, Descripcion, Precio, Horario, Estado, Imagen, Pais, Direccion, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,113  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,114 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,114 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,114 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,114 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,149 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,149 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,149 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,150 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,150 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,150 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,150 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,151 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,156 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,156 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,156 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select critica0_.id as id8_0_, critica0_.Nombre as Nombre8_0_, critica0_.Descripcion as Descripc3_8_0_, critica0_.Hotel as Hotel8_0_, critica0_.Nivel as Nivel8_0_ from Criticaes critica0_ where critica0_.id=? for update
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazTransitorio(167) : >hazTransitorio(critica)
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,160 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,161 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,161  WARN edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(49) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,161 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,161 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,162 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,162 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,162 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,163 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,164 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,165 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,165 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,165 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,165 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazPersistente(149) : >hazPersistente(critica)
+[SCEC] 2017-04-07 05:21:11,166 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select max(id) from Criticaes
+[SCEC] 2017-04-07 05:21:11,167 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,167 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Criticaes (Nombre, Descripcion, Hotel, Nivel, id) values (?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,169  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,169 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,170 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,170 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,170 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,205 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,205 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,205 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,205 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,208 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,208 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,208 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,208 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,209 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(63) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,209 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(70) : from Critica ORDER BY nombre
+[SCEC] 2017-04-07 05:21:11,209 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select critica0_.id as id8_, critica0_.Nombre as Nombre8_, critica0_.Descripcion as Descripc3_8_, critica0_.Hotel as Hotel8_, critica0_.Nivel as Nivel8_ from Criticaes critica0_ order by critica0_.Nombre
+[SCEC] 2017-04-07 05:21:11,214 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(76) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:11,214 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(82) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:11,215 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(83) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Critica@2a65bb85[
+  id=1
+  nombre=001
+  descripcion=001
+  hotel=001
+  nivel=001
+]]
+[SCEC] 2017-04-07 05:21:11,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,217 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazPersistente(149) : >hazPersistente(critica)
+[SCEC] 2017-04-07 05:21:11,217 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,217 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(63) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,217 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(70) : from Critica ORDER BY nombre
+[SCEC] 2017-04-07 05:21:11,217 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: insert into Criticaes (Nombre, Descripcion, Hotel, Nivel, id) values (?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,218  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,219 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,219  WARN edu.uag.iidis.scec.persistencia.CriticaDAO.ordenarCriticaesPor(86) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,219 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,220 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,247 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,251 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazPersistente(149) : >hazPersistente(critica)
+[SCEC] 2017-04-07 05:21:11,252 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,252 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,252 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Criticaes (Nombre, Descripcion, Hotel, Nivel, id) values (?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,254  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,254 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,254 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,255 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,255 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,283 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,286 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(184) : >existeRol(nombreRol)
+[SCEC] 2017-04-07 05:21:11,286 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(205) : select nombre from Critica where nombre = :nombre001
+[SCEC] 2017-04-07 05:21:11,286 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,290 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(211) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:11,290 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(216) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select critica0_.Nombre as col_0_0_ from Criticaes critica0_ where critica0_.Nombre=?
+[SCEC] 2017-04-07 05:21:11,291 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(221) : <<<<<<<<< Result size 1
+[SCEC] 2017-04-07 05:21:11,292 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,292 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,292 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,293 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,293 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,293 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,293 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select critica0_.id as id8_0_, critica0_.Nombre as Nombre8_0_, critica0_.Descripcion as Descripc3_8_0_, critica0_.Hotel as Hotel8_0_, critica0_.Nivel as Nivel8_0_ from Criticaes critica0_ where critica0_.id=? for update
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazTransitorio(167) : >hazTransitorio(critica)
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,295 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,296 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,296  WARN edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(49) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,296 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,296 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,297 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,297 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,297 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,298 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,299 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,300 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,300 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,300 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,300 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazPersistente(149) : >hazPersistente(critica)
+[SCEC] 2017-04-07 05:21:11,300 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,301 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,301 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select critica0_.id as id8_0_, critica0_.Nombre as Nombre8_0_, critica0_.Descripcion as Descripc3_8_0_, critica0_.Hotel as Hotel8_0_, critica0_.Nivel as Nivel8_0_ from Criticaes critica0_ where critica0_.id=? for update
+[SCEC] 2017-04-07 05:21:11,302 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,303 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Criticaes (Nombre, Descripcion, Hotel, Nivel, id) values (?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,304  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,305 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,305 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,305 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,305 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,359 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,359 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,359 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,360 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,360 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,360 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,360 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,361 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,363 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,363 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,363 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,364 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,364 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(184) : >existeRol(nombreRol)
+[SCEC] 2017-04-07 05:21:11,364 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(205) : select nombre from Critica where nombre = :nombre002
+[SCEC] 2017-04-07 05:21:11,364 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,365 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(211) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-07 05:21:11,365 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(216) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select critica0_.Nombre as col_0_0_ from Criticaes critica0_ where critica0_.Nombre=?
+[SCEC] 2017-04-07 05:21:11,366 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.existeCritica(221) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-07 05:21:11,366 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,366 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,367 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,367 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,368 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,368 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,368 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,369 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,369 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.hazPersistente(149) : >hazPersistente(critica)
+[SCEC] 2017-04-07 05:21:11,369 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,369 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarPorId(33) : >buscarPorID(1, true)
+[SCEC] 2017-04-07 05:21:11,370 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select critica0_.id as id8_0_, critica0_.Nombre as Nombre8_0_, critica0_.Descripcion as Descripc3_8_0_, critica0_.Hotel as Hotel8_0_, critica0_.Nivel as Nivel8_0_ from Criticaes critica0_ where critica0_.id=? for update
+[SCEC] 2017-04-07 05:21:11,371 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,371 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Criticaes (Nombre, Descripcion, Hotel, Nivel, id) values (?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 05:21:11,373  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 05:21:11,373 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry '001' for key 'Nombre'"
+[SCEC] 2017-04-07 05:21:11,373 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,373 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,373 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacción para este thread.
+[SCEC] 2017-04-07 05:21:11,402 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,402 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,402 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,403 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : <HibernateException
+[SCEC] 2017-04-07 05:21:11,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : >rollbackTransaction()
+[SCEC] 2017-04-07 05:21:11,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesión.
+[SCEC] 2017-04-07 05:21:11,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,405 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,405 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,405 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,405 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,406 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(101) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,406 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.id as id8_0_, this_.Nombre as Nombre8_0_, this_.Descripcion as Descripc3_8_0_, this_.Hotel as Hotel8_0_, this_.Nivel as Nivel8_0_ from Criticaes this_
+[SCEC] 2017-04-07 05:21:11,407 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(109) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:11,408 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(110) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Critica@1e044120[
+  id=1
+  nombre=001
+  descripcion=001
+  hotel=001
+  nivel=001
+]]
+[SCEC] 2017-04-07 05:21:11,408 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,408 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,409 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,409 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-07 05:21:11,410 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-07 05:21:11,410 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-07 05:21:11,411 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-07 05:21:11,411 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-07 05:21:11,411 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(101) : >buscarTodos()
+[SCEC] 2017-04-07 05:21:11,411 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.id as id8_0_, this_.Nombre as Nombre8_0_, this_.Descripcion as Descripc3_8_0_, this_.Hotel as Hotel8_0_, this_.Nivel as Nivel8_0_ from Criticaes this_
+[SCEC] 2017-04-07 05:21:11,413 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(109) : >buscarTodos() ---- list   1
+[SCEC] 2017-04-07 05:21:11,414 DEBUG edu.uag.iidis.scec.persistencia.CriticaDAO.buscarTodos(110) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Critica@60b71e8f[
+  id=1
+  nombre=001
+  descripcion=001
+  hotel=001
+  nivel=001
+]]
+[SCEC] 2017-04-07 05:21:11,414 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-07 05:21:11,414 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-07 05:21:11,415 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-07 05:21:11,415 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
 ]]></system-out>
 
       <system-err><![CDATA[]]></system-err>

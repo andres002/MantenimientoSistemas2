@@ -285,7 +285,7 @@ public class CriticaDAOTest extends TestCase{
 
     public static Test suite() {
 
-       TestSetup suite = new TestSetup(new TestSuite(UsuarioDAOTest.class)) {
+       TestSetup suite = new TestSetup(new TestSuite(CriticaDAOTest.class)) {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite
