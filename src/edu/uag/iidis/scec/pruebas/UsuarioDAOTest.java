@@ -181,8 +181,8 @@ public class UsuarioDAOTest extends TestCase {
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite
 
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
+                //SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
+                //ddlExport.create(false, true);
 
                 dao = new UsuarioDAO();
                 rolDAO = new RolDAO();

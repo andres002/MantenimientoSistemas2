@@ -1,0 +1,169 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard Output from AllTests</title>
+</head>
+<body>
+<pre>[SCEC] 2017-04-07 01:09:43,835 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.&lt;clinit&gt;(69) : &gt;creando sessionFactory
+[SCEC] 2017-04-07 01:09:47,523 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:47,524 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:47,525 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:47,525 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:47,600 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : &gt;hazPersistente(usuario)
+[SCEC] 2017-04-07 01:09:47,600 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+Hibernate: select max(idUsuario) from Usuarios
+[SCEC] 2017-04-07 01:09:47,922 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-07 01:09:47,922 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 01:09:48,024 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,024 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,033 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : &gt;buscarPorID(1, false)
+[SCEC] 2017-04-07 01:09:48,033 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,034 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-07 01:09:48,084 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,085 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,088 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorEjemplo(122) : &gt;buscarPorEjemplo()
+[SCEC] 2017-04-07 01:09:48,088 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,089 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_ where (this_.nombreUsuario=?)
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-07 01:09:48,123 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,124 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,125 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : &gt;hazPersistente(usuario)
+[SCEC] 2017-04-07 01:09:48,126 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,127 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-07 01:09:48,127 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-07 01:09:48,149  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(143) : SQL Error: 1062, SQLState: 23000
+[SCEC] 2017-04-07 01:09:48,150 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(144) : Duplicate key or integrity constraint violation,  message from server: "Duplicate entry 'gosuna' for key 'nombreUsuario'"
+[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(271) : -Deshaciendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,152 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,188 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,189 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,189 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,190 ERROR edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(274) : &lt;HibernateException
+[SCEC] 2017-04-07 01:09:48,190 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,191 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,196 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,196 DEBUG edu.uag.iidis.scec.persistencia.RolDAO.buscarPorId(33) : &gt;buscarPorID(2, false)
+[SCEC] 2017-04-07 01:09:48,197 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,197 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : &gt;buscarPorID(1, false)
+[SCEC] 2017-04-07 01:09:48,198 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+Hibernate: select rol0_.idRol as idRol2_0_, rol0_.nombre as nombre2_0_, rol0_.descripcion as descripc3_2_0_ from Roles rol0_ where rol0_.idRol=?
+[SCEC] 2017-04-07 01:09:48,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,206 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : &gt;buscarPorID(1, false)
+[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,210 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-07 01:09:48,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarTodos(100) : &gt;buscarTodos()
+[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,216 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,221 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorId(33) : &gt;buscarPorID(1, false)
+[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,222 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+Hibernate: select usuario0_.idUsuario as idUsuario0_0_, usuario0_.nombrePrefijo as nombrePr2_0_0_, usuario0_.nombreNombre as nombreNo3_0_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_0_, usuario0_.nombrePosfijo as nombrePo6_0_0_, usuario0_.nombreIniciales as nombreIn7_0_0_, usuario0_.nombreUsuario as nombreUs8_0_0_, usuario0_.claveAcceso as claveAcc9_0_0_ from Usuarios usuario0_ where usuario0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-07 01:09:48,241 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(186) : &gt;hazPersistente(usuario)
+[SCEC] 2017-04-07 01:09:48,241 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,242 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-07 01:09:48,242 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,243 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,244 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,245 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,246 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,247 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,248 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,249 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,250 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,251 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,252 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,253 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,254 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,254 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,266 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,267 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,269 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,270 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,270 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,271 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,272 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,273 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,274 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,275 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,276 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,278 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,279 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,279 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,281 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-07 01:09:48,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,283 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-07 01:09:48,285 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,286 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,287 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(287) : &gt;rollbackTransaction()
+[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(295) : -Intentando deshacer la transacci&oacute;n para este thread.
+[SCEC] 2017-04-07 01:09:48,288 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.rollbackTransaction(304) : -Intentando cerrar la sesi&oacute;n.
+[SCEC] 2017-04-07 01:09:48,289 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-07 01:09:48,289 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+</pre>
+</body>
+</html>

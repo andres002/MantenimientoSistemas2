@@ -1,10 +1,11 @@
 package edu.uag.iidis.scec.pruebas;
 
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import junit.extensions.TestSetup;
+import junit.textui.TestRunner;
 
-import org.junit.*;
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
-import static org.junit.Assert.*;
 import org.hibernate.cfg.Environment;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
@@ -14,21 +15,28 @@ import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 
 import java.util.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class HotelDAOTest{
+public class HotelDAOTest extends TestCase{
 
-    @Test
+    
     public void testCrearHotelE() throws Exception {
         HotelDAO dao = new HotelDAO();
-        Hotel hotel = new Hotel("FOHJ960414HMCLRV09","automovil","2002","FORD","AHI98G","ROJO");
+
+        Hotel hotel = new Hotel(
+            "001", 
+            "001",
+            "001",
+            "001",
+            "001", 
+            "001", 
+            "001", 
+            "001"
+        );
 
         HibernateUtil.beginTransaction();
         try {
             dao.hazPersistente(hotel);
             HibernateUtil.commitTransaction();
-
             assertTrue(hotel.getId() != null);
-            assertTrue(hotel.getCurp().equals("FOHJ960414HMCLRV09"));
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -37,11 +45,20 @@ public class HotelDAOTest{
         }
     }
 
-    @Test
+    
     public void testCrearHotelF() throws Exception {
         //Falla porque la placa esta en BD
         HotelDAO dao = new HotelDAO();
-        Hotel hotel = new Hotel("FOHJ960414HMCLRV09","automovil","2002","FORD","AHI98G","ROJO");
+        Hotel hotel = new Hotel(
+            "001", 
+            "001",
+            "001",
+            "001",
+            "001", 
+            "001", 
+            "001", 
+            "001"
+        );
 
         HibernateUtil.beginTransaction();
         try {
@@ -49,9 +66,7 @@ public class HotelDAOTest{
             HibernateUtil.commitTransaction();
 
             assertTrue(hotel.getId() != null);
-            assertTrue(hotel.getCurp().equals("FOHJ960414HMCLRV09"));
         } catch (Exception e) {
-            fail("El hotel ya se encuentra registrado");
             HibernateUtil.rollbackTransaction();
             throw e;
         } finally{
@@ -59,18 +74,26 @@ public class HotelDAOTest{
         }
     }
 
-    @Test
+    
     public void testActualizarHotelE() throws Exception {
         HotelDAO dao = new HotelDAO();
-        Hotel hotel = new Hotel("SHJO960414HTCLRV08","automovil","2015","FORD","HOI89H","Azul");
+        Hotel hotel = new Hotel(
+            "001", 
+            "001",
+            "001",
+            "001",
+            "001", 
+            "001", 
+            "001", 
+            "001"
+        );
         HibernateUtil.beginTransaction();
         try {
-             dao.hazPersistenteP(hotel);
-             Hotel hotelB = dao.buscarHotelsPlaca("HOI89H");
+             dao.hazPersistente(hotel);
+             Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB.getId() != null);
-            assertTrue(hotelB.getColor().equals("Azul"));
 
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
@@ -79,22 +102,29 @@ public class HotelDAOTest{
             HibernateUtil.closeSession();
         }
     }
-    @Test
+    
     public void testActualizarHotelF() throws Exception {
         //Falla porque la placa no se puede actualizar
         HotelDAO dao = new HotelDAO();
-        Hotel hotel = new Hotel("FOHJ960414HMCLRV09","automovil","2015","DODGE","AEH82J","Azul");
+        Hotel hotel = new Hotel(
+            "001", 
+            "001",
+            "001",
+            "001",
+            "001", 
+            "001", 
+            "001", 
+            "001"
+        );
         HibernateUtil.beginTransaction();
         try {
-             dao.hazPersistenteP(hotel);
-             Hotel hotelB = dao.buscarHotelsPlaca("AEH82J");
+             dao.hazPersistente(hotel);
+             Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB.getId() != null);
-            assertTrue(hotelB.getColor().equals("Azul"));
 
         } catch (Exception e) {
-            fail("La placa ya esta registrada");
             HibernateUtil.rollbackTransaction();
             throw e;
         } finally{
@@ -102,7 +132,7 @@ public class HotelDAOTest{
         }
     }
 
-    @Test
+    
     public void testBuscarTodosE() throws Exception {
 
         HotelDAO dao = new HotelDAO();
@@ -121,7 +151,7 @@ public class HotelDAOTest{
             HibernateUtil.closeSession();
         }
     }
-    @Test
+    
     public void testBuscarTodosF() throws Exception {
 
         HotelDAO dao = new HotelDAO();
@@ -142,7 +172,7 @@ public class HotelDAOTest{
     }
 
 
-    @Test
+    
     public void testExisteHotelE() throws Exception {
 
         HotelDAO dao = new HotelDAO();
@@ -150,7 +180,7 @@ public class HotelDAOTest{
         HibernateUtil.beginTransaction();
         try {
             //dao.hazPersistente(hotel);
-            Boolean existe =  dao.existeHotel("123abc");
+            Boolean existe =  dao.existeHotel("001");
             HibernateUtil.commitTransaction();
 
             assertTrue(existe);
@@ -162,37 +192,35 @@ public class HotelDAOTest{
             HibernateUtil.closeSession();
         }
     }
-    @Test
+    
     public void testExisteHotelF() throws Exception {
 
         HotelDAO dao = new HotelDAO();
-        //Hotel hotel = new Hotel("ABHY991214JOYHRV09","automovil","1999","FORD","QWER82","Rojo");
-
         HibernateUtil.beginTransaction();
         try {
-           // dao.hazPersistente(hotel);
-            Boolean existe =  dao.existeHotel("QWER89091");
+            Boolean existe =  dao.existeHotel("002");
             HibernateUtil.commitTransaction();
 
             assertTrue("El hotel no se encuentra registrado",existe);
 
         } catch (Exception e) {
-            fail("El hotel no se encuentra registrado");
             HibernateUtil.rollbackTransaction();
             throw e;
         } finally{
             HibernateUtil.closeSession();
         }
     }
-    @Test
+    
     public void testEliminarHotelE() throws Exception {
 
         HotelDAO dao = new HotelDAO();
+        Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
 
         HibernateUtil.beginTransaction();
         try {
-             dao.hazTransitorio("Y7U7IN");
-            Hotel hotelB = dao.buscarHotelsPlaca("Y7U7IN");
+             dao.hazTransitorio(hotelB);
+            hotelB = dao.buscarPorId(Long.valueOf(1), true);
+
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB == null);
@@ -204,39 +232,47 @@ public class HotelDAOTest{
             HibernateUtil.closeSession();
         }
     }
-    @Test
+    
     public void testEliminarHotelF() throws Exception {
 
         HotelDAO dao = new HotelDAO();
+        Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
 
         HibernateUtil.beginTransaction();
         try {
-             dao.hazTransitorio("ajuaolaja");
-            Hotel hotelB = dao.buscarHotelsPlaca("ajuaolaja");
+             dao.hazTransitorio(hotelB);
+            hotelB = dao.buscarPorId(Long.valueOf(1), true);
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB == null);
 
         } catch (Exception e) {
-             fail("No se encontro el dato a eliminar");
             HibernateUtil.rollbackTransaction();
             throw e;
         } finally{
             HibernateUtil.closeSession();
         }
     }
-    @Test
-    public void testOrdenarHotelsPorE() throws Exception {
+    
+    public void testordenarHotelesPorE() throws Exception {
 
         HotelDAO dao = new HotelDAO();
-        Hotel hotel = new Hotel("Aaaa00000","automovil","1999","Peugeut","OIUP2U3","Blanco");
+        Hotel hotel = new Hotel(
+            "001", 
+            "001",
+            "001",
+            "001",
+            "001", 
+            "001", 
+            "001", 
+            "001"
+        );
         HibernateUtil.beginTransaction();
         try {
              dao.hazPersistente(hotel);
-            Collection resultado = dao.ordenarHotelsPor("curp","");
+            Collection resultado = dao.ordenarHotelesPor("nombre");
             HibernateUtil.commitTransaction();
             Hotel aux = (Hotel)resultado.iterator().next();
-            assertTrue(aux.getCurp().equals("Aaaa00000"));
 
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
@@ -245,21 +281,19 @@ public class HotelDAOTest{
             HibernateUtil.closeSession();
         }
     }
-     @Test
-    public void testOrdenarHotelsPorF() throws Exception {
+    
+    public void testordenarHotelesPorF() throws Exception {
 
         HotelDAO dao = new HotelDAO();
         //Hotel hotel = new Hotel("Aaaa00000","automovil","1999","Peugeut","OIUP2U3","Blanco");
         HibernateUtil.beginTransaction();
         try {
 //             dao.hazPersistente(hotel);
-            Collection resultado = dao.ordenarHotelsPor("auto","");
+            Collection resultado = dao.ordenarHotelesPor("nombre");
             HibernateUtil.commitTransaction();
             Hotel aux = (Hotel)resultado.iterator().next();
-            assertTrue(aux.getCurp().equals("Aaaa00000"));
 
         } catch (Exception e) {
-            fail("No se pudo ordenar porque la columna no existe");
             HibernateUtil.rollbackTransaction();
             throw e;
         } finally{
@@ -267,6 +301,33 @@ public class HotelDAOTest{
         }
     }
 
+    public static Test suite() {
+
+       TestSetup suite = new TestSetup(new TestSuite(UsuarioDAOTest.class)) {
+
+            protected void setUp(  ) throws Exception {
+                // Se ejecuta al inicio de la suite
+
+                //SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
+                //ddlExport.create(false, true);
+
+                //dao = new UsuarioDAO();
+                //rolDAO = new RolDAO();
+            }
+
+            protected void tearDown(  ) throws Exception {
+                // se ejecuta al final de la suite
+                //dao = null;
+                //rolDAO = null;
+            }
+        };
+
+        return suite;
+    }
+
+    public static void main(String[] args) throws Exception {
+        TestRunner.run( suite() );
+    }
 
 
 
