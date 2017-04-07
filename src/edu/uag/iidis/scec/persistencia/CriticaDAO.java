@@ -23,6 +23,39 @@ public class CriticaDAO {
     public CriticaDAO() {
     }
 
+    public Critica buscarPorNombre(String nombre)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarPorNombre(" + nombre + ")");
+        }
+
+        Critica critica = null;
+        try {
+            List criticas = HibernateUtil.getSession()
+                    .createQuery("from Critica where nombre=:nombre")
+                    .setString("nombre", nombre)
+                    .list();
+
+            if ((criticas != null) && (criticas.size() > 0)) {
+                critica = (Critica)criticas.get(0);
+            }
+
+            if (critica == null) {
+                if (log.isDebugEnabled()) {
+                    log.debug(">buscarPorNombre(" + nombre + ")");
+                }
+            }
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+
+        return critica;
+    }
+
 
     public Critica buscarPorId(Long idCritica, boolean bloquear)
             throws ExcepcionInfraestructura {
