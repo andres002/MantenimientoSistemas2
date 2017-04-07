@@ -22,14 +22,14 @@ public class HotelDAOTest extends TestCase{
         HotelDAO dao = new HotelDAO();
 
         Hotel hotel = new Hotel(
-            "001", 
-            "001",
-            "001",
-            "001",
-            "001", 
-            "001", 
-            "001", 
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003",
+            "003", 
+            "003", 
+            "003", 
+            "003"
         );
 
         HibernateUtil.beginTransaction();
@@ -50,14 +50,14 @@ public class HotelDAOTest extends TestCase{
         //Falla porque la placa esta en BD
         HotelDAO dao = new HotelDAO();
         Hotel hotel = new Hotel(
-            "001", 
-            "001",
-            "001",
-            "001",
-            "001", 
-            "001", 
-            "001", 
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003",
+            "003", 
+            "003", 
+            "003", 
+            "003"
         );
 
         HibernateUtil.beginTransaction();
@@ -78,19 +78,19 @@ public class HotelDAOTest extends TestCase{
     public void testActualizarHotelE() throws Exception {
         HotelDAO dao = new HotelDAO();
         Hotel hotel = new Hotel(
-            "001", 
-            "001",
-            "001",
-            "001",
-            "001", 
-            "001", 
-            "001", 
-            "001"
+            "005", 
+            "005",
+            "005",
+            "005",
+            "005", 
+            "005", 
+            "005", 
+            "005"
         );
         HibernateUtil.beginTransaction();
         try {
              dao.hazPersistente(hotel);
-             Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
+             Hotel hotelB = dao.buscarPorNombre("005");
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB.getId() != null);
@@ -107,14 +107,14 @@ public class HotelDAOTest extends TestCase{
         //Falla porque la placa no se puede actualizar
         HotelDAO dao = new HotelDAO();
         Hotel hotel = new Hotel(
-            "001", 
-            "001",
-            "001",
-            "001",
-            "001", 
-            "001", 
-            "001", 
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003",
+            "003", 
+            "003", 
+            "003", 
+            "003"
         );
         HibernateUtil.beginTransaction();
         try {
@@ -180,7 +180,7 @@ public class HotelDAOTest extends TestCase{
         HibernateUtil.beginTransaction();
         try {
             //dao.hazPersistente(hotel);
-            Boolean existe =  dao.existeHotel("001");
+            Boolean existe =  dao.existeHotel("003");
             HibernateUtil.commitTransaction();
 
             assertTrue(existe);
@@ -236,12 +236,11 @@ public class HotelDAOTest extends TestCase{
     public void testEliminarHotelF() throws Exception {
 
         HotelDAO dao = new HotelDAO();
-        Hotel hotelB = dao.buscarPorId(Long.valueOf(1), true);
+        Hotel hotelB = dao.buscarPorId(Long.valueOf(0), true);
 
         HibernateUtil.beginTransaction();
         try {
              dao.hazTransitorio(hotelB);
-            hotelB = dao.buscarPorId(Long.valueOf(1), true);
             HibernateUtil.commitTransaction();
 
             assertTrue(hotelB == null);
@@ -258,14 +257,14 @@ public class HotelDAOTest extends TestCase{
 
         HotelDAO dao = new HotelDAO();
         Hotel hotel = new Hotel(
-            "001", 
-            "001",
-            "001",
-            "001",
-            "001", 
-            "001", 
-            "001", 
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003",
+            "003", 
+            "003", 
+            "003", 
+            "003"
         );
         HibernateUtil.beginTransaction();
         try {

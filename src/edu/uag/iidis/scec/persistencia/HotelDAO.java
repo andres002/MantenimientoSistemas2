@@ -54,6 +54,39 @@ public class HotelDAO {
         return hotel;
     }
 
+    public Hotel buscarPorNombre(String nombre)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarPorNombre(" + nombre + ")");
+        }
+
+        Hotel hotel = null;
+        try {
+            List hotels = HibernateUtil.getSession()
+                    .createQuery("from Hotel where nombre=:nombre")
+                    .setString("nombre", nombre)
+                    .list();
+
+            if ((hotels != null) && (hotels.size() > 0)) {
+                hotel = (Hotel)hotels.get(0);
+            }
+
+            if (hotel == null) {
+                if (log.isDebugEnabled()) {
+                    log.debug(">buscarPorNombre(" + nombre + ")");
+                }
+            }
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+
+        return hotel;
+    }
+
     public Collection ordenarHotelesPor( String attribute )
             throws ExcepcionInfraestructura {
 

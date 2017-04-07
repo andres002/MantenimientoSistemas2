@@ -23,10 +23,10 @@ public class CriticaDAOTest extends TestCase{
         CriticaDAO dao = new CriticaDAO();
 
         Critica Critica = new Critica(
-            "001", 
-            "001",
-            "001",
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003"
         );
 
         HibernateUtil.beginTransaction();
@@ -48,10 +48,10 @@ public class CriticaDAOTest extends TestCase{
         //Falla porque la placa esta en BD
         CriticaDAO dao = new CriticaDAO();
         Critica Critica = new Critica(
-            "001", 
-            "001",
-            "001",
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003"
         );
 
         HibernateUtil.beginTransaction();
@@ -72,10 +72,10 @@ public class CriticaDAOTest extends TestCase{
     public void testActualizarCriticaE() throws Exception {
         CriticaDAO dao = new CriticaDAO();
         Critica Critica = new Critica(
-            "001", 
-            "001",
-            "001",
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003"
         );
         HibernateUtil.beginTransaction();
         try {
@@ -97,10 +97,10 @@ public class CriticaDAOTest extends TestCase{
         //Falla porque la placa no se puede actualizar
         CriticaDAO dao = new CriticaDAO();
         Critica Critica = new Critica(
-            "001", 
-            "001",
-            "001",
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003"
         );
         HibernateUtil.beginTransaction();
         try {
@@ -147,8 +147,7 @@ public class CriticaDAOTest extends TestCase{
             Collection resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
 
-            assertTrue(resultado != null);
-            assertTrue("La busqueda fallo",resultado.isEmpty());
+            assertTrue(resultado == null);
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -166,7 +165,7 @@ public class CriticaDAOTest extends TestCase{
         HibernateUtil.beginTransaction();
         try {
             //dao.hazPersistente(Critica);
-            Boolean existe =  dao.existeCritica("001");
+            Boolean existe =  dao.existeCritica("003");
             HibernateUtil.commitTransaction();
 
             assertTrue(existe);
@@ -184,7 +183,7 @@ public class CriticaDAOTest extends TestCase{
         CriticaDAO dao = new CriticaDAO();
         HibernateUtil.beginTransaction();
         try {
-            Boolean existe =  dao.existeCritica("002");
+            Boolean existe =  dao.existeCritica("000");
             HibernateUtil.commitTransaction();
 
             assertTrue("El Critica no se encuentra registrado",existe);
@@ -244,10 +243,10 @@ public class CriticaDAOTest extends TestCase{
 
         CriticaDAO dao = new CriticaDAO();
         Critica Critica = new Critica(
-            "001", 
-            "001",
-            "001",
-            "001"
+            "003", 
+            "003",
+            "003",
+            "003"
         );
         HibernateUtil.beginTransaction();
         try {

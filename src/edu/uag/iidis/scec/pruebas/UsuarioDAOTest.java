@@ -44,6 +44,14 @@ public class UsuarioDAOTest extends TestCase {
             Usuario usuB = dao.buscarPorNombreUsuario("flyzx");
 
             assertTrue(usuB != null);
+
+            HibernateUtil.beginTransaction();
+            Usuario usuario2 = dao.buscarPorNombreUsuario("flyzx");
+            if (usuario2 != null) {
+              dao.hazTransitorio(usuario2);
+            }
+            HibernateUtil.commitTransaction();
+
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -54,7 +62,17 @@ public class UsuarioDAOTest extends TestCase {
     }
 
     public void testEliminarUsuario() {
+        Usuario usuario2 = new Usuario(
+                    new NombrePersona("DR.",
+                                      "Fujencio",
+                                      "Martines", "Martines", 
+                                      "Funje", "FMM"),
+                    new Credencial("flyzx","123"));
         try {
+            HibernateUtil.beginTransaction();
+            dao.hazPersistente(usuario2);
+            HibernateUtil.commitTransaction();
+
             HibernateUtil.beginTransaction();
             Usuario usuario = dao.buscarPorNombreUsuario("flyzx");
             if (usuario != null) {
